@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Home - Cube',
-  description: 'Page description',
+  title: 'Home - Movoo',
+  description: 'A powerful suite of delivery integrations',
 }
 
 import Hero from '@/components/hero'
