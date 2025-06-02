@@ -110,7 +110,7 @@ export default function HeroHome() {
             </div>
           </div>
           {/* Hero image */}
-          <div
+          {/* <div
             className="mx-auto max-w-3xl"
             data-aos="zoom-y-out"
             data-aos-delay={600}
@@ -146,7 +146,7 @@ export default function HeroHome() {
                 </span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
