@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Pricing - Simple",
+  title: "Pricing - Movoo",
   description: "Page description",
 };
 
@@ -18,7 +18,7 @@ export default function Pricing() {
       <Faqs />
       <Cta
         className="overflow-hidden"
-        heading="Create your next project with Simple"
+        heading="Start integrating with Movoo"
         buttonText="Start Free Trial"
         buttonLink="#0"
       />
