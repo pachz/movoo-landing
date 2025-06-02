@@ -1,45 +1,48 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import Illustration from '@/public/images/cta-illustration.svg'
+import Image from "next/image";
+import Stripes from "@/public/images/stripes-dark.svg";
 
 export default function Cta() {
   return (
-    <section className="relative border-t border-slate-800">
-      {/* Bg gradient: top */}
-      <div
-        className="absolute top-0 left-0 right-0 bg-linear-to-b from-slate-800 to-transparent opacity-25 h-[25rem] pointer-events-none -z-10"
-        aria-hidden="true"
-      />
-      {/* Illustration */}
-      <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 -mt-8 pointer-events-none -z-10" aria-hidden="true">
-        <Image src={Illustration} className="max-w-none" alt="Features 01 Illustration" />
-      </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-20">
-          {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20" data-aos="fade-up">
-            <h2 className="h2 font-hkgrotesk">Join the most flexible user-centric platform for teams</h2>
+    <section>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div
+          className="relative overflow-hidden rounded-2xl text-center shadow-xl before:pointer-events-none before:absolute before:inset-0 before:-z-10 before:rounded-2xl before:bg-gray-900"
+          data-aos="zoom-y-out"
+        >
+          {/* Glow */}
+          <div
+            className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2 translate-y-1/2"
+            aria-hidden="true"
+          >
+            <div className="h-56 w-[480px] rounded-full border-[20px] border-blue-500 blur-3xl will-change-[filter]" />
           </div>
-          {/* Buttons */}
-          <div className="text-center">
-            <div className="max-w-xs mx-auto sm:max-w-none sm:inline-flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <div data-aos="fade-up" data-aos-delay="100">
-                <Link className="btn text-white bg-indigo-500 hover:bg-indigo-600 w-full shadow-xs group" href="/signup">
-                  Get Started Free{' '}
-                  <span className="tracking-normal text-sky-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
+          {/* Stripes illustration */}
+          <div
+            className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 transform"
+            aria-hidden="true"
+          >
+            <Image className="max-w-none" src={Stripes} alt="Stripes" />
+          </div>
+          <div className="px-4 py-12 md:px-12 md:py-20">
+            <h2 className="mb-6 border-y text-3xl font-bold text-gray-200 [border-image:linear-gradient(to_right,transparent,--theme(--color-slate-700/.7),transparent)1] md:mb-12 md:text-4xl">
+              Create your next project with Simple
+            </h2>
+            <div className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center">
+              <a
+                className="btn group mb-4 w-full bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
+                href="#0"
+              >
+                <span className="relative inline-flex items-center">
+                  Start Free Trial{" "}
+                  <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
                     -&gt;
                   </span>
-                </Link>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="200">
-                <a className="btn text-slate-300 bg-slate-700 hover:bg-slate-600 border-slate-600 w-full shadow-xs" href="#0">
-                  Read Docs
-                </a>
-              </div>
+                </span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

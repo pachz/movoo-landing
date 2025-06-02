@@ -1,42 +1,15 @@
-/* Typography */
-.h1 {
-    @apply text-6xl font-extrabold;
-}
-
-.h2 {
-    @apply text-5xl font-extrabold;
-}
-
-.h3 {
-    @apply text-4xl font-extrabold;
-}
-
-.h4 {
-    @apply text-3xl font-extrabold;
-}
-
-@media (width >= theme(--breakpoint-md)) {
-    .h1 {
-        @apply text-7xl;
-    }
-
-    .h2 {
-        @apply text-6xl;
-    }
-}
-
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply font-medium inline-flex items-center justify-center border border-transparent rounded-sm transition duration-150 ease-in-out;
+    @apply text-sm font-medium inline-flex items-center justify-center rounded-lg whitespace-nowrap transition-all;
 }
 
 .btn {
-    @apply px-6 py-3;
+    @apply px-4 py-[11px] shadow-lg;
 }
 
 .btn-sm {
-    @apply px-4 py-2;
+    @apply px-3 py-[5px] shadow-sm;
 }
 
 /* Forms */
@@ -53,19 +26,19 @@ input[type="search"]::-webkit-search-results-decoration {
 .form-select,
 .form-checkbox,
 .form-radio {
-    @apply border border-slate-700 focus:ring-0 focus:ring-offset-0;
+    @apply border border-gray-200 shadow-xs rounded-lg focus:ring-0 focus:ring-offset-0;
 }
 
 .form-input,
 .form-textarea,
 .form-multiselect,
 .form-select {
-    @apply bg-slate-800 py-3 px-4 focus:border-indigo-500;
+    @apply bg-white text-sm py-2.5 px-4 focus:border-blue-300;
 }
 
 .form-input,
 .form-textarea {
-    @apply placeholder-slate-500;
+    @apply placeholder-gray-400;
 }
 
 .form-select {
@@ -74,19 +47,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .form-checkbox,
 .form-radio {
-    @apply bg-slate-800 checked:bg-indigo-600 checked:border-transparent text-indigo-600 focus-visible:border-indigo-500;
+    @apply text-gray-800 checked:bg-blue-500 checked:border-transparent focus-visible:not-checked:border-blue-300;
 }
 
 .form-checkbox {
     @apply rounded-xs;
-}
-
-/* Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
 }

@@ -1,54 +1,100 @@
-import Link from 'next/link'
+import Link from "next/link";
+import Logo from "./logo";
+import Dropdown from "@/components/dropdown";
+import MobileMenu from "./mobile-menu";
 
-export default function Header({ nav = true }: {
-  nav?: boolean
-}) {
+export default function Header() {
   return (
-    <header className="absolute w-full z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <header className="fixed top-2 z-30 w-full md:top-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-white/90 px-3 shadow-lg shadow-black/[0.03] backdrop-blur-xs before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(var(--color-gray-100),var(--color-gray-200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
-            {/* Logo */}
-            <Link className="block" href="/" aria-label="Cruip">
-              <svg className="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient x1="0%" y1="32.443%" x2="104.18%" y2="50%" id="hlogo-a">
-                    <stop stopColor="#FFF" stopOpacity=".299" offset="0%" />
-                    <stop stopColor="#7587E4" stopOpacity="0" offset="100%" />
-                  </linearGradient>
-                  <linearGradient x1="18.591%" y1="0%" x2="100%" y2="100%" id="hlogo-b">
-                    <stop stopColor="#818CF8" offset="0%" />
-                    <stop stopColor="#C7D2FE" offset="100%" />
-                  </linearGradient>
-                </defs>
-                <g fill="none" fillRule="evenodd">
-                  <path fill="#3730A3" d="M16 18.5V32l15.999-9.25V9.25z" />
-                  <path fill="#4F46E5" d="m0 23 16 9V18.501L0 9.251z" />
-                  <path fillOpacity=".64" fill="url(#hlogo-a)" d="M16 13 0 23l16 9 16-9z" />
-                  <path fill="url(#hlogo-b)" d="M16 0 0 9.25l16 9.25 15.999-9.25z" />
-                </g>
-              </svg>
-            </Link>
+          <div className="flex flex-1 items-center">
+            <Logo />
           </div>
+
           {/* Desktop navigation */}
-          {nav &&
-            <nav className="flex grow">
-              {/* Desktop sign in links */}
-              <ul className="flex grow justify-end flex-wrap items-center">
+          <nav className="hidden md:flex md:grow">
+            {/* Desktop menu links */}
+            <ul className="flex grow flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
+              <li className="px-3 py-1">
+                <Link
+                  href="/pricing"
+                  className="flex items-center text-gray-700 transition hover:text-gray-900"
+                >
+                  Pricing
+                </Link>
+              </li>
+              <li className="px-3 py-1">
+                <Link
+                  href="/customers"
+                  className="flex items-center text-gray-700 transition hover:text-gray-900"
+                >
+                  Customers
+                </Link>
+              </li>
+              <li className="px-3 py-1">
+                <Link
+                  href="/blog"
+                  className="flex items-center text-gray-700 transition hover:text-gray-900"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="px-3 py-1">
+                <Link
+                  href="/documentation"
+                  className="flex items-center text-gray-700 transition hover:text-gray-900"
+                >
+                  Docs
+                </Link>
+              </li>
+              {/* 1st level: hover */}
+              <Dropdown title="Extra">
+                {/* 2nd level: hover */}
                 <li>
-                  <Link className="font-medium text-slate-500 hover:text-slate-300 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="/signin">Sign in</Link>
-                </li>
-                <li className="ml-3">
-                  <Link className="btn-sm text-white bg-indigo-500 hover:bg-indigo-600 w-full shadow-xs group" href="/signup">
-                    Get Started <span className="tracking-normal text-sky-300 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">-&gt;</span>
+                  <Link
+                    href="/support"
+                    className="flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Support center
                   </Link>
                 </li>
-              </ul>
-            </nav>
-          }
+                <li>
+                  <Link
+                    href="/apps"
+                    className="flex rounded-lg px-2 py-1.5 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Apps
+                  </Link>
+                </li>
+              </Dropdown>
+            </ul>
+          </nav>
+
+          {/* Desktop sign in links */}
+          <ul className="flex flex-1 items-center justify-end gap-3">
+            <li>
+              <Link
+                href="/signin"
+                className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
+              >
+                Login
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/signup"
+                className="btn-sm bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
+              >
+                Register
+              </Link>
+            </li>
+          </ul>
+
+          <MobileMenu />
         </div>
       </div>
     </header>
-  )
+  );
 }

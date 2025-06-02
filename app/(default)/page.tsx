@@ -1,28 +1,26 @@
 export const metadata = {
-  title: 'Home - Movoo',
-  description: 'A powerful suite of delivery integrations',
-}
+  title: "Home - Simple",
+  description: "Page description",
+};
 
-import Hero from '@/components/hero'
-import Testimonials from '@/components/testimonials'
-import Features from '@/components/features'
-import Features02 from '@/components/features-02'
-import Integrations from '@/components/integrations'
-import Pricing from '@/components/pricing'
-import Faqs from '@/components/faqs'
-import Cta from '@/components/cta'
+import Hero from "@/components/hero-home";
+import BusinessCategories from "@/components/business-categories";
+import LargeTestimonial from "@/components/large-testimonial";
+import FeaturesPlanet from "@/components/features-planet";
+import Features from "@/components/features-home";
+import TestimonialsCarousel from "@/components/testimonials-carousel";
+import Cta from "@/components/cta";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Testimonials />
+      <BusinessCategories />
+      <LargeTestimonial />
+      <FeaturesPlanet />
       <Features />
-      <Features02 />
-      <Integrations />
-      <Pricing />
-      <Faqs />
+      <TestimonialsCarousel />
       <Cta />
     </>
-  )
+  );
 }
