@@ -14,13 +14,13 @@ export default function FeaturesPlanet() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-16 text-center md:pb-20">
             <h2 className="text-3xl font-bold text-gray-200 md:text-4xl">
-              Simple helps your teams work more efficiently together
+              Simplify, Scale, and Supercharge Your Last-Mile Delivery
             </h2>
           </div>
           {/* Planet */}
           <div className="pb-16 md:pb-20" data-aos="zoom-y-out">
             <div className="text-center">
-              <div className="relative inline-flex rounded-full before:absolute before:inset-0 before:-z-10 before:scale-[.85] before:animate-[pulse_4s_cubic-bezier(.4,0,.6,1)_infinite] before:bg-linear-to-b before:from-blue-900 before:to-sky-700/50 before:blur-3xl after:absolute after:inset-0 after:rounded-[inherit] after:[background:radial-gradient(closest-side,var(--color-blue-500),transparent)]">
+              <div className="relative inline-flex rounded-full before:absolute before:inset-0 before:-z-10 before:scale-[.85] before:animate-[pulse_4s_cubic-bezier(.4,0,.6,1)_infinite] before:bg-linear-to-b before:from-primary-900 before:to-sky-700/50 before:blur-3xl after:absolute after:inset-0 after:rounded-[inherit] after:[background:radial-gradient(closest-side,var(--color-primary-500),transparent)]">
                 <Image
                   className="rounded-full bg-gray-900"
                   src={PlanetImg}
@@ -75,113 +75,109 @@ export default function FeaturesPlanet() {
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-blue-500"
+                  className="fill-primary-500"
+                  viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"
                   width={16}
                   height={16}
                 >
-                  <path d="M2 4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4Zm2-4a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4H4Zm1 10a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H5Z" />
+                  <path d="M311.168 225.835L481.835 55.168q12.5-12.5 30.165-12.5 17.664 0 30.165 12.5l170.667 170.667q12.5 12.5 12.5 30.165 0 17.664-12.5 30.165-12.5 12.502-30.165 12.502-17.664 0-30.166-12.502L512 145.665l-140.5 140.5q-12.503 12.502-30.167 12.502t-30.165-12.502q-12.5-12.5-12.5-30.165 0-17.664 12.5-30.165zm243.5-140.502V524.8q.98 89.26-62.508 152.704L200.832 968.832q-12.5 12.5-30.165 12.5-17.664 0-30.166-12.5-12.5-12.5-12.5-30.165 0-17.664 12.5-30.166l291.33-291.327q38.1-38.058 37.503-92.373V85.333q0-17.664 12.502-30.165 12.5-12.5 30.165-12.5 17.664 0 30.165 12.5 12.502 12.5 12.502 30.165zm268.5 883.5L609.835 755.498q-12.502-12.503-12.502-30.167t12.502-30.165q12.5-12.5 30.165-12.5 17.664 0 30.165 12.5L883.5 908.5q12.5 12.503 12.5 30.167t-12.5 30.165q-12.503 12.5-30.167 12.5t-30.165-12.5z" />
                 </svg>
-                <span>Instant Analytics</span>
+                <span>Unified Integration</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Collect essential insights about how visitors are using your
-                site with in-depth page view metrics like pages, referring
-                sites, and more.
+                Connect with multiple delivery service providers through one
+                easy-to-use API—no more juggling complex integration.
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-blue-500"
+                  viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="fill-primary-500"
                   width={16}
                   height={16}
                 >
-                  <path d="M14.29 2.614a1 1 0 0 0-1.58-1.228L6.407 9.492l-3.199-3.2a1 1 0 1 0-1.414 1.415l4 4a1 1 0 0 0 1.496-.093l7-9ZM1 14a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H1Z" />
+                  <path d="M170.795 640h-.128q-53.846.128-77.1-48.512-23.295-48.683 10.668-90.58 1.194-1.495 2.517-2.817L528.427 63.617q33.194-37.29 77.653-13.483 45.1 24.107 31.53 73.387-.213.853-.47 1.664l-81.92 256.853-.68 1.963h298.793q53.803-.17 77.1 48.512 23.295 48.683-10.668 90.58-1.194 1.495-2.517 2.817L495.573 960.383q-33.194 37.29-77.653 13.483-45.1-24.107-31.53-73.387.213-.853.47-1.664l81.92-256.853.68-1.963zm-.043-85.333h298.453q44.715-.128 70.315 36.565 25.216 36.224 10.283 77.525l-53.76 168.62 357.205-368.044H554.795q-44.715.128-70.315-36.565-25.216-36.224-10.283-77.525l53.76-168.62-357.205 368.044z" />
                 </svg>
-                <span>Metadata</span>
+                <span>Faster Time-to-Market</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Collect essential insights about how visitors are using your
-                site with in-depth page view metrics like pages, referring
-                sites, and more.
+                Launch and scale delivery operations quickly without waiting for
+                lengthy development cycles.
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-blue-500"
+                  viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="fill-primary-500"
                   width={16}
                   height={16}
                 >
-                  <path
-                    d="M2.248 6.285a1 1 0 0 1-1.916-.57A8.014 8.014 0 0 1 5.715.332a1 1 0 0 1 .57 1.916 6.014 6.014 0 0 0-4.037 4.037Z"
-                    opacity=".3"
-                  />
-                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm1.715-6.752a1 1 0 0 1 .57-1.916 8.014 8.014 0 0 1 5.383 5.383 1 1 0 1 1-1.916.57 6.014 6.014 0 0 0-4.037-4.037Zm4.037 7.467a1 1 0 1 1 1.916.57 8.014 8.014 0 0 1-5.383 5.383 1 1 0 1 1-.57-1.916 6.014 6.014 0 0 0 4.037-4.037Zm-7.467 4.037a1 1 0 1 1-.57 1.916 8.014 8.014 0 0 1-5.383-5.383 1 1 0 1 1 1.916-.57 6.014 6.014 0 0 0 4.037 4.037Z" />
+                  <path d="M213.333 85.333H384q128 0 128 128V384q0 128-128 128H213.333q-128 0-128-128V213.333q0-128 128-128zm0 85.334q-42.666 0-42.666 42.666V384q0 42.667 42.666 42.667H384q42.667 0 42.667-42.667V213.333q0-42.666-42.667-42.666zm128 298.666V640q0 42.667 42.667 42.667h170.667q17.664 0 30.165 12.5 12.5 12.502 12.5 30.166t-12.5 30.166q-12.5 12.5-30.165 12.5H384q-128 0-128-128V469.333q0-17.664 12.5-30.165 12.503-12.5 30.167-12.5t30.165 12.5q12.5 12.5 12.5 30.165zM640 512h170.667q128 0 128 128v170.667q0 128-128 128H640q-128 0-128-128V640q0-128 128-128zm0 85.333q-42.667 0-42.667 42.667v170.667q0 42.666 42.667 42.666h170.667q42.666 0 42.666-42.666V640q0-42.667-42.666-42.667z" />
                 </svg>
-                <span>SEO &amp; Performance</span>
+                <span>Standardized Logistics Flows</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Collect essential insights about how visitors are using your
-                site with in-depth page view metrics like pages, referring
-                sites, and more.
+                Streamline your delivery processes with consistent, reliable
+                workflows across all providers.
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-blue-500"
+                  viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"
                   width={16}
                   height={16}
+                  className="fill-primary-500"
                 >
-                  <path d="M8 0a1 1 0 0 1 1 1v14a1 1 0 1 1-2 0V1a1 1 0 0 1 1-1Zm6 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h1a1 1 0 1 1 0 2h-1a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h1a1 1 0 1 1 0 2h-1ZM1 1a1 1 0 0 0 0 2h1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 1 0 0 2h1a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H1Z" />
+                  <path d="M682.667 85.333H896q17.664 0 30.165 12.502 12.502 12.5 12.502 30.165v213.333q0 17.664-12.502 30.166Q913.665 384 896 384q-17.664 0-30.165-12.5-12.502-12.503-12.502-30.167V170.667H682.667q-17.664 0-30.166-12.502Q640 145.665 640 128q0-17.664 12.5-30.165 12.503-12.502 30.167-12.502zm-341.334 85.334H170.667v170.666q0 17.664-12.502 30.166Q145.665 384 128 384q-17.664 0-30.165-12.5-12.502-12.503-12.502-30.167V128q0-17.664 12.502-30.165 12.5-12.502 30.165-12.502h213.333q17.664 0 30.166 12.502Q384 110.335 384 128q0 17.664-12.5 30.165-12.503 12.502-30.167 12.502zm128 768V584.533q.598-54.314-37.504-92.373L97.834 158.165Q85.333 145.665 85.333 128q0-17.664 12.502-30.165 12.5-12.502 30.165-12.502 17.664 0 30.165 12.502L492.16 431.83q63.488 63.445 62.507 152.703v354.134q0 17.664-12.502 30.165-12.5 12.5-30.165 12.5-17.664 0-30.165-12.5-12.502-12.5-12.502-30.165zm140.502-584.832l256-256q12.5-12.502 30.165-12.502 17.664 0 30.165 12.502 12.502 12.5 12.502 30.165 0 17.664-12.502 30.165l-256 256q-12.5 12.502-30.165 12.502-17.664 0-30.165-12.502-12.502-12.5-12.502-30.165 0-17.664 12.502-30.165z" />
                 </svg>
-                <span>Custom Code</span>
+                <span>Flexible Delivery Options</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Collect essential insights about how visitors are using your
-                site with in-depth page view metrics like pages, referring
-                sites, and more.
+                Support on-demand, scheduled, and multi-industry deliveries —
+                from e-commerce to groceries and beyond
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-blue-500"
+                  viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="fill-primary-500"
                   width={16}
                   height={16}
                 >
-                  <path d="M10.284.33a1 1 0 1 0-.574 1.917 6.049 6.049 0 0 1 2.417 1.395A1 1 0 0 0 13.5 2.188 8.034 8.034 0 0 0 10.284.33ZM6.288 2.248A1 1 0 0 0 5.718.33 8.036 8.036 0 0 0 2.5 2.187a1 1 0 0 0 1.372 1.455 6.036 6.036 0 0 1 2.415-1.395ZM1.42 5.401a1 1 0 0 1 .742 1.204 6.025 6.025 0 0 0 0 2.79 1 1 0 0 1-1.946.462 8.026 8.026 0 0 1 0-3.714A1 1 0 0 1 1.421 5.4Zm2.452 6.957A1 1 0 0 0 2.5 13.812a8.036 8.036 0 0 0 3.216 1.857 1 1 0 0 0 .574-1.916 6.044 6.044 0 0 1-2.417-1.395Zm9.668.04a1 1 0 0 1-.041 1.414 8.033 8.033 0 0 1-3.217 1.857 1 1 0 1 1-.571-1.917 6.035 6.035 0 0 0 2.415-1.395 1 1 0 0 1 1.414.042Zm2.242-6.255a1 1 0 1 0-1.946.462 6.03 6.03 0 0 1 0 2.79 1 1 0 1 0 1.946.462 8.022 8.022 0 0 0 0-3.714Z" />
+                  <path d="M565.077 54.187L931.115 220.8q50.944 22.443 50.944 78.08t-50.476 77.867l-366.037 166.4q-53.12 24.234-106.24 0L93.74 376.533q-50.945-22.442-50.945-78.08 0-55.637 50.474-77.866l365.61-166.4q53.12-24.235 106.197 0zm-35.37 77.653q-17.707-8.064-35.414 0l-365.696 166.4-.47.213 366.593 167.04q17.707 8.064 35.413 0l366.123-166.4.47-.213-366.977-167.04zM128 512.085l366.677 166.742q17.536 7.936 35.158-.043L895.83 512.427l.17-.086q-.128-17.663 12.245-30.25 12.416-12.63 30.08-12.757 17.664-.128 30.25 12.246 12.63 12.415 12.758 30.08.427 55.68-50.176 78.42L564.992 756.523q-52.78 23.893-105.643-.043L92.16 589.568q-49.62-22.997-49.493-77.653.042-17.707 12.586-30.166 12.502-12.46 30.166-12.417 17.705.043 30.164 12.587 12.46 12.5 12.416 30.165zm0 213.334l366.677 166.74q17.536 7.936 35.158-.043L895.83 725.76l.17-.085q-.128-17.664 12.245-30.25 12.416-12.63 30.08-12.758 17.664-.128 30.25 12.245 12.63 12.416 12.758 30.08.427 55.68-50.176 78.42L564.992 969.857q-52.78 23.893-105.643-.043L92.16 802.9q-49.62-22.996-49.493-77.652.042-17.707 12.586-30.165 12.502-12.46 30.166-12.416 17.705.042 30.164 12.586 12.46 12.502 12.416 30.166z" />
                 </svg>
-                <span>Localization</span>
+                <span>Future-Proof Infrastructure</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Collect essential insights about how visitors are using your
-                site with in-depth page view metrics like pages, referring
-                sites, and more.
+                Build on a scalable platform designed to evolve with your
+                business needs and new industry verticals.
               </p>
             </article>
             <article>
               <h3 className="mb-2 flex items-center space-x-2 font-medium text-gray-200">
                 <svg
-                  className="fill-blue-500"
+                  viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="fill-primary-500"
                   width={16}
                   height={16}
                 >
-                  <path d="M9 1a1 1 0 1 0-2 0v6a1 1 0 0 0 2 0V1ZM4.572 3.08a1 1 0 0 0-1.144-1.64A7.987 7.987 0 0 0 0 8a8 8 0 0 0 16 0c0-2.72-1.36-5.117-3.428-6.56a1 1 0 1 0-1.144 1.64A5.987 5.987 0 0 1 14 8 6 6 0 1 1 2 8a5.987 5.987 0 0 1 2.572-4.92Z" />
+                  <path d="M981.333 512q0 194.39-137.472 331.86Q706.39 981.334 512 981.334q-194.39 0-331.86-137.472Q42.666 706.39 42.666 512q0-194.39 137.472-331.86Q317.61 42.666 512 42.666q194.39 0 331.86 137.472Q981.334 317.61 981.334 512zM896 512q0-159.06-112.47-271.53Q671.06 128 512 128q-159.06 0-271.53 112.47Q128 352.94 128 512q0 159.06 112.47 271.53Q352.94 896 512 896q159.06 0 271.53-112.47Q896 671.06 896 512zm-520.533 59.733Q426.667 640 512 640q85.333 0 136.533-68.267 10.624-14.122 28.118-16.64 17.494-2.517 31.617 8.107 14.122 10.624 16.64 28.117 2.517 17.494-8.107 31.616-76.8 102.4-204.8 102.4t-204.8-102.4q-10.624-14.122-8.107-31.616 2.518-17.493 16.64-28.117 14.123-10.624 31.616-8.107 17.493 2.518 28.117 16.64zm8.533-230.4h.427q17.664 0 30.165 12.502 12.5 12.5 12.5 30.165 0 17.664-12.5 30.165-12.5 12.502-30.165 12.502H384q-17.664 0-30.165-12.502-12.502-12.5-12.502-30.165 0-17.664 12.502-30.165 12.5-12.502 30.165-12.502zm256 0h.427q17.664 0 30.165 12.502 12.5 12.5 12.5 30.165 0 17.664-12.5 30.165-12.5 12.502-30.165 12.502H640q-17.664 0-30.165-12.502-12.502-12.5-12.502-30.165 0-17.664 12.502-30.165 12.5-12.502 30.165-12.502z" />
                 </svg>
-                <span>Canonical URL</span>
+                <span>Enhanced Customer </span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Collect essential insights about how visitors are using your
-                site with in-depth page view metrics like pages, referring
-                sites, and more.
+                Experience  Deliver faster and more reliably, improving
+                satisfaction and driving repeat business.
               </p>
             </article>
           </div>

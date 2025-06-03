@@ -9,8 +9,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Movoo - A powerful suite of delivery integrations",
-  description: "Movoo is a powerful suite of delivery integrations designed to help businesses create a seamless and efficient delivery experience for their customers.",
+  title: "One API for Every Delivery Need",
+  description:
+    "Movoo is the infrastructure layer for last-mile delivery integration — starting with e-commerce and expanding across industries. Connect to multiple delivery providers through a single, unified interface and scale your logistics with speed and flexibility.",
 };
 
 export default function RootLayout({

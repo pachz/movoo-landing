@@ -16,10 +16,10 @@ export default function Home() {
     <>
       <Hero />
       <BusinessCategories />
-      <LargeTestimonial />
+      {/* <LargeTestimonial /> */}
       <FeaturesPlanet />
       <Features />
-      <TestimonialsCarousel />
+      {/* <TestimonialsCarousel /> */}
       <Cta />
     </>
   );

@@ -15,6 +15,18 @@
   --font-inter: Inter, sans-serif;
   --font-mono: Roboto Mono, monospace;
 
+   --color-primary-50:  #e1f4f9;
+  --color-primary-100: #b9e4f0;
+  --color-primary-200: #8fd3e7;
+  --color-primary-300: #64c1dc;
+  --color-primary-400: #3caed1;
+  --color-primary-500: #0A7EA4;  
+  --color-primary-600: #086d8e;
+  --color-primary-700: #065870;
+  --color-primary-800: #044357;
+  --color-primary-900: #022e3c;
+  --color-primary-950: #011f2a;
+
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
   --text-sm: 0.875rem;
