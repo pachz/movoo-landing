@@ -10,6 +10,7 @@ import FeaturesPlanet from "@/components/features-planet";
 import Features from "@/components/features-home";
 import TestimonialsCarousel from "@/components/testimonials-carousel";
 import Cta from "@/components/cta";
+import FeaturesDemoSection from "@/components/features";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       {/* <LargeTestimonial /> */}
       <FeaturesPlanet />
       <Features />
+      <FeaturesDemoSection />
       {/* <TestimonialsCarousel /> */}
       <Cta />
     </>
