@@ -27,7 +27,7 @@ export default function FeaturesHome() {
             </p>
           </div>
           {/* Illustration */}
-          <div className="group relative mx-auto mb-16 flex w-full max-w-[800px] justify-center md:mb-20">
+          <div className="group relative mx-auto mb-16 flex w-full max-w-[800px] justify-center md:mb-20 hover:scale-105 transform transition duration-500">
             <div className=" pointer-events-none ">
               <Image
                 className="-rotate-1  rounded-lg  shadow-xl shadow-black-50 "
