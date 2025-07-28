@@ -9,13 +9,13 @@ import FeaturesDemoSectionAr from "@/components/features-ar";
 import FeaturesAr from "@/components/features-home-ar";
 import FeaturesPlanetAr from "@/components/features-planet-ar";
 import HeroAr from "@/components/hero-home-ar";
-import Header from "@/components/ui/header";
-import Footer from "@/components/ui/footer";
+import HeaderAr from "@/components/ui/header-ar";
+import FooterAr from "@/components/ui/footer-ar";
 
 export default function HomeAr() {
   return (
     <>
-      <Header />
+      <HeaderAr />
       <main className="grow">
         <section id="home">
           <HeroAr />
@@ -32,7 +32,7 @@ export default function HomeAr() {
         </section>
         <CtaAr />
       </main>
-      <Footer border={true} />
+      <FooterAr border={true} />
     </>
   );
 } 
