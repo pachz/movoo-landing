@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import AdminPanel from "@/public/images/Admin.png";
-import Seamless from "@/public/images/Seamless.png";
-import Live from "@/public/images/liveDebugger.png";
-import Track from "@/public/images/Track.png";
+import AdminPanel from "@/public/images/Admin.webp";
+import Seamless from "@/public/images/Seamless.webp";
+import Live from "@/public/images/liveDebugger.webp";
+import Track from "@/public/images/Track.webp";
 
 const features = [
   {
