@@ -13,6 +13,7 @@
 
 @theme {
   --font-inter: Inter, sans-serif;
+  --font-noto-sans-arabic: 'Noto Sans Arabic', sans-serif;
   --font-mono: Roboto Mono, monospace;
 
    --color-primary-50:  #e1f4f9;
