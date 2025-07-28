@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Pricing - Movoo",
+  title: "Pricing - Muvu",
   description: "Page description",
 };
 
@@ -18,8 +18,8 @@ export default function Pricing() {
       <Faqs />
       <Cta
         className="overflow-hidden"
-        heading="Start integrating with Movoo"
-        buttonText="Start Free Trial"
+        heading="Start integrating with Muvu"
+        buttonText="Start Free"
         buttonLink="#0"
       />
     </>

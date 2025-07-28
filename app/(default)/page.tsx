@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Home - Movoo",
+  title: "Home - Muvu",
   description: "Page description",
 };
 

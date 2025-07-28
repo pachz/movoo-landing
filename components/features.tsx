@@ -1,32 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import TestImage from "@/public/images/image.png";
+import AdminPanel from "@/public/images/Admin.png";
+import Seamless from "@/public/images/Seamless.png";
+import Live from "@/public/images/liveDebugger.png";
+import Track from "@/public/images/Track.png";
 
 const features = [
   {
-    title: "Calculate Shipping Costs Instantly",
-    desc: "Check rates and shipping fees across multiple providers in real-time for accurate pricing.",
-    img: TestImage,
-    flip: false,
+    title: "Admin Panel for Full Control",
+    desc: "Review orders, test scenarios, and configure integration all from a single dashboard.",
+    img: AdminPanel,
+    flip: true,
   },
   {
     title: "Seamless Order Management",
-    desc: "Create and dispatch orders directly from your e-commerce system using Movoo’s unified API.",
-    img: TestImage,
-    flip: true,
-  },
-  {
-    title: "Track Deliveries in Real-Time",
-    desc: "Receive live updates on delivery and payment statuses with webhooks or interval polling — stay in the loop effortlessly.",
-    img: TestImage,
+    desc: "Create and dispatch orders directly from your e-commerce system using Muvu’s unified API.",
+    img: Seamless,
     flip: false,
   },
   {
-    title: "Admin Panel for Full Control",
-    desc: "Review orders, test scenarios, and configure integration all from a single dashboard.",
-    img: TestImage,
+    title: "Live API Debugger",
+    desc: "Monitor API health and troubleshoot issues in real time with Muvu’s built-in live debugger for smooth, reliable integration.",
+    img: Live,
     flip: true,
+  },
+
+  {
+    title: "Track Deliveries in Real-Time",
+    desc: "Receive live updates on delivery and payment statuses with webhooks or interval polling — stay in the loop effortlessly.",
+    img: Track,
+    flip: false,
   },
 ];
 
@@ -45,7 +49,7 @@ export default function FeaturesDemoSection() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              See Movoo in Action — Simple, Powerful Delivery Management
+              See Muvu in Action — Simple, Powerful Delivery Management
             </h2>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto">
               Our intuitive panel makes last-mile delivery integration
@@ -82,8 +86,8 @@ export default function FeaturesDemoSection() {
                 </div>
 
                 {/* Image */}
-                {/* <div className="w-full md:w-1/2">
-                  <div className="rounded-lg overflow-hidden bg-white shadow-md p-2 hover:scale-105 transform transition duration-500">
+                <div className="w-full md:w-1/2 flex justify-center">
+                  <div className="w-full sm:w-[90%] md:w-[85%] max-w-md rounded-lg overflow-hidden bg-white shadow-md p-2 hover:scale-105 transform transition duration-500">
                     <Image
                       src={feature.img}
                       alt={feature.title}
@@ -91,7 +95,7 @@ export default function FeaturesDemoSection() {
                       placeholder="blur"
                     />
                   </div>
-                </div> */}
+                </div>
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@ import PageIllustration from "@/components/page-illustration";
 import PostItem from "@/components/post-item";
 
 export const metadata = {
-  title: "Blog - Movoo",
+  title: "Blog - Muvu",
   description: "Page description",
 };
 
