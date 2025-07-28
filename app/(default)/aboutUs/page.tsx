@@ -36,7 +36,7 @@ export default function Support() {
           <li>A clean, intuitive dashboard for operations and analytics</li>
         </ul>
         <p className="mb-4 text-sm sm:text-base text-gray-700">
-          We’re here to make delivery smarter—for everyone.
+          We’re here to make delivery smarter, for everyone.
         </p>
         <h2 className="mb-4 text-lg sm:text-xl font-semibold text-gray-800">
           ContactUs

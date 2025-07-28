@@ -28,7 +28,7 @@ const features = [
 
   {
     title: "Track Deliveries in Real-Time",
-    desc: "Receive live updates on delivery and payment statuses with webhooks or interval polling — stay in the loop effortlessly.",
+    desc: "Receive live updates on delivery and payment statuses with webhooks or interval polling, stay in the loop effortlessly.",
     img: Track,
     flip: false,
   },
@@ -49,7 +49,7 @@ export default function FeaturesDemoSection() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              See Muvu in Action — Simple, Powerful Delivery Management
+              See Muvu in Action, Simple, Powerful Delivery Management
             </h2>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto">
               Our intuitive panel makes last-mile delivery integration

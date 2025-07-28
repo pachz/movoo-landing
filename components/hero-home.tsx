@@ -23,7 +23,7 @@ export default function HeroHome() {
                 data-aos-delay={300}
               >
                 Muvu is the infrastructure layer for last-mile delivery
-                integration — starting with e-commerce and expanding across
+                integration, starting with e-commerce and expanding across
                 industries. Connect to multiple delivery providers through a
                 single, unified interface and scale your logistics with speed
                 and flexibility.

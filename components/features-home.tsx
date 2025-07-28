@@ -14,9 +14,9 @@ export default function FeaturesHome() {
         <div className="h-80 w-80 rounded-full bg-linear-to-tr from-primary-500 to-gray-900 opacity-40 blur-[160px] will-change-[filter]" />
       </div>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-12 md:py-20">
+        <div className="py-6 md:py-10">
           {/* Section header */}
-          <div className="mx-auto max-w-3xl pb-24 text-center md:pb-28">
+          <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
               Why Muvu Matters?
             </h2>
@@ -27,16 +27,11 @@ export default function FeaturesHome() {
             </p>
           </div>
           {/* Illustration */}
-          <div
-            className="group relative mx-auto mb-32 flex w-full max-w-[500px] justify-center md:mb-36"
-            data-aos="zoom-y-out"
-          >
-            <div className=" pointer-events-none translate-y-2 transition delay-100 duration-300 group-hover:translate-y-0 group-hover:opacity-0">
+          <div className="group relative mx-auto mb-16 flex w-full max-w-[800px] justify-center md:mb-20">
+            <div className=" pointer-events-none ">
               <Image
                 className="-rotate-1  rounded-lg  shadow-xl shadow-black-50 "
                 src={Landing1}
-                width={500}
-                height={91}
                 alt="Overlay 03"
               />
             </div>
