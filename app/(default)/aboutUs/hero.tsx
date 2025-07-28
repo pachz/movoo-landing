@@ -14,7 +14,7 @@ export default function Hero() {
             </h1>
             <div className="mx-auto max-w-3xl">
               <p className="text-lg text-gray-700">
-                Connecting Businesses and Couriers—Smarter, Faster, Together.
+                Connecting Businesses and Couriers, Smarter, Faster, Together.
               </p>
             </div>
           </div>

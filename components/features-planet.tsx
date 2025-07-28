@@ -87,7 +87,7 @@ export default function FeaturesPlanet() {
               </h3>
               <p className="text-[15px] text-gray-400">
                 Connect with multiple delivery service providers through one
-                easy-to-use API—no more juggling complex integration.
+                easy-to-use API, no more juggling complex integration.
               </p>
             </article>
             <article>
@@ -140,7 +140,7 @@ export default function FeaturesPlanet() {
                 <span>Flexible Delivery Options</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Support on-demand, scheduled, and multi-industry deliveries —
+                Support on-demand, scheduled, and multi-industry deliveries,
                 from e-commerce to groceries and beyond
               </p>
             </article>
