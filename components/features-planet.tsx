@@ -38,28 +38,28 @@ export default function FeaturesPlanet() {
                   />
                   <div>
                     <Image
-                      className="absolute -left-28 top-16 z-10 animate-[float_4s_ease-in-out_infinite_both] opacity-80 transition-opacity duration-500"
+                      className="absolute -left-28 top-16 z-10 animate-[float_4s_ease-in-out_infinite_both] opacity-85 transition-opacity duration-500"
                       src={PlanetTagImg01}
                       width={253}
                       height={56}
                       alt="Tag 01"
                     />
                     <Image
-                      className="absolute left-56 top-7 z-10 animate-[float_4s_ease-in-out_infinite_1s_both] opacity-50 transition-opacity duration-500"
+                      className="absolute left-56 top-7 z-10 animate-[float_4s_ease-in-out_infinite_1s_both] opacity-80 transition-opacity duration-500"
                       src={PlanetTagImg02}
                       width={241}
                       height={56}
                       alt="Tag 02"
                     />
                     <Image
-                      className="absolute -left-20 bottom-24 z-10 animate-[float_4s_ease-in-out_infinite_2s_both] opacity-45 transition-opacity duration-500"
+                      className="absolute -left-20 bottom-24 z-10 animate-[float_4s_ease-in-out_infinite_2s_both] opacity-80 transition-opacity duration-500"
                       src={PlanetTagImg03}
                       width={243}
                       height={56}
                       alt="Tag 03"
                     />
                     <Image
-                      className="absolute bottom-32 left-64 z-10 animate-[float_4s_ease-in-out_infinite_3s_both] opacity-80 transition-opacity duration-500"
+                      className="absolute bottom-32 left-64 z-10 animate-[float_4s_ease-in-out_infinite_3s_both] opacity-85 transition-opacity duration-500"
                       src={PlanetTagImg04}
                       width={251}
                       height={56}
