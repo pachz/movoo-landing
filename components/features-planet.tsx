@@ -1,10 +1,10 @@
 import Image from "next/image";
 import PlanetImg from "@/public/images/planet.png";
 import PlanetOverlayImg from "@/public/images/planet-overlay.svg";
-import PlanetTagImg01 from "@/public/images/planet-tag-01.png";
-import PlanetTagImg02 from "@/public/images/planet-tag-02.png";
-import PlanetTagImg03 from "@/public/images/planet-tag-03.png";
-import PlanetTagImg04 from "@/public/images/planet-tag-04.png";
+import PlanetTagImg01 from "@/public/images/planet-tag-01.webp";
+import PlanetTagImg02 from "@/public/images/planet-tag-02.webp";
+import PlanetTagImg03 from "@/public/images/planet-tag-03.webp";
+import PlanetTagImg04 from "@/public/images/planet-tag-04.webp";
 
 export default function FeaturesPlanet() {
   return (
@@ -45,14 +45,14 @@ export default function FeaturesPlanet() {
                       alt="Tag 01"
                     />
                     <Image
-                      className="absolute left-56 top-7 z-10 animate-[float_4s_ease-in-out_infinite_1s_both] opacity-30 transition-opacity duration-500"
+                      className="absolute left-56 top-7 z-10 animate-[float_4s_ease-in-out_infinite_1s_both] opacity-50 transition-opacity duration-500"
                       src={PlanetTagImg02}
                       width={241}
                       height={56}
                       alt="Tag 02"
                     />
                     <Image
-                      className="absolute -left-20 bottom-24 z-10 animate-[float_4s_ease-in-out_infinite_2s_both] opacity-25 transition-opacity duration-500"
+                      className="absolute -left-20 bottom-24 z-10 animate-[float_4s_ease-in-out_infinite_2s_both] opacity-45 transition-opacity duration-500"
                       src={PlanetTagImg03}
                       width={243}
                       height={56}
