@@ -1,26 +1,32 @@
 export const metadata = {
-  title: "Home - Movoo",
+  title: "Home - Muvu",
   description: "Page description",
 };
 
-import Hero from "@/components/hero-home";
 import BusinessCategories from "@/components/business-categories";
-import LargeTestimonial from "@/components/large-testimonial";
-import FeaturesPlanet from "@/components/features-planet";
-import Features from "@/components/features-home";
-import TestimonialsCarousel from "@/components/testimonials-carousel";
 import Cta from "@/components/cta";
 import FeaturesDemoSection from "@/components/features";
+import Features from "@/components/features-home";
+import FeaturesPlanet from "@/components/features-planet";
+import Hero from "@/components/hero-home";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <BusinessCategories />
+      <section id="home">
+        <Hero />
+        <BusinessCategories />
+      </section>
+      <section id="how-it-works">
+        <FeaturesPlanet />
+      </section>
       {/* <LargeTestimonial /> */}
-      <FeaturesPlanet />
-      <Features />
-      <FeaturesDemoSection />
+      <section id="why-us">
+        <Features />
+      </section>
+      <section id="features">
+        <FeaturesDemoSection />
+      </section>
       {/* <TestimonialsCarousel /> */}
       <Cta />
     </>

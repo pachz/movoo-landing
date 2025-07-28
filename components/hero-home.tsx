@@ -14,7 +14,7 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Movoo - One API for Every Delivery Need
+              Muvu - One API for Every Delivery Need
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -22,7 +22,7 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Movoo is the infrastructure layer for last-mile delivery
+                Muvu is the infrastructure layer for last-mile delivery
                 integration — starting with e-commerce and expanding across
                 industries. Connect to multiple delivery providers through a
                 single, unified interface and scale your logistics with speed
@@ -39,7 +39,7 @@ export default function HeroHome() {
                     href="#0"
                   >
                     <span className="relative inline-flex items-center">
-                      Start Free Trial{" "}
+                      Start Free{" "}
                       <span className="ml-1 tracking-normal text-white transition-transform group-hover:translate-x-0.5">
                         -&gt;
                       </span>

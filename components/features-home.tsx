@@ -2,6 +2,7 @@ import Image from "next/image";
 import FeatureImg01 from "@/public/images/features-02-overlay-01.png";
 import FeatureImg02 from "@/public/images/features-02-overlay-02.png";
 import FeatureImg03 from "@/public/images/features-02-overlay-03.png";
+import Landing1 from "@/public/images/LANDIN1.jpg";
 
 export default function FeaturesHome() {
   return (
@@ -17,7 +18,7 @@ export default function FeaturesHome() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-24 text-center md:pb-28">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Why Movoo Matters?
+              Why Muvu Matters?
             </h2>
             <p className="text-lg text-gray-700">
               We empower businesses to unlock seamless delivery integration,
@@ -30,10 +31,19 @@ export default function FeaturesHome() {
             className="group relative mx-auto mb-32 flex w-full max-w-[500px] justify-center md:mb-36"
             data-aos="zoom-y-out"
           >
-            <div className="absolute bottom-0 -z-10" aria-hidden="true">
-              <div className="h-80 w-80 rounded-full bg-primary-500 opacity-70 blur-[160px] will-change-[filter]" />
+            <div className=" pointer-events-none translate-y-2 transition delay-100 duration-300 group-hover:translate-y-0 group-hover:opacity-0">
+              <Image
+                className="-rotate-1  rounded-lg  shadow-xl shadow-black-50 "
+                src={Landing1}
+                width={500}
+                height={91}
+                alt="Overlay 03"
+              />
             </div>
-            <div className="aspect-video w-full -rotate-1 rounded-2xl bg-gray-900 px-5 py-3 shadow-xl transition duration-300 group-hover:-rotate-0">
+            {/* <div className="absolute bottom-0 -z-10" aria-hidden="true">
+              <div className="h-80 w-80 rounded-full bg-primary-500 opacity-70 blur-[160px] will-change-[filter]" />
+            </div> */}
+            {/* <div className="aspect-video w-full -rotate-1 rounded-2xl bg-gray-900 px-5 py-3 shadow-xl transition duration-300 group-hover:-rotate-0">
               <div className="relative mb-8 flex items-center justify-between before:block before:h-[9px] before:w-[41px] before:bg-[length:16px_9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] after:w-[41px]">
                 <span className="text-[13px] font-medium text-white">
                   AI Project
@@ -63,8 +73,8 @@ export default function FeaturesHome() {
                   Package published.
                 </span>
               </div>
-            </div>
-            <div className="absolute top-16">
+            </div> */}
+            {/* <div className="absolute top-16">
               <div className="pointer-events-none mb-[7%] translate-y-2 transition duration-300 group-hover:translate-y-0 group-hover:opacity-0">
                 <Image
                   className="-rotate-2"
@@ -86,7 +96,7 @@ export default function FeaturesHome() {
                   alt="Overlay 03"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
           {/* Grid */}
           <div className="grid overflow-hidden border-y [border-image:linear-gradient(to_right,transparent,var(--color-slate-200),transparent)1] lg:grid-cols-3 *:relative *:p-6 *:before:absolute *:before:bg-linear-to-b *:before:from-transparent *:before:via-gray-200 *:before:[block-size:100%] *:before:[inline-size:1px] *:before:[inset-block-start:0] *:before:[inset-inline-start:-1px] md:*:px-10 md:*:py-12">
@@ -140,7 +150,7 @@ export default function FeaturesHome() {
                 <span>Industry-Wide Flexibility</span>
               </h3>
               <p className="text-[15px] text-gray-700">
-                From e-commerce to restaurants, pharmacies, and beyond, Movoo
+                From e-commerce to restaurants, pharmacies, and beyond, Muvu
                 adapts to serve diverse delivery models and business
                 requirements.
               </p>

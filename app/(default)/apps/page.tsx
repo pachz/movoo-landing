@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Apps - Movoo",
+  title: "Apps - Muvu",
   description: "Page description",
 };
 
@@ -13,8 +13,8 @@ export default function Apps() {
       <Hero />
       <AppList />
       <Cta
-        heading="Start integrating with Movoo"
-        buttonText="Start Free Trial"
+        heading="Start integrating with Muvu"
+        buttonText="Start Free"
         buttonLink="#0"
       />
     </>
