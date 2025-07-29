@@ -1,0 +1,143 @@
+## Connections: Sources
+
+### What is a Source?
+
+In Muvu, a **Source** represents your online store, marketplace, restaurant app, or custom backend system that you'd like to connect to our platform. Once connected, your orders will seamlessly flow into Muvu, ready to be dispatched to selected delivery providers.
+
+---
+
+### 🧭 Sources Page Overview
+
+
+On the **Sources** page, you can manage and view all integrated sources at a glance. Easily control multiple online stores or restaurant systems from one organized interface.
+
+### 🔹 List of Sources
+
+The **Sources** page shows all of your connected sales channels—whether they are e-commerce platforms, marketplaces, or custom backend systems.
+
+There are two possible states for this page:
+
+---
+
+#### 1. When No Sources Are Connected
+
+If you haven’t added any sources yet, the page will show a clear call-to-action prompting you to connect your first source. This is your starting point to begin sending orders through Muvu.
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753795395779_Source-empty-list.png" alt="Source page (empty list)" width="100%" />
+
+> 💡 Click **“Add Sources”** to begin integrating your online store or backend system with Muvu.
+
+
+#### 2. When Sources Are Connected
+
+If one or more sources have already been created, you’ll see a list with key details about each one:
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753795837279_source-list.png" alt="Source page list" width="100%" />
+
+Each row in the list includes:
+
+- **Source Name**: The internal label you've assigned to this source.
+- **Category**: The type of integration used (e.g., `customApi`, `Shopify`, etc.).
+- **Destination(s)**: Connected delivery providers (if any).
+- **Status**: Shows whether the source is currently `Pending`, `Connected`, or `Disabled`.
+- **Total Shipments**: The number of orders sent through this source.
+- **Action**: Options to edit or manage the source.
+
+> ➕ You can add more sources at any time by clicking the **“Add Sources”** button located at the top right of the page.
+
+> ✅ You can manage as many sources as you need—each source can represent a different brand, system, or sales channel under your company.
+
+---
+### 🔹 Add a Source
+
+Integrating a new source in Muvu is a simple two-step process, designed to support various platforms and backend systems.
+
+#### Step 1: Choose Your Integration Type
+
+Easily integrate a new source by selecting from available options:
+
+- **Custom API**:  
+  Directly integrate using Muvu’s REST API for full flexibility.
+
+- **Platform Plugins**:  
+  Shopify, Magento, WooCommerce, and other e-commerce platforms.
+  
+- **Server SDKs**:  
+  Use SDKs for PHP, Java, and more to connect your backend system quickly.
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753796131285_add-source-catalog.png" alt="Add Source Catalog" width="100%" />
+
+
+#### Step 2: Provide Source Information
+
+After selecting an integration type, you’ll be prompted to provide the required configuration details. This may vary depending on the selected method.
+
+- For **Custom API**, you simply need to provide a **Source Name** — an internal label for your source instance.
+- For other integrations like Shopify or Java SDK, additional fields may appear (such as access tokens, domain info, or SDK keys), depending on what’s needed to establish the connection.
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753796085837_add-source.png" alt="Add Source page" width="100%" />
+
+Once submitted, the new source will appear in your **Sources list**, ready to be connected to one or more delivery providers.
+
+> ✅ You can manage multiple sources across various platforms under one company profile within Muvu.
+
+---
+### 🔹 Source Details
+
+After creating a source, you’ll be automatically redirected to its detail page. You can also revisit this page anytime by clicking on the source from the **Sources list**.
+
+Each source has a dedicated configuration and management panel, organized into multiple tabs for easy navigation and control.
+
+---
+
+##### 📊 Overview
+
+The **Overview** tab provides a quick summary of the source's integration status:
+
+- Your **API Key**, used to authenticate requests from your system
+- The source’s current connection state (enabled/disabled)
+- Basic **performance analytics** showing shipment success trends and volume
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799039417_source-overview.png" alt="Source overview" width="100%" />
+
+---
+
+##### 🛠 Debugger
+
+The **Debugger** tab helps you test and verify your webhook integration:
+
+- Enter your **Webhook URL** to receive real-time order updates
+- Select between **Sandbox** and **Production** environments
+- Use the **Test Connection** button to simulate events and ensure your system is listening correctly
+- View detailed **Integration Logs**, including status codes, message paths, response times, and more
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799395566_source-Debugger.png" alt="Source Debugger" width="100%" />
+---
+
+##### 📦 Shipment Management
+
+The **Shipment** tab shows all orders coming through this specific source:
+
+- Filter shipments by status:  
+  `Created`, `Ready for Pick Up`, `Picked Up`, `Out for Delivery`, `Delivered`, `Cancelled`
+- Each row includes:  
+  `Track ID`, `Destination`, `Payment Method`, `Timestamps`, `Status`, and more
+
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799766741_Source-Shipment.png" alt="Source Shipment" width="100%" />
+---
+
+##### ⚙️ Settings
+
+The **Settings** tab allows you to manage the configuration of the source:
+
+- Edit the **Source Name**
+- Switch between **Sandbox** and **Production**
+- View and copy your **API Key**
+- Toggle the **Integration Status** (on/off)
+<img src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799988753_Source-Setting.png" alt="Source Setting" width="100%" />
+
+---
+
+> 🔐 Your API key is securely generated and scoped to each source. **Keep it confidential**.
+
+
