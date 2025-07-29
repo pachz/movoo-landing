@@ -1,16 +1,64 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useDocumentationProvider } from "./documentation-provider";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import useScrollSpy from "@/utils/useScrollspy";
 
-export default function Sidebar({ docs }: { docs: any[] }) {
+type DocType = {
+  metadata: {
+    title: string;
+    publishedAt: string;
+    updatedAt?: string;
+    summary?: string;
+    author?: string;
+    authorImg?: string;
+    kind?: string;
+    parent?: string;
+  };
+  slug: string;
+  content: string;
+  parent?: string;
+};
+
+export default function Sidebar({ docs }: { docs: DocType[] }) {
   const sidebar = useRef<HTMLDivElement>(null);
   const { sidebarOpen, setSidebarOpen } = useDocumentationProvider();
   const pathname = usePathname();
   const links = useScrollSpy();
+  const [expandedParents, setExpandedParents] = useState<Set<string>>(new Set());
+
+  // Group docs by parent
+  const groupedDocs = docs.reduce((acc, doc) => {
+    const parent = doc.metadata.parent || "General";
+    if (!acc[parent]) {
+      acc[parent] = [];
+    }
+    acc[parent].push(doc);
+    return acc;
+  }, {} as Record<string, DocType[]>);
+
+  // Auto-expand parent if current page belongs to it
+  useEffect(() => {
+    const currentDoc = docs.find(doc => pathname.includes(doc.slug));
+    if (currentDoc) {
+      const parent = currentDoc.metadata.parent || "General";
+      setExpandedParents(prev => new Set([...Array.from(prev), parent]));
+    }
+  }, [pathname, docs]);
+
+  const toggleParent = (parent: string) => {
+    setExpandedParents(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(parent)) {
+        newSet.delete(parent);
+      } else {
+        newSet.add(parent);
+      }
+      return newSet;
+    });
+  };
 
   // close on click outside
   useEffect(() => {
@@ -56,45 +104,78 @@ export default function Sidebar({ docs }: { docs: any[] }) {
           <nav className="space-y-8 md:block">
             <div>
               <div className="mb-3 font-bold">Documentation</div>
-              <ul className="space-y-2 text-sm">
-                {docs.map((doc, index) => (
-                  <li key={index}>
-                    <Link
-                      href={`/documentation/${doc.slug}`}
-                      className={`relative flex items-center text-gray-700 hover:text-gray-900 ${pathname.includes(doc.slug) ? "font-medium" : ""}`}
+              <ul className="space-y-4 text-sm">
+                {Object.entries(groupedDocs).map(([parent, parentDocs]) => (
+                  <li key={parent}>
+                    {/* Parent Group Header */}
+                    <button
+                      onClick={() => toggleParent(parent)}
+                      className={`relative flex w-full items-center justify-between text-gray-700 hover:text-gray-900 ${
+                        expandedParents.has(parent) ? "font-medium" : ""
+                      }`}
                     >
-                      {doc.metadata.kind === "detailed" ? (
-                        <>
-                          <svg
-                            className={`absolute -left-5 shrink-0 fill-gray-400 ${pathname.includes(doc.slug) ? "" : "-rotate-90"}`}
-                            width="11"
-                            height="7"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
-                          </svg>
-                          <span>{doc.metadata.title}</span>
-                        </>
-                      ) : (
-                        doc.metadata.title
-                      )}
-                    </Link>
-                    {doc.metadata.kind === "detailed" &&
-                    pathname.includes(doc.slug) ? (
+                      <span className="font-semibold">{parent}</span>
+                      <svg
+                        className={`shrink-0 fill-gray-400 transition-transform duration-200 ${
+                          expandedParents.has(parent) ? "rotate-180" : ""
+                        }`}
+                        width="11"
+                        height="7"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
+                      </svg>
+                    </button>
+                    
+                    {/* Parent Group Content */}
+                    {expandedParents.has(parent) && (
                       <ul className="mt-2 space-y-2 pl-4">
-                        {links.map((link, linkIndex) => (
-                          <li key={linkIndex}>
-                            <a
-                              data-scrollspy-link
-                              className="text-gray-500 hover:text-gray-900"
-                              href={`#${link.id}`}
+                        {parentDocs.map((doc: DocType, index: number) => (
+                          <li key={index}>
+                            <Link
+                              href={`/documentation/${doc.slug}`}
+                              className={`relative flex items-center text-gray-700 hover:text-gray-900 ${
+                                pathname.includes(doc.slug) ? "font-medium" : ""
+                              }`}
                             >
-                              {link.innerText}
-                            </a>
+                              {doc.metadata.kind === "detailed" ? (
+                                <>
+                                  <svg
+                                    className={`absolute -left-5 shrink-0 fill-gray-400 ${
+                                      pathname.includes(doc.slug) ? "" : "-rotate-90"
+                                    }`}
+                                    width="11"
+                                    height="7"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
+                                  </svg>
+                                  <span>{doc.metadata.title}</span>
+                                </>
+                              ) : (
+                                doc.metadata.title
+                              )}
+                            </Link>
+                            {doc.metadata.kind === "detailed" &&
+                            pathname.includes(doc.slug) ? (
+                              <ul className="mt-2 space-y-2 pl-4">
+                                {links.map((link, linkIndex) => (
+                                  <li key={linkIndex}>
+                                    <a
+                                      data-scrollspy-link
+                                      className="text-gray-500 hover:text-gray-900"
+                                      href={`#${link.id}`}
+                                    >
+                                      {link.innerText}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            ) : null}
                           </li>
                         ))}
                       </ul>
-                    ) : null}
+                    )}
                   </li>
                 ))}
               </ul>
