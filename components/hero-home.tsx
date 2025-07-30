@@ -14,7 +14,7 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Muvu - One API for Every Delivery Need
+              Muvu - One Integration. Endless Delivery Options.
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -22,11 +22,12 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Muvu is the infrastructure layer for last-mile delivery
-                integration, starting with e-commerce and expanding across
-                industries. Connect to multiple delivery providers through a
-                single, unified interface and scale your logistics with speed
-                and flexibility.
+                Tired of re-integrating every time you switch partners? Muvu
+                connects businesses and delivery services through a single,
+                smart API. Built for both businesses and delivery providers,
+                Muvu eliminates repetitive integrations and tech headaches. With
+                just one setup, you unlock access to a growing network, no
+                matter which side you're on.
               </p>
               <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                 <div
