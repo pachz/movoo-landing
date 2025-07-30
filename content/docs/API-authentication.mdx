@@ -1,0 +1,27 @@
+---
+title: "Authentication"
+publishedAt: "2025-07-30"
+updatedAt: "2025-07-30"
+summary: "All requests to the Muvu API require a valid API key passed in the Authorization header."
+kind: "simple"
+parent: "API Docs"
+---
+
+**Header Format:**
+```bash
+{
+Authorization: Bearer <your_api_key>
+```
+
+> Replace `<your_api_key>` with the actual key provided in your onboarding dashboard.
+
+---
+
+### 401 Unauthorized Response
+```bash
+{
+  "success": false,
+  "error": "unauthorized",
+  "message": "Invalid/missing token"
+}
+```

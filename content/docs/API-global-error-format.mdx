@@ -1,0 +1,29 @@
+---
+title: "Global Error Format"
+publishedAt: "2025-07-30"
+updatedAt: "2025-07-30"
+summary: "All error responses follow this structure:"
+kind: "simple"
+parent: "API Docs"
+---
+
+
+```bash
+{
+  "success": false,
+  "error": "error_code", // snake_case machine-friendly code
+  "message": "Human-readable explanation"
+}
+```
+---
+
+### Common Error Codes
+
+| Code             | Meaning                                      |
+|------------------|----------------------------------------------|
+| `not_found`       | Resource does not exist                     |
+| `validation_error`| Missing or invalid field                    |
+| `unauthorized`    | Invalid/missing token                       |
+| `duplicate_order` | Duplicate integration_order_id              |
+| `invalid_action`  | Action not allowed for the current state    |
+| `internal_error`  | Something went wrong on our side            |
