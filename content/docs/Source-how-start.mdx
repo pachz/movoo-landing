@@ -76,14 +76,18 @@ Easily integrate a new source by selecting from available options:
 
 ### Step 2: Provide Source Information
 
-After selecting an integration type, you’ll be prompted to provide the required configuration details. This may vary depending on the selected method.
+After selecting an integration type, you'll be prompted to enter the required configuration details.  
+For **Custom API**, the setup is straightforward:
 
-- For **Custom API**, you simply need to provide a **Source Name** — an internal label for your source instance.
-- For other integrations like Shopify or Java SDK, additional fields may appear (such as access tokens, domain info, or SDK keys), depending on what’s needed to establish the connection.
+- **Source Name** – an internal label to identify this source instance.
+- **Webhook URL** – the endpoint on your system that will receive shipment status updates.
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753796085837_add-source.png" alt="Add Source page" width="806" height="403" />
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753971271653_Add-your%DB%B0Custom-API.png" alt="Add Source - Custom API" width="707" height="502" />
 
-Once submitted, the new source will appear in your **Sources list**, ready to be connected to one or more delivery providers.
+<Banner title="Provider-Specific Fields">
+  For other integrations such as Shopify or Java SDK, additional fields may appear — like API tokens, domain names, or SDK credentials — depending on the platform requirements.
+</Banner>
 
-> You can manage multiple sources across various platforms under one company profile within Muvu.
----
+Once submitted, the new source will appear in your **Sources list**, ready to be linked to one or more destinations.
+
+> You can manage multiple sources across various platforms under a single company workspace in Muvu.
