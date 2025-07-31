@@ -63,6 +63,20 @@ You can start with **Autobot** to test the full delivery flow without connecting
 
 ---
 
+### About Autobot
+
+**Autobot** is Muvu’s built-in test destination, ideal for simulating the full delivery lifecycle without needing a connection to a real courier service.
+
+When you send a test order to Autobot, it will automatically progress through each delivery status—`Created`, `Accepted`, `Dispatched`, `Picked Up`, `In Transit`, and `Delivered`—**one step every 60 seconds**.  
+This makes it perfect for testing webhook flows, validating your integration, and debugging how your system handles status updates.
+
+<Banner title="Autobot for Seamless Testing">
+  Use **Autobot** as a sandbox delivery provider to simulate the full shipment lifecycle.  
+  After sending an order to Autobot, its status will automatically update **every 1 minute**, helping you test how your system handles real-time delivery events.
+</Banner>
+
+---
+
 ### Step 2: Integration Setup
 
 After selecting a delivery partner, you’ll be asked to configure the destination:
