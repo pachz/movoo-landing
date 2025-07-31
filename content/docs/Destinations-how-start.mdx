@@ -4,11 +4,9 @@ publishedAt: "2025-07-31"
 updatedAt: "2025-07-31"
 summary: "The Destinations page lets you enable delivery providers, link them to your sources, and manage each destination’s settings and shipments."
 kind: "detailed"
-parent: "Destination"
+parent: "4. Destination"
 rank: "1"
 ---
-
-# Destinations
 
 ## What is a Destination?
 
@@ -28,7 +26,7 @@ There are two possible states for this page:
 
 If you haven’t added any delivery partners yet, the page will show a clear call-to-action:
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964232921_destination-empty.jpeg" alt="Destination empty state" width="1536" height="652" />
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968139335_No-Destination.png" alt="Destination empty state" width="1622" height="777" />
 
 > Click **"Add Destination"** to browse the available delivery partners and choose one to get started.
 
@@ -36,15 +34,9 @@ If you haven’t added any delivery partners yet, the page will show a clear cal
 
 ### 2. When Destinations Are Enabled
 
-Once you’ve added destinations, the list displays all enabled providers with the following info:
+Once you’ve added destinations, the list displays all enabled providers .
 
-- **Destination Name**
-- **Linked Sources**
-- **Status**: `Pending`, `Connected`, etc.
-- **Last Synced**
-- **Action** button to open the detail page
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964304102_destination-list.jpeg" alt="Destination list" width="1536" height="527" />
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968411555_Destinations-List.png" alt="Destination list" width="1630" height="469" />
 
 > You can add more destinations anytime by clicking the **“Add Destinations”** button.
 
@@ -56,9 +48,15 @@ Adding a new delivery partner to your Muvu account is quick and straightforward.
 
 ### Step 1: Choose a Delivery Partner
 
-Select from the catalog of available delivery providers:
+Select from the catalog of available delivery providers
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964260995_destination-catalog.jpeg" alt="Destination catalog" width="1463" height="768" />
+<Banner title="Please Confirm Your Provider Agreement">
+  Muvu acts solely as an integration platform and does **not** manage or negotiate delivery contracts, pricing, or service terms on your behalf.  
+  Before enabling any delivery provider, make sure your business has an active, pre-established agreement directly with that provider.  
+  Only select providers you are already contracted with.
+</Banner>
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968864784_Choose-Your-Delivery-Partner.png" alt="Destination catalog" width="1630" height="830" />
 
 Each provider card includes a short description and an **“Add Destination”** button.  
 You can start with **Autobot** to test the full delivery flow without connecting a real courier service.
@@ -67,19 +65,19 @@ You can start with **Autobot** to test the full delivery flow without connecting
 
 ### Step 2: Integration Setup
 
-After selecting a provider, configure your destination instance:
+After selecting a delivery partner, you’ll be asked to configure the destination:
 
-- Set the **Destination Name** (internal label)
-- Some providers may request extra fields (e.g., tokens, credentials, regions)
+- **Destination Name** — a label to identify this delivery instance internally.
+- **Select Sources** — choose one or more sources to connect to this destination.
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964284806_destination-create.jpeg" alt="Create Destination" width="1536" height="638" />
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753969622363_Destination-Add.png" alt="Destination Integration Setup" width="1396" height="728" />
 
-Click **“Complete Integration”** to finalize the setup.
-
-<Banner title="Provider-Specific Settings">
-  Depending on the delivery provider selected for this destination, additional configuration options may appear in the **Settings** tab.  
-  These options are specific to the provider’s requirements and capabilities.
+<Banner title="Provider Requirements May Vary">
+  Some delivery providers may ask for additional fields during setup, such as access tokens, service region, account credentials, or integration keys.  
+  These fields will appear dynamically based on the provider you select.
 </Banner>
+
+Click **“Complete Integration”** to save the destination and start routing shipments.
 
 ---
 
