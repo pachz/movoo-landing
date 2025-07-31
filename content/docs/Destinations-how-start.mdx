@@ -1,0 +1,86 @@
+---
+title: "How to Start"
+publishedAt: "2025-07-31"
+updatedAt: "2025-07-31"
+summary: "The Destinations page lets you enable delivery providers, link them to your sources, and manage each destination’s settings and shipments."
+kind: "detailed"
+parent: "Destination"
+rank: "1"
+---
+
+# Destinations
+
+## What is a Destination?
+
+In Muvu, a **Destination** represents a delivery provider (such as DHL, Shipa, or even the Autobot simulator) where your shipments are dispatched. Once connected, you can link your sources to a destination and start routing orders.
+
+---
+
+## Destinations Page Overview
+
+On the **Destinations** page, you can enable new delivery providers, manage existing ones, and open detail pages for configuration and shipment tracking.
+
+There are two possible states for this page:
+
+---
+
+### 1. When No Destinations Are Enabled
+
+If you haven’t added any delivery partners yet, the page will show a clear call-to-action:
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964232921_destination-empty.jpeg" alt="Destination empty state" width="1536" height="652" />
+
+> Click **"Add Destination"** to browse the available delivery partners and choose one to get started.
+
+---
+
+### 2. When Destinations Are Enabled
+
+Once you’ve added destinations, the list displays all enabled providers with the following info:
+
+- **Destination Name**
+- **Linked Sources**
+- **Status**: `Pending`, `Connected`, etc.
+- **Last Synced**
+- **Action** button to open the detail page
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964304102_destination-list.jpeg" alt="Destination list" width="1536" height="527" />
+
+> You can add more destinations anytime by clicking the **“Add Destinations”** button.
+
+---
+
+## Add a Destination
+
+Adding a new delivery partner to your Muvu account is quick and straightforward.
+
+### Step 1: Choose a Delivery Partner
+
+Select from the catalog of available delivery providers:
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964260995_destination-catalog.jpeg" alt="Destination catalog" width="1463" height="768" />
+
+Each provider card includes a short description and an **“Add Destination”** button.  
+You can start with **Autobot** to test the full delivery flow without connecting a real courier service.
+
+---
+
+### Step 2: Integration Setup
+
+After selecting a provider, configure your destination instance:
+
+- Set the **Destination Name** (internal label)
+- Some providers may request extra fields (e.g., tokens, credentials, regions)
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964284806_destination-create.jpeg" alt="Create Destination" width="1536" height="638" />
+
+Click **“Complete Integration”** to finalize the setup.
+
+<Banner title="Provider-Specific Settings">
+  Depending on the delivery provider selected for this destination, additional configuration options may appear in the **Settings** tab.  
+  These options are specific to the provider’s requirements and capabilities.
+</Banner>
+
+---
+
+> After saving, the new destination will appear in your Destinations list, ready to be linked to one or more Sources.
