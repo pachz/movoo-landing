@@ -4,7 +4,8 @@ publishedAt: "2025-07-29"
 updatedAt: "2025-07-29"
 summary: "The Sources page lets you connect your store or system to Muvu, view existing sources, and manage their settings and shipments."
 kind: "detailed"
-parent: "Connections"
+parent: "Source"
+rank: "1"
 ---
 
 # Sources
@@ -89,67 +90,4 @@ After selecting an integration type, you’ll be prompted to provide the require
 Once submitted, the new source will appear in your **Sources list**, ready to be connected to one or more delivery providers.
 
 > You can manage multiple sources across various platforms under one company profile within Muvu.
-
 ---
-## Source Details
-
-After creating a source, you’ll be automatically redirected to its detail page. You can also revisit this page anytime by clicking on the source from the **Sources list**.
-
-Each source has a dedicated configuration and management panel, organized into multiple tabs for easy navigation and control.
-
----
-
-### Overview
-
-The **Overview** tab provides a quick summary of the source's integration status:
-
-- Your **API Key**, used to authenticate requests from your system
-- The source’s current connection state (enabled/disabled)
-- Basic **performance analytics** showing shipment success trends and volume
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799039417_source-overview.png" alt="Source overview" width="1586" height="713" />
-
----
-
-### Debugger
-
-The **Debugger** tab helps you test and verify your webhook integration:
-
-- Enter your **Webhook URL** to receive real-time order updates
-- Select between **Sandbox** and **Production** environments
-- Use the **Test Connection** button to simulate events and ensure your system is listening correctly
-- View detailed **Integration Logs**, including status codes, message paths, response times, and more
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799395566_source-Debugger.png" alt="Source Debugger" width="1592" height="691" />
----
-
-### Shipment Management
-
-The **Shipment** tab shows all orders coming through this specific source:
-
-- Filter shipments by status:  
-  `Created`, `Ready for Pick Up`, `Picked Up`, `Out for Delivery`, `Delivered`, `Cancelled`
-- Each row includes:  
-  `Track ID`, `Destination`, `Payment Method`, `Timestamps`, `Status`, and more
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799766741_Source-Shipment.png" alt="Source Shipment" width="1607" height="404" />
----
-
-### Settings
-
-The **Settings** tab allows you to manage the configuration of the source:
-
-- Edit the **Source Name**
-- Switch between **Sandbox** and **Production**
-- View and copy your **API Key**
-- Toggle the **Integration Status** (on/off)
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753799988753_Source-Setting.png" alt="Source Setting" width="1531" height="655" />
-
----
-
->
-
-<Banner title="API Key Security Reminder">
-  Your API key is securely generated and scoped to each source. 
-  **Keep it confidential**.
-</Banner>
