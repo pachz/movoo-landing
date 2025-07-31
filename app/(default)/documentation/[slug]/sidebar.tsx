@@ -16,11 +16,11 @@ type DocType = {
     authorImg?: string;
     kind?: string;
     parent?: string;
-    rank: string;
   };
   slug: string;
   content: string;
   parent?: string;
+  rank: string;
 };
 
 export default function Sidebar({ docs }: { docs: DocType[] }) {
@@ -43,8 +43,8 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
   // Sort documents within each parent group by rank
   Object.keys(groupedDocs).forEach(parent => {
     groupedDocs[parent].sort((a, b) => {
-      const rankA = parseInt(a.metadata.rank) || 99;
-      const rankB = parseInt(b.metadata.rank) || 99;
+      const rankA = parseInt(a.rank) || 99;
+      const rankB = parseInt(b.rank) || 99;
       return rankA - rankB;
     });
   });
