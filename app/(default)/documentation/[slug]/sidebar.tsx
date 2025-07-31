@@ -16,6 +16,7 @@ type DocType = {
     authorImg?: string;
     kind?: string;
     parent?: string;
+    rank: string;
   };
   slug: string;
   content: string;
@@ -29,7 +30,7 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
   const links = useScrollSpy();
   const [expandedParents, setExpandedParents] = useState<Set<string>>(new Set());
 
-  // Group docs by parent
+  // Group docs by parent and sort by rank
   const groupedDocs = docs.reduce((acc, doc) => {
     const parent = doc.metadata.parent || "General";
     if (!acc[parent]) {
@@ -38,6 +39,15 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
     acc[parent].push(doc);
     return acc;
   }, {} as Record<string, DocType[]>);
+
+  // Sort documents within each parent group by rank
+  Object.keys(groupedDocs).forEach(parent => {
+    groupedDocs[parent].sort((a, b) => {
+      const rankA = parseInt(a.metadata.rank) || 99;
+      const rankB = parseInt(b.metadata.rank) || 99;
+      return rankA - rankB;
+    });
+  });
 
   // Auto-expand parent if current page belongs to it
   useEffect(() => {
