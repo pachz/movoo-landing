@@ -115,7 +115,9 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
             <div>
               <div className="mb-3 font-bold">Documentation</div>
               <ul className="space-y-4 text-sm">
-                {Object.entries(groupedDocs).map(([parent, parentDocs]) => (
+                {Object.entries(groupedDocs)
+                  .sort(([parentA], [parentB]) => parentA.localeCompare(parentB))
+                  .map(([parent, parentDocs]) => (
                   <li key={parent}>
                     {/* Parent Group Header */}
                     <button
