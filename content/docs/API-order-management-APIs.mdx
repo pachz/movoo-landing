@@ -16,7 +16,7 @@ Creates a new delivery order in Muvu.
 
 ### Request Body
 
-```bash
+```json
 {
   "integration_order_id": "SHOP123456",
   "pickup": {
@@ -57,8 +57,11 @@ Creates a new delivery order in Muvu.
 
 > **Note**: address fields can be a plain string or a structured object. lat and lng are optional but improve delivery accuracy.
 
-#### 200 OK Response
-```bash
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+
+```json
 {
   "success": true,
   "id": "MOV123",
@@ -68,8 +71,10 @@ Creates a new delivery order in Muvu.
 }
 ```
 
-#### 400 Bad Request
-```bash
+<div className="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-0 rounded">
+  400 Bad Request
+</div>
+```json
 {
   "success": false,
   "error": "validation_error",
@@ -77,8 +82,10 @@ Creates a new delivery order in Muvu.
 }
 ```
 
-#### 409 Conflict
-```bash
+<div className="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-0 rounded">
+  409 Conflict
+</div>
+```json
 {
   "success": false,
   "error": "duplicate_order",
@@ -93,8 +100,10 @@ Creates a new delivery order in Muvu.
 
 Cancels a previously created order.
 
-#### 200 OK Response
-```bash
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+```json
 {
   "success": true,
   "id": "MOV123",
@@ -102,8 +111,10 @@ Cancels a previously created order.
 }
 ```
 
-#### 404 Not Found
-```bash
+<div className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-0 rounded">
+  404 Not Found
+</div>
+```json
 {
   "success": false,
   "error": "not_found",
@@ -111,8 +122,10 @@ Cancels a previously created order.
 }
 ```
 
-#### 400 Bad Request
-```bash
+<div className="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-0 rounded">
+  400 Bad Request
+</div>
+```json
 {
   "success": false,
   "error": "invalid_action",
@@ -127,8 +140,10 @@ Cancels a previously created order.
 
 Fetches the latest delivery status of a given order.
 
-#### 200 OK Response
-```bash
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+```json
 {
   "success": true,
   "id": "MOV123",
@@ -138,8 +153,10 @@ Fetches the latest delivery status of a given order.
 }
 ```
 
-#### 404 Not Found
-```bash
+<div className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-0 rounded">
+  404 Not Found
+</div>
+```json
 {
   "success": false,
   "error": "not_found",
@@ -154,8 +171,10 @@ Fetches the latest delivery status of a given order.
 
 Manually triggers a pickup for an existing order if auto-pickup is disabled or delayed.
 
-#### 200 OK Response
-```bash
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+```json
 {
   "success": true,
   "id": "MOV123",
@@ -163,8 +182,10 @@ Manually triggers a pickup for an existing order if auto-pickup is disabled or d
 }
 ```
 
-#### 404 Not Found
-```bash
+<div className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-0 rounded">
+  404 Not Found
+</div>
+```json
 {
   "success": false,
   "error": "not_found",
@@ -172,8 +193,10 @@ Manually triggers a pickup for an existing order if auto-pickup is disabled or d
 }
 ```
 
-#### 400 Bad Request
-```bash
+<div className="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-0 rounded">
+  400 Bad Request
+</div>
+```json
 {
   "success": false,
   "error": "invalid_status",
