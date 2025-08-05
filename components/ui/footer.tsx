@@ -61,7 +61,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="/aboutUs"
+                  href="/documentation/what-is-Muvu-overview"
                 >
                   Getting started
                 </Link>
@@ -69,7 +69,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="/terms"
+                  href="/documentation/API-overview"
                 >
                   API refrence
                 </Link>

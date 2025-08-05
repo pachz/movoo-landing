@@ -31,11 +31,9 @@ function updatedDate(dateString: string) {
   }
 }
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-): Promise<Metadata | undefined> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata | undefined> {
   const params = await props.params;
   const post = getDocPages().find((post) => post.slug === params.slug);
 
@@ -51,11 +49,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function DocumentationPage(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function DocumentationPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const allDocs = getDocPages();
   // Sort pages by date
@@ -120,7 +116,7 @@ export default async function DocumentationPage(
                             {post.metadata.summary}
                           </p>
                         </header>
-                        <div className="prose max-w-none text-gray-700 prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:text-gray-900 prose-a:font-medium prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline prose-strong:font-medium prose-strong:text-gray-900 prose-code:rounded prose-code:bg-transparent prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-gray-900 prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900">
+                        <div className="prose max-w-none text-gray-700 prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:text-gray-900 prose-a:font-medium prose-a:text-primary-500 prose-a:no-underline hover:prose-a:underline prose-strong:font-medium prose-strong:text-gray-900 prose-code:rounded prose-code:bg-transparent prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-gray-900 prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900">
                           <CustomMDX source={post.content} />
                         </div>
                       </div>

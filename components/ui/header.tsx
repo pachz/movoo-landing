@@ -51,7 +51,7 @@ export default function Header() {
                 </li>
                 <li className="px-3 py-1">
                   <a
-                    href="https://www.movoo.cc/documentation"
+                    href="/documentation"
                     className="flex items-center text-gray-700 transition hover:text-gray-900"
                   >
                     Documentation
