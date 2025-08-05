@@ -41,7 +41,9 @@ export default function MobileMenu() {
       {/* Hamburger button */}
       <button
         ref={trigger}
-        className={`group inline-flex h-8 w-8 items-center justify-center bg-white text-center text-gray-800 transition ${mobileNavOpen && "active"}`}
+        className={`group inline-flex h-8 w-8 items-center justify-center bg-white text-center text-gray-800 transition ${
+          mobileNavOpen && "active"
+        }`}
         aria-controls="mobile-nav"
         aria-expanded={mobileNavOpen}
         onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -89,56 +91,29 @@ export default function MobileMenu() {
           <ul className="p-2 text-sm">
             <li>
               <Link
-                href="/pricing"
+                href="https://www.movoo.cc/documentation"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Pricing
+                Documentation
               </Link>
             </li>
             <li>
               <Link
-                href="/customers"
+                href="https://panel.movoo.cc/signin"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Customers
+                Login
               </Link>
             </li>
             <li>
               <Link
-                href="/blog"
+                href="https://panel.movoo.cc/signup"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/documentation"
-                className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Docs
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/support"
-                className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Support center
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/apps"
-                className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
-                onClick={() => setMobileNavOpen(false)}
-              >
-                Apps
+                Register
               </Link>
             </li>
           </ul>
