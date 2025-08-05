@@ -54,8 +54,29 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
             </ul>
           </div>
-
-          {/* 5th block */}
+          {/* 3nd block */}
+          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+            <h3 className="text-sm font-medium">Documentation</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/aboutUs"
+                >
+                  Getting started
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-gray-600 transition hover:text-gray-900"
+                  href="/terms"
+                >
+                  API refrence
+                </Link>
+              </li>
+            </ul>
+          </div>
+          {/* 4th block */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h3 className="text-sm font-medium">Social</h3>
             <ul className="flex gap-1">
