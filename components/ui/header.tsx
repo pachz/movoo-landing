@@ -17,14 +17,14 @@ export default function Header() {
             <nav className="hidden md:flex">
               {/* Desktop menu links */}
               <ul className="flex flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
-                <li className="px-3 py-1">
+                {/* <li className="px-3 py-1">
                   <a
                     href="#home"
                     className="flex items-center text-gray-700 transition hover:text-gray-900"
                   >
                     Home
                   </a>
-                </li>
+                </li> */}
                 <li className="px-3 py-1">
                   <a
                     href="#how-it-works"
