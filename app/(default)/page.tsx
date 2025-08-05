@@ -4,6 +4,7 @@ export const metadata = {
 };
 
 import BusinessCategories from "@/components/business-categories";
+import Whether from "@/components/whether";
 import Cta from "@/components/cta";
 import FeaturesDemoSection from "@/components/features";
 import Features from "@/components/features-home";
@@ -23,6 +24,7 @@ export default function Home() {
       {/* <LargeTestimonial /> */}
       <section id="why-us">
         <Features />
+        <Whether />
       </section>
       <section id="features">
         <FeaturesDemoSection />

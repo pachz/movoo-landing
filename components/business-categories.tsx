@@ -300,7 +300,7 @@ export default function BusinessCategories() {
                     <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:m-[8.334%] before:rounded-[inherit] before:border before:border-gray-700/5 before:bg-gray-200/60 before:[mask-image:linear-gradient(to_bottom,black,transparent)]">
                       <Image
                         className="relative rounded-full"
-                        src={Onro}
+                        src={Tookan}
                         width={50}
                         height={50}
                         alt="Logo 05"
@@ -353,7 +353,7 @@ export default function BusinessCategories() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200/60 bg-white shadow-lg">
                       <Image
                         className="relative rounded-full"
-                        src={Tookan}
+                        src={Onro}
                         width={30}
                         height={30}
                         alt="Logo 09"
