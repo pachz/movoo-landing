@@ -1,0 +1,210 @@
+---
+title: "Order Management APIs"
+publishedAt: "2025-07-30"
+updatedAt: "2025-07-30"
+summary: "These endpoints allow your system — whether it’s an e-commerce platform, restaurant app, or any custom backend — to create, update, and track delivery orders via Muvu."
+kind: "detailed"
+parent: "2. API Docs"
+rank: "4"
+---
+# Endpoints (Shop → Muvu)
+
+## 1. Create Order  
+`POST /v1/orders`
+
+Creates a new delivery order in Muvu.
+
+### Request Body
+
+```json
+{
+  "integration_order_id": "SHOP123456",
+  "pickup": {
+    "name": "Store Name",
+    "address": "789 Elm St, Kuwait City",
+    "lat": 29.3375,
+    "lng": 48.0286,
+    "phone": "+96500000000"
+  },
+  "dropoff": {
+    "name": "Customer Name",
+    "address": {
+      "area": "Salmiya",
+      "block": "3",
+      "street": "Al Muqawil",
+      "building": "21A",
+      "floor": "1",
+      "flat": "2"
+    },
+    "lat": 29.3759,
+    "lng": 47.9774,
+    "phone": "+96511111111"
+  },
+  "items": [
+    {
+      "name": "Product A",
+      "quantity": 2,
+      "price": 1.25,
+      "weight": 0.53
+    }
+  ],
+  "notes": "Leave at the door",
+  "cod_amount": 3.5,
+  "auto_pickup": true,
+  "scheduled_pickup_time": "2025-07-16T15:00:00Z"
+}
+```
+
+> **Note**: address fields can be a plain string or a structured object. lat and lng are optional but improve delivery accuracy.
+
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+
+```json
+{
+  "success": true,
+  "id": "MOV123",
+  "status": "created",
+  "tracking_url": "https://sample.com/track/MOV123",      // optional
+  "status_url": "https://api.sample.com/v1/orders/MOV123/status"
+}
+```
+
+<div className="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-0 rounded">
+  400 Bad Request
+</div>
+```json
+{
+  "success": false,
+  "error": "validation_error",
+  "message": "Missing required field: dropoff.phone"
+}
+```
+
+<div className="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold px-3 py-0 rounded">
+  409 Conflict
+</div>
+```json
+{
+  "success": false,
+  "error": "duplicate_order",
+  "message": "An order with this integration_order_id already exists."
+}
+```
+
+---
+
+## 2. Cancel Order  
+`POST /v1/orders/{id}/cancel`
+
+Cancels a previously created order.
+
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+```json
+{
+  "success": true,
+  "id": "MOV123",
+  "status": "cancelled"
+}
+```
+
+<div className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-0 rounded">
+  404 Not Found
+</div>
+```json
+{
+  "success": false,
+  "error": "not_found",
+  "message": "Order not found"
+}
+```
+
+<div className="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-0 rounded">
+  400 Bad Request
+</div>
+```json
+{
+  "success": false,
+  "error": "invalid_action",
+  "message": "Cannot cancel an order that has already been delivered."
+}
+```
+
+---
+
+## 3. Get Order Status  
+`GET /v1/orders/{id}/status`
+
+Fetches the latest delivery status of a given order.
+
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+```json
+{
+  "success": true,
+  "id": "MOV123",
+  "integration_order_id": "SHOP123456",
+  "status": "in_transit",
+  "last_updated": "2025-07-16T09:42:00Z"
+}
+```
+
+<div className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-0 rounded">
+  404 Not Found
+</div>
+```json
+{
+  "success": false,
+  "error": "not_found",
+  "message": "Order not found"
+}
+```
+
+---
+
+## 4. Trigger Pickup  
+`POST /v1/orders/{id}/pickup`
+
+Manually triggers a pickup for an existing order if auto-pickup is disabled or delayed.
+
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+```json
+{
+  "success": true,
+  "id": "MOV123",
+  "status": "dispatched"
+}
+```
+
+<div className="inline-block bg-gray-100 text-gray-800 text-sm font-semibold px-3 py-0 rounded">
+  404 Not Found
+</div>
+```json
+{
+  "success": false,
+  "error": "not_found",
+  "message": "Order not found"
+}
+```
+
+<div className="inline-block bg-red-100 text-red-800 text-sm font-semibold px-3 py-0 rounded">
+  400 Bad Request
+</div>
+```json
+{
+  "success": false,
+  "error": "invalid_status",
+  "message": "Pickup cannot be triggered. Current status: picked_up"
+}
+```
+
+---
+
+
+

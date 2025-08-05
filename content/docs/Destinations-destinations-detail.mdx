@@ -1,0 +1,54 @@
+---
+title: "Destination Detail"
+publishedAt: "2025-07-29"
+updatedAt: "2025-07-29"
+summary: "Each destination has its own control panel where you can simulate delivery flows, view linked sources, and manage settings."
+kind: "detailed"
+parent: "4. Destination"
+rank: "2"
+---
+
+After selecting a destination from the **Connections** list, you’ll be redirected to its detail page. This interface is divided into multiple tabs: **Overview**, **Shipment**, and **Settings**.
+
+---
+
+## Overview
+
+The **Overview** tab offers a description of the destination's function and purpose.
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964873152_Destination-overview.png" alt="Destination Overview" width="1405" height="411" />
+
+---
+
+## Shipment
+
+The **Shipment** tab lists all shipments routed through this destination.
+
+- Filter by status:
+  `Created`, `Accepted`, `Dispatched`, `Picked Up`, `In Transit`, `Delivered`, `Cancelled`, `Failed`
+- Table columns include:  
+  `Integration ID`, `Source`, `Order ID`, `Created Date`, `Status`, `COD`, `Last Updated`
+
+If there are no shipments yet, the table will display an empty state message.
+
+<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753964056506_Destination-Shipment.png" alt="Destination Shipments" width="1394" height="483" />
+
+---
+
+## Settings
+
+The **Settings** tab allows you to configure how the destination behaves in your environment.
+
+You can:
+
+- Edit the **Destination Name**
+- Select between **Sandbox** and **Production** environments
+- Toggle the **Integration Status**
+- Manage **Linked Sources**, which are the Sources sending orders to this destination
+
+<Banner title="Provider-Specific Settings">
+  Depending on the delivery provider selected for this destination, additional configuration options may appear in the **Settings** tab.  
+  These options are specific to the provider’s requirements and capabilities.
+</Banner>
+
+Each linked source shows its current connection state (Connected/Disconnected).

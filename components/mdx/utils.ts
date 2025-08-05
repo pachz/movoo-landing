@@ -9,6 +9,8 @@ type Metadata = {
   author?: string;
   authorImg?: string;
   kind?: string;
+  parent?: string;
+  rank?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -47,6 +49,8 @@ function getMDXData(dir: string) {
       metadata,
       slug,
       content,
+      parent: metadata.parent,
+      rank: metadata.rank || "99",
     };
   });
 }
