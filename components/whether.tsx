@@ -1,3 +1,4 @@
+import PlanetImg from "@/public/images/planet.png";
 import Delivery from "@/public/images/delivery.png";
 import Image from "next/image";
 
@@ -15,19 +16,28 @@ export default function Whether() {
           {/* Planet */}
           <div className="pb-4 md:pb-6" data-aos="zoom-y-out">
             <div className="relative text-center">
+              <div
+                className="pointer-events-none absolute inset-0 flex justify-center items-center"
+                aria-hidden="true"
+              >
+                <Image
+                  className="max-w-sm md:max-w-md opacity-40"
+                  src={PlanetImg}
+                  width={800}
+                  height={800}
+                  alt="Planet decoration"
+                />
+              </div>
               <div className="relative w-fit mx-auto before:absolute before:inset-0 before:blur-3xl before:bg-primary-600/10 before:scale-100 before:rounded-[50%]">
                 <Image
-                  className="relative س z-10 rounded-full"
+                  className="relative z-10 rounded-full "
                   src={Delivery}
                   width={600}
                   height={600}
                   alt="Planet"
                 />
               </div>
-              <div
-                className="pointer-events-none absolute inset-0 flex justify-center items-center"
-                aria-hidden="true"
-              ></div>
+              <div className="relative inline-flex rounded-full before:absolute before:inset-0 before:-z-10 before:scale-[.85] before:animate-[pulse_4s_cubic-bezier(.4,0,.6,1)_infinite] before:bg-linear-to-b before:from-primary-900 before:to-sky-700/50 before:blur-3xl after:absolute after:inset-0 after:rounded-[inherit] after:[background:radial-gradient(closest-side,var(--color-primary-500),transparent)]"></div>
             </div>
           </div>
           {/* Grid */}
