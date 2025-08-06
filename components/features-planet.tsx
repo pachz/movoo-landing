@@ -84,13 +84,11 @@ export default function FeaturesPlanet() {
                 >
                   <path d="M311.168 225.835L481.835 55.168q12.5-12.5 30.165-12.5 17.664 0 30.165 12.5l170.667 170.667q12.5 12.5 12.5 30.165 0 17.664-12.5 30.165-12.5 12.502-30.165 12.502-17.664 0-30.166-12.502L512 145.665l-140.5 140.5q-12.503 12.502-30.167 12.502t-30.165-12.502q-12.5-12.5-12.5-30.165 0-17.664 12.5-30.165zm243.5-140.502V524.8q.98 89.26-62.508 152.704L200.832 968.832q-12.5 12.5-30.165 12.5-17.664 0-30.166-12.5-12.5-12.5-12.5-30.165 0-17.664 12.5-30.166l291.33-291.327q38.1-38.058 37.503-92.373V85.333q0-17.664 12.502-30.165 12.5-12.5 30.165-12.5 17.664 0 30.165 12.5 12.502 12.5 12.502 30.165zm268.5 883.5L609.835 755.498q-12.502-12.503-12.502-30.167t12.502-30.165q12.5-12.5 30.165-12.5 17.664 0 30.165 12.5L883.5 908.5q12.5 12.503 12.5 30.167t-12.5 30.165q-12.503 12.5-30.167 12.5t-30.165-12.5z" />
                 </svg>
-                <span>
-                  Tired of Repeating the Same Integration?
-                </span>
+                <span>Tired of Repeating the Same Integration?</span>
               </h3>
               <p className="text-[15px] text-gray-400">
                 Every new delivery system or business means starting from
-                scratch. Muvu breaks the cycle.
+                scratch. Muvx breaks the cycle.
               </p>
             </article>
             <article>
@@ -107,7 +105,7 @@ export default function FeaturesPlanet() {
                 <span>Switching Shouldn’t Slow You Down</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Need to change partners? With Muvu, there’s no need to rewire
+                Need to change partners? With Muvx, there’s no need to rewire
                 your backend every time.
               </p>
             </article>
@@ -143,7 +141,7 @@ export default function FeaturesPlanet() {
                 <span>Time Is Money, Save Both</span>
               </h3>
               <p className="text-[15px] text-gray-400">
-                Integration work drains hours and budgets. Muvu’s one-time setup
+                Integration work drains hours and budgets. Muvx’s one-time setup
                 saves you both.
               </p>
             </article>

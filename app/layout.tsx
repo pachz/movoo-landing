@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata = {
   title: "One API for Every Delivery Need",
   description:
-    "Muvu is the infrastructure layer for last-mile delivery integration, starting with e-commerce and expanding across industries. Connect to multiple delivery providers through a single, unified interface and scale your logistics with speed and flexibility.",
+    "Muvx is the infrastructure layer for last-mile delivery integration, starting with e-commerce and expanding across industries. Connect to multiple delivery providers through a single, unified interface and scale your logistics with speed and flexibility.",
 };
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Customers - Muvu",
+  title: "Customers - Muvx",
   description: "Page description",
 };
 
@@ -13,7 +13,7 @@ export default function Customers() {
       <Hero />
       <WallOfLove />
       <Cta
-        heading="Start integrating with Muvu"
+        heading="Start integrating with Muvx"
         buttonText="Start Free"
         buttonLink="#0"
       />

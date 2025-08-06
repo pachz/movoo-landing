@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Apps - Muvu",
+  title: "Apps - Muvx",
   description: "Page description",
 };
 
@@ -11,7 +11,7 @@ export default function Apps() {
       <Hero />
       <div className="mx-auto max-w-4xl px-4 sm:px-6 mb-8">
         <p className="mb-6 text-sm sm:text-base text-gray-700">
-          Welcome to Muvu. By accessing or using our platform, APIs, or
+          Welcome to Muvx. By accessing or using our platform, APIs, or
           services, you agree to the following terms:
         </p>
 
@@ -19,9 +19,9 @@ export default function Apps() {
           1. Use of the Platform
         </h2>
         <p className="mb-6 text-sm sm:text-base text-gray-700">
-          Muvu provides a delivery API hub that connects e-commerce platforms
+          Muvx provides a delivery API hub that connects e-commerce platforms
           and delivery service providers. By registering, you represent that you
-          are authorized to act on behalf of your company. You agree to use Muvu
+          are authorized to act on behalf of your company. You agree to use Muvx
           in compliance with all applicable laws and not misuse the platform for
           unauthorized or illegal purposes.
         </p>
@@ -48,7 +48,7 @@ export default function Apps() {
           4. Liability
         </h2>
         <p className="mb-6 text-sm sm:text-base text-gray-700">
-          Muvu is not liable for delivery failures, delays, or damages caused by
+          Muvx is not liable for delivery failures, delays, or damages caused by
           third-party providers. Our role is to facilitate the technical
           integration between businesses and logistics partners.
         </p>

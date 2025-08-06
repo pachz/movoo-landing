@@ -2,16 +2,17 @@
 title: "Webhook Setup"
 publishedAt: "2025-07-30"
 updatedAt: "2025-07-30"
-summary: "Muvu will notify your system whenever the status of an order changes by sending a `POST` request to your configured webhook URL."
+summary: "Muvx will notify your system whenever the status of an order changes by sending a `POST` request to your configured webhook URL."
 kind: "simple"
 parent: "2. API Docs"
 rank: "5"
 section: "API Docs"
 ---
 
-# Webhooks (Muvu → Your System)
+# Webhooks (Muvx → Your System)
 
 ### Example Webhook Payload
+
 ```json
 {
   "id": "MOV123",
@@ -25,4 +26,4 @@ section: "API Docs"
 
 - You will provide your **webhook URL** and **secret key** in the onboarding dashboard.
 - We recommend verifying each request using **HMAC-SHA256** and the shared secret.
-- If webhook delivery fails, Muvu will retry automatically with **exponential backoff**, up to **5 times**.
+- If webhook delivery fails, Muvx will retry automatically with **exponential backoff**, up to **5 times**.

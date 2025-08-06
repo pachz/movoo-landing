@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function Home() {
-  redirect("/documentation/what-is-Muvu-overview");
+  redirect("/documentation/what-is-Muvx-overview");
 }

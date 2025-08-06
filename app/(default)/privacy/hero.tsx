@@ -14,7 +14,7 @@ export default function Hero() {
             </h1>
             <div className="mx-auto max-w-3xl">
               <p className="text-lg text-gray-700">
-                Your privacy matters to us, learn how Muvu collects, uses, and
+                Your privacy matters to us, learn how Muvx collects, uses, and
                 protects your data.
               </p>
             </div>

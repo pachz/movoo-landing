@@ -10,7 +10,7 @@ export default function Whether() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-8 text-center md:pb-10">
             <h2 className="text-3xl font-bold text-gray-200 md:text-4xl">
-              Whether You’re a Business or Delivery Provider, Muvu Works for You
+              Whether You’re a Business or Delivery Provider, Muvx Works for You
             </h2>
           </div>
           {/* Planet */}
@@ -64,10 +64,10 @@ export default function Whether() {
                 <span>Delivery Providers</span>
               </h3>
               <p className="text-[15px] text-gray-400 text-lg">
-                One Integration. Many Clients. Connect with Muvu once to easily
+                One Integration. Many Clients. Connect with Muvx once to easily
                 reach restaurants, e-commerce platforms, and more.
                 <br />
-                <br /> - Get listed in Muvu’s provider catalog
+                <br /> - Get listed in Muvx’s provider catalog
                 <br /> - Send partnership requests to Restaurants and Ecommerce
                 <br /> - Receive synced delivery orders in real time
                 <br /> - Manage orders with filters and smart tools
@@ -104,7 +104,7 @@ export default function Whether() {
                 <br />
                 - No more tech overhead when switching or adding providers.
                 <br /> - Use our APIs, SDKs, or platform plugins
-                <br /> - Choose from Muvu’s growing delivery partner catalog
+                <br /> - Choose from Muvx’s growing delivery partner catalog
                 <br /> - Track every shipment in real time
                 <br />- Debug and manage integrations with ease
               </p>

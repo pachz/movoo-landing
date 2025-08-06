@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "About us - Muvu",
+  title: "About us - Muvx",
   description: "Page description",
 };
 
@@ -12,10 +12,10 @@ export default function Support() {
       <Hero />
       <div className="mx-auto max-w-4xl px-4 sm:px-6 mb-8">
         <h2 className="mb-4 text-lg sm:text-xl font-semibold text-gray-800">
-          Muvu – Smarter Delivery Connections
+          Muvx – Smarter Delivery Connections
         </h2>
         <p className="mb-6 text-sm sm:text-base text-gray-700">
-          Muvu is a technology-driven delivery integration platform that
+          Muvx is a technology-driven delivery integration platform that
           empowers businesses and delivery providers to connect seamlessly
           through a single, unified API hub. Our goal is simple: streamline
           last-mile logistics for better speed, transparency, and control.
@@ -24,7 +24,7 @@ export default function Support() {
           We understand the complexities of modern e-commerce and the need for
           flexible, scalable delivery systems. Whether you’re a business looking
           to offer multiple delivery options or a logistics partner aiming to
-          expand your reach, Muvu helps you bridge the gap with ease.
+          expand your reach, Muvx helps you bridge the gap with ease.
         </p>
         <h2 className="mb-4 text-lg sm:text-xl font-semibold text-gray-800">
           What We Offer:
@@ -44,11 +44,11 @@ export default function Support() {
         <div className="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
           <div className="flex items-start gap-3">
             <Mail className="w-5 h-5 mt-0.5 text-gray-600" />
-            <span>dev@muvu.me</span>
+            <span>dev@Muvu.me</span>
           </div>
           <div className="flex items-start gap-3">
             <Globe className="w-5 h-5 mt-0.5 text-gray-600" />
-            <span>www.muvu.me</span>
+            <span>www.Muvx.ai</span>
           </div>
         </div>
       </div>
