@@ -91,7 +91,7 @@ export default function MobileMenu() {
           <ul className="p-2 text-sm">
             <li>
               <Link
-                href="https://www.movoo.cc/documentation"
+                href="https://www.muvx.ai/documentation"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >
@@ -100,7 +100,7 @@ export default function MobileMenu() {
             </li>
             <li>
               <Link
-                href="https://panel.movoo.cc/signin"
+                href="https://panel.muvx.ai/signin"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >
@@ -109,7 +109,7 @@ export default function MobileMenu() {
             </li>
             <li>
               <Link
-                href="https://panel.movoo.cc/signup"
+                href="https://panel.muvx.ai/signup"
                 className="flex rounded-lg px-2 py-1.5 text-gray-700 hover:bg-gray-100"
                 onClick={() => setMobileNavOpen(false)}
               >

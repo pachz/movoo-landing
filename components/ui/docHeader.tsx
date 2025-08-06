@@ -12,13 +12,13 @@ export default function DocHeader() {
           </div>
           <div className="flex items-center gap-3">
             <Link
-              href="https://panel.movoo.cc/signin"
+              href="https://panel.muvx.ai/signin"
               className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
             >
               Login
             </Link>
             <Link
-              href="https://panel.movoo.cc/signup"
+              href="https://panel.muvx.ai/signup"
               className="btn-sm bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
             >
               Register
