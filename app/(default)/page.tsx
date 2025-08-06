@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Home - Muvx",
-  description: "Muvu - One Integration. Endless Delivery Options.",
+  description: "Muvx - One Integration. Endless Delivery Options.",
 };
 
 import BusinessCategories from "@/components/business-categories";
