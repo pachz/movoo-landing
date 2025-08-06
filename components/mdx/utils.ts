@@ -11,6 +11,7 @@ type Metadata = {
   kind?: string;
   parent?: string;
   rank?: string;
+  section?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -51,6 +52,7 @@ function getMDXData(dir: string) {
       content,
       parent: metadata.parent,
       rank: metadata.rank || "99",
+      section: metadata.section || "General",
     };
   });
 }

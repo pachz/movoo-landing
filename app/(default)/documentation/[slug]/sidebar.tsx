@@ -16,11 +16,13 @@ type DocType = {
     authorImg?: string;
     kind?: string;
     parent?: string;
+    section?: string;
   };
   slug: string;
   content: string;
   parent?: string;
   rank: string;
+  section?: string;
 };
 
 export default function Sidebar({ docs }: { docs: DocType[] }) {
@@ -28,43 +30,43 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
   const { sidebarOpen, setSidebarOpen } = useDocumentationProvider();
   const pathname = usePathname();
   const links = useScrollSpy();
-  const [expandedParents, setExpandedParents] = useState<Set<string>>(new Set());
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
-  // Group docs by parent and sort by rank
+  // Group docs by section and sort by rank
   const groupedDocs = docs.reduce((acc, doc) => {
-    const parent = doc.metadata.parent || "General";
-    if (!acc[parent]) {
-      acc[parent] = [];
+    const section = doc.section || doc.metadata.section || "General";
+    if (!acc[section]) {
+      acc[section] = [];
     }
-    acc[parent].push(doc);
+    acc[section].push(doc);
     return acc;
   }, {} as Record<string, DocType[]>);
 
-  // Sort documents within each parent group by rank
-  Object.keys(groupedDocs).forEach(parent => {
-    groupedDocs[parent].sort((a, b) => {
+  // Sort documents within each section group by rank
+  Object.keys(groupedDocs).forEach(section => {
+    groupedDocs[section].sort((a, b) => {
       const rankA = parseInt(a.rank) || 99;
       const rankB = parseInt(b.rank) || 99;
       return rankA - rankB;
     });
   });
 
-  // Auto-expand parent if current page belongs to it
+  // Auto-expand section if current page belongs to it
   useEffect(() => {
     const currentDoc = docs.find(doc => pathname.includes(doc.slug));
     if (currentDoc) {
-      const parent = currentDoc.metadata.parent || "General";
-      setExpandedParents(prev => new Set([...Array.from(prev), parent]));
+      const section = currentDoc.section || currentDoc.metadata.section || "General";
+      setExpandedSections(prev => new Set([...Array.from(prev), section]));
     }
   }, [pathname, docs]);
 
-  const toggleParent = (parent: string) => {
-    setExpandedParents(prev => {
+  const toggleSection = (section: string) => {
+    setExpandedSections(prev => {
       const newSet = new Set(prev);
-      if (newSet.has(parent)) {
-        newSet.delete(parent);
+      if (newSet.has(section)) {
+        newSet.delete(section);
       } else {
-        newSet.add(parent);
+        newSet.add(section);
       }
       return newSet;
     });
@@ -113,23 +115,27 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
           {/* Docs nav */}
           <nav className="space-y-8 md:block">
             <div>
-              <div className="mb-3 font-bold">Documentation</div>
               <ul className="space-y-4 text-sm">
                 {Object.entries(groupedDocs)
-                  .sort(([parentA], [parentB]) => parentA.localeCompare(parentB))
-                  .map(([parent, parentDocs]) => (
-                  <li key={parent}>
-                    {/* Parent Group Header */}
+                  .sort(([sectionA], [sectionB]) => {
+                    // Put "General" or "Documentation" first
+                    if (sectionA === "General" || sectionA === "Documentation") return -1;
+                    if (sectionB === "General" || sectionB === "Documentation") return 1;
+                    return sectionA.localeCompare(sectionB);
+                  })
+                  .map(([section, sectionDocs]) => (
+                  <li key={section}>
+                    {/* Section Header */}
                     <button
-                      onClick={() => toggleParent(parent)}
+                      onClick={() => toggleSection(section)}
                       className={`relative flex w-full items-center justify-between text-gray-700 hover:text-gray-900 ${
-                        expandedParents.has(parent) ? "font-medium" : ""
+                        expandedSections.has(section) ? "font-medium" : ""
                       }`}
                     >
-                      <span className="font-semibold">{parent}</span>
+                      <span className="font-bold">{section}</span>
                       <svg
                         className={`shrink-0 fill-gray-400 transition-transform duration-200 ${
-                          expandedParents.has(parent) ? "rotate-180" : ""
+                          expandedSections.has(section) ? "rotate-180" : ""
                         }`}
                         width="11"
                         height="7"
@@ -139,10 +145,10 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
                       </svg>
                     </button>
                     
-                    {/* Parent Group Content */}
-                    {expandedParents.has(parent) && (
+                    {/* Section Content */}
+                    {expandedSections.has(section) && (
                       <ul className="mt-2 space-y-2 pl-4">
-                        {parentDocs.map((doc: DocType, index: number) => (
+                        {sectionDocs.map((doc: DocType, index: number) => (
                           <li key={index}>
                             <Link
                               href={`/documentation/${doc.slug}`}
