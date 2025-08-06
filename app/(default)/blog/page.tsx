@@ -4,7 +4,7 @@ import PostItem from "@/components/post-item";
 
 export const metadata = {
   title: "Blog - Muvx",
-  description: "Page description",
+  description: "Muvx - One Integration. Endless Delivery Options. Tired of re-integrating every time you switch partners? Muvx connects businesses and delivery services through a single, smart API.",
 };
 
 export default function Blog() {

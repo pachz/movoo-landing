@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Sign Up - Muvx",
-  description: "Page description",
+  description: "Muvx - One Integration. Endless Delivery Options. Tired of re-integrating every time you switch partners? Muvx connects businesses and delivery services through a single, smart API.",
 };
 
 export default function SignUp() {
