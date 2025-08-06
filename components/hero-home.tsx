@@ -14,7 +14,7 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              Muvu - One Integration. Endless Delivery Options.
+              Muvx - One Integration. Endless Delivery Options.
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -22,10 +22,10 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Tired of re-integrating every time you switch partners? Muvu
+                Tired of re-integrating every time you switch partners? Muvx
                 connects businesses and delivery services through a single,
                 smart API. Built for both businesses and delivery providers,
-                Muvu eliminates repetitive integrations and tech headaches. With
+                Muvx eliminates repetitive integrations and tech headaches. With
                 just one setup, you unlock access to a growing network, no
                 matter which side you're on.
               </p>

@@ -2,18 +2,20 @@
 title: "Order Management APIs"
 publishedAt: "2025-07-30"
 updatedAt: "2025-07-30"
-summary: "These endpoints allow your system — whether it’s an e-commerce platform, restaurant app, or any custom backend — to create, update, and track delivery orders via Muvu."
+summary: "These endpoints allow your system — whether it’s an e-commerce platform, restaurant app, or any custom backend — to create, update, and track delivery orders via Muvx."
 kind: "detailed"
 parent: "2. API Docs"
 rank: "4"
 section: "API Docs"
 ---
-# Endpoints (Shop → Muvu)
 
-## 1. Create Order  
+# Endpoints (Shop → Muvx)
+
+## 1. Create Order
+
 `POST /v1/orders`
 
-Creates a new delivery order in Muvu.
+Creates a new delivery order in Muvx.
 
 ### Request Body
 
@@ -67,7 +69,7 @@ Creates a new delivery order in Muvu.
   "success": true,
   "id": "MOV123",
   "status": "created",
-  "tracking_url": "https://sample.com/track/MOV123",      // optional
+  "tracking_url": "https://sample.com/track/MOV123", // optional
   "status_url": "https://api.sample.com/v1/orders/MOV123/status"
 }
 ```
@@ -96,7 +98,8 @@ Creates a new delivery order in Muvu.
 
 ---
 
-## 2. Cancel Order  
+## 2. Cancel Order
+
 `POST /v1/orders/{id}/cancel`
 
 Cancels a previously created order.
@@ -136,7 +139,8 @@ Cancels a previously created order.
 
 ---
 
-## 3. Get Order Status  
+## 3. Get Order Status
+
 `GET /v1/orders/{id}/status`
 
 Fetches the latest delivery status of a given order.
@@ -167,7 +171,8 @@ Fetches the latest delivery status of a given order.
 
 ---
 
-## 4. Trigger Pickup  
+## 4. Trigger Pickup
+
 `POST /v1/orders/{id}/pickup`
 
 Manually triggers a pickup for an existing order if auto-pickup is disabled or delayed.
@@ -206,6 +211,3 @@ Manually triggers a pickup for an existing order if auto-pickup is disabled or d
 ```
 
 ---
-
-
-

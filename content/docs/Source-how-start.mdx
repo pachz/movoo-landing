@@ -2,18 +2,17 @@
 title: "How to Start"
 publishedAt: "2025-07-29"
 updatedAt: "2025-07-29"
-summary: "The Sources page lets you connect your store or system to Muvu, view existing sources, and manage their settings and shipments."
+summary: "The Sources page lets you connect your store or system to Muvx, view existing sources, and manage their settings and shipments."
 kind: "detailed"
 parent: "3. Source"
 rank: "1"
 ---
 
-In Muvu, a **Source** represents your online store, marketplace, restaurant app, or custom backend system that you'd like to connect to our platform. Once connected, your orders will seamlessly flow into Muvu, ready to be dispatched to selected delivery providers.
+In Muvx, a **Source** represents your online store, marketplace, restaurant app, or custom backend system that you'd like to connect to our platform. Once connected, your orders will seamlessly flow into Muvx, ready to be dispatched to selected delivery providers.
 
 ---
 
 ## Sources Page Overview
-
 
 On the **Sources** page, you can manage and view all integrated sources at a glance. Easily control multiple online stores or restaurant systems from one organized interface.
 
@@ -27,18 +26,27 @@ There are two possible states for this page:
 
 ### 1. When No Sources Are Connected
 
-If you haven’t added any sources yet, the page will show a clear call-to-action prompting you to connect your first source. This is your starting point to begin sending orders through Muvu.
+If you haven’t added any sources yet, the page will show a clear call-to-action prompting you to connect your first source. This is your starting point to begin sending orders through Muvx.
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753795395779_Source-empty-list.png" alt="Source page (empty list)" width="1647" height="800" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753795395779_Source-empty-list.png"
+  alt="Source page (empty list)"
+  width="1647"
+  height="800"
+/>
 
->Click **“Add Sources”** to begin integrating your online store or backend system with Muvu.
-
+> Click **“Add Sources”** to begin integrating your online store or backend system with Muvx.
 
 ### 2. When Sources Are Connected
 
 If one or more sources have already been created, you’ll see a list with key details about each one:
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753795837279_source-list.png" alt="Source page list" width="1648" height="509" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753795837279_source-list.png"
+  alt="Source page list"
+  width="1648"
+  height="509"
+/>
 
 Each row in the list includes:
 
@@ -49,30 +57,34 @@ Each row in the list includes:
 - **Total Shipments**: The number of orders sent through this source.
 - **Action**: Options to edit or manage the source.
 
->You can add more sources at any time by clicking the **“Add Sources”** button located at the top right of the page.
+> You can add more sources at any time by clicking the **“Add Sources”** button located at the top right of the page.
 
->You can manage as many sources as you need—each source can represent a different brand, system, or sales channel under your company.
+> You can manage as many sources as you need—each source can represent a different brand, system, or sales channel under your company.
 
 ---
+
 ## Add a Source
 
-Integrating a new source in Muvu is a simple two-step process, designed to support various platforms and backend systems.
+Integrating a new source in Muvx is a simple two-step process, designed to support various platforms and backend systems.
 
 ### Step 1: Choose Your Integration Type
 
 Easily integrate a new source by selecting from available options:
 
 - **Custom API**:  
-  Directly integrate using Muvu’s REST API for full flexibility.
+  Directly integrate using Muvx’s REST API for full flexibility.
 
 - **Platform Plugins**:  
   Shopify, Magento, WooCommerce, and other e-commerce platforms.
-  
 - **Server SDKs**:  
   Use SDKs for PHP, Java, and more to connect your backend system quickly.
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753796131285_add-source-catalog.png" alt="Add Source Catalog" width="1648" height="835" />
-
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753796131285_add-source-catalog.png"
+  alt="Add Source Catalog"
+  width="1648"
+  height="835"
+/>
 
 ### Step 2: Provide Source Information
 
@@ -82,12 +94,19 @@ For **Custom API**, the setup is straightforward:
 - **Source Name** – an internal label to identify this source instance.
 - **Webhook URL** – the endpoint on your system that will receive shipment status updates.
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753971271653_Add-your%DB%B0Custom-API.png" alt="Add Source - Custom API" width="707" height="502" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753971271653_Add-your%DB%B0Custom-API.png"
+  alt="Add Source - Custom API"
+  width="707"
+  height="502"
+/>
 
 <Banner title="Provider-Specific Fields">
-  For other integrations such as Shopify or Java SDK, additional fields may appear — like API tokens, domain names, or SDK credentials — depending on the platform requirements.
+  For other integrations such as Shopify or Java SDK, additional fields may
+  appear — like API tokens, domain names, or SDK credentials — depending on the
+  platform requirements.
 </Banner>
 
 Once submitted, the new source will appear in your **Sources list**, ready to be linked to one or more destinations.
 
-> You can manage multiple sources across various platforms under a single company workspace in Muvu.
+> You can manage multiple sources across various platforms under a single company workspace in Muvx.

@@ -15,13 +15,13 @@ const features = [
   },
   {
     title: "Seamless Order Management",
-    desc: "Create and dispatch orders directly from your e-commerce system using Muvu’s unified API.",
+    desc: "Create and dispatch orders directly from your e-commerce system using Muvx’s unified API.",
     img: Seamless,
     flip: false,
   },
   {
     title: "Live API Debugger",
-    desc: "Monitor API health and troubleshoot issues in real time with Muvu’s built-in live debugger for smooth, reliable integration.",
+    desc: "Monitor API health and troubleshoot issues in real time with Muvx’s built-in live debugger for smooth, reliable integration.",
     img: Live,
     flip: true,
   },
@@ -49,7 +49,7 @@ export default function FeaturesDemoSection() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-              See Muvu in Action, Simple, Powerful Delivery Management
+              See Muvx in Action, Simple, Powerful Delivery Management
             </h2>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto">
               Our intuitive panel makes last-mile delivery integration

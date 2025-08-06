@@ -18,7 +18,7 @@ export default function FeaturesHome() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Why Muvu Matters?
+              Why Muvx Matters?
             </h2>
             <p className="text-lg text-gray-700">
               Designed to Eliminate Friction, for Businesses and Delivery
@@ -108,7 +108,7 @@ export default function FeaturesHome() {
                 <span>One-Time Integration</span>
               </h3>
               <p className="text-[15px] text-gray-700">
-                Connect once to Muvu’s unified API and skip the redundant work
+                Connect once to Muvx’s unified API and skip the redundant work
                 forever. Whether you’re a delivery provider or an e-commerce
                 business, we simplify your tech stack.
               </p>
@@ -127,7 +127,7 @@ export default function FeaturesHome() {
                 <span>Scalable by Design</span>
               </h3>
               <p className="text-[15px] text-gray-700">
-                Add or switch partners without rebuilding anything. Muvu was
+                Add or switch partners without rebuilding anything. Muvx was
                 built to scale with your needs, across cities, services, and
                 platforms.
               </p>
@@ -146,7 +146,7 @@ export default function FeaturesHome() {
                 <span>A True Two-Sided Network</span>
               </h3>
               <p className="text-[15px] text-gray-700">
-                Muvu isn’t just middleware, it’s a growing ecosystem. Delivery
+                Muvx isn’t just middleware, it’s a growing ecosystem. Delivery
                 services meet more clients. Businesses gain more flexibility.
                 Everyone wins.
               </p>

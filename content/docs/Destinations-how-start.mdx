@@ -10,7 +10,7 @@ rank: "1"
 
 ## What is a Destination?
 
-In Muvu, a **Destination** represents a delivery provider (such as DHL, Shipa, or even the Autobot simulator) where your shipments are dispatched. Once connected, you can link your sources to a destination and start routing orders.
+In Muvx, a **Destination** represents a delivery provider (such as DHL, Shipa, or even the Autobot simulator) where your shipments are dispatched. Once connected, you can link your sources to a destination and start routing orders.
 
 ---
 
@@ -26,7 +26,12 @@ There are two possible states for this page:
 
 If you haven’t added any delivery partners yet, the page will show a clear call-to-action:
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968139335_No-Destination.png" alt="Destination empty state" width="1622" height="777" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968139335_No-Destination.png"
+  alt="Destination empty state"
+  width="1622"
+  height="777"
+/>
 
 > Click **"Add Destination"** to browse the available delivery partners and choose one to get started.
 
@@ -36,7 +41,12 @@ If you haven’t added any delivery partners yet, the page will show a clear cal
 
 Once you’ve added destinations, the list displays all enabled providers .
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968411555_Destinations-List.png" alt="Destination list" width="1630" height="469" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968411555_Destinations-List.png"
+  alt="Destination list"
+  width="1630"
+  height="469"
+/>
 
 > You can add more destinations anytime by clicking the **“Add Destinations”** button.
 
@@ -44,19 +54,26 @@ Once you’ve added destinations, the list displays all enabled providers .
 
 ## Add a Destination
 
-Adding a new delivery partner to your Muvu account is quick and straightforward.
+Adding a new delivery partner to your Muvx account is quick and straightforward.
 
 ### Step 1: Choose a Delivery Partner
 
 Select from the catalog of available delivery providers
 
 <Banner title="Please Confirm Your Provider Agreement">
-  Muvu acts solely as an integration platform and does **not** manage or negotiate delivery contracts, pricing, or service terms on your behalf.  
-  Before enabling any delivery provider, make sure your business has an active, pre-established agreement directly with that provider.  
-  Only select providers you are already contracted with.
+  Muvx acts solely as an integration platform and does **not** manage or
+  negotiate delivery contracts, pricing, or service terms on your behalf. Before
+  enabling any delivery provider, make sure your business has an active,
+  pre-established agreement directly with that provider. Only select providers
+  you are already contracted with.
 </Banner>
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968864784_Choose-Your-Delivery-Partner.png" alt="Destination catalog" width="1630" height="830" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753968864784_Choose-Your-Delivery-Partner.png"
+  alt="Destination catalog"
+  width="1630"
+  height="830"
+/>
 
 Each provider card includes a short description and an **“Add Destination”** button.  
 You can start with **Autobot** to test the full delivery flow without connecting a real courier service.
@@ -65,14 +82,16 @@ You can start with **Autobot** to test the full delivery flow without connecting
 
 ### About Autobot
 
-**Autobot** is Muvu’s built-in test destination, ideal for simulating the full delivery lifecycle without needing a connection to a real courier service.
+**Autobot** is Muvx’s built-in test destination, ideal for simulating the full delivery lifecycle without needing a connection to a real courier service.
 
 When you send a test order to Autobot, it will automatically progress through each delivery status—`Created`, `Accepted`, `Dispatched`, `Picked Up`, `In Transit`, and `Delivered`—**one step every 60 seconds**.  
 This makes it perfect for testing webhook flows, validating your integration, and debugging how your system handles status updates.
 
 <Banner title="Autobot for Seamless Testing">
-  Use **Autobot** as a sandbox delivery provider to simulate the full shipment lifecycle.  
-  After sending an order to Autobot, its status will automatically update **every 1 minute**, helping you test how your system handles real-time delivery events.
+  Use **Autobot** as a sandbox delivery provider to simulate the full shipment
+  lifecycle. After sending an order to Autobot, its status will automatically
+  update **every 1 minute**, helping you test how your system handles real-time
+  delivery events.
 </Banner>
 
 ---
@@ -84,11 +103,17 @@ After selecting a delivery partner, you’ll be asked to configure the destinati
 - **Destination Name** — a label to identify this delivery instance internally.
 - **Select Sources** — choose one or more sources to connect to this destination.
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753969622363_Destination-Add.png" alt="Destination Integration Setup" width="1396" height="728" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753969622363_Destination-Add.png"
+  alt="Destination Integration Setup"
+  width="1396"
+  height="728"
+/>
 
 <Banner title="Provider Requirements May Vary">
-  Some delivery providers may ask for additional fields during setup, such as access tokens, service region, account credentials, or integration keys.  
-  These fields will appear dynamically based on the provider you select.
+  Some delivery providers may ask for additional fields during setup, such as
+  access tokens, service region, account credentials, or integration keys. These
+  fields will appear dynamically based on the provider you select.
 </Banner>
 
 Click **“Complete Integration”** to save the destination and start routing shipments.

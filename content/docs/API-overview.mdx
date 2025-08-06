@@ -2,14 +2,14 @@
 title: "API Overview"
 publishedAt: "2025-07-30"
 updatedAt: "2025-07-30"
-summary: "The Muvu API enables online stores to integrate seamlessly with 20+ delivery providers through a single, unified interface."
+summary: "The Muvx API enables online stores to integrate seamlessly with 20+ delivery providers through a single, unified interface."
 kind: "simple"
 parent: "2. API Docs"
 rank: "1"
 section: "API Docs"
 ---
 
-Instead of managing multiple courier integrations, your system connects to Muvu once — and we handle the complexity behind the scenes.
+Instead of managing multiple courier integrations, your system connects to Muvx once — and we handle the complexity behind the scenes.
 
 This low-code, scalable API helps streamline your logistics workflow, reduce technical overhead, and speed up delivery operations.
 
@@ -19,15 +19,20 @@ This low-code, scalable API helps streamline your logistics workflow, reduce tec
 
 Below is the typical **order status flow**:
 
-1. **created** – Order created in Muvu by the shop  
-2. **accepted** – Accepted by Muvu or assigned to delivery  
-3. **dispatched** – Courier assigned and dispatched (if supported)  
-4. **picked_up** – Package picked up from the store (if supported)  
-5. **in_transit** – On the way to customer (if supported)  
-6. **delivered** – Successfully delivered  
-7. **cancelled** – Cancelled (by shop or Muvu)  
+1. **created** – Order created in Muvx by the shop
+2. **accepted** – Accepted by Muvx or assigned to delivery
+3. **dispatched** – Courier assigned and dispatched (if supported)
+4. **picked_up** – Package picked up from the store (if supported)
+5. **in_transit** – On the way to customer (if supported)
+6. **delivered** – Successfully delivered
+7. **cancelled** – Cancelled (by shop or Muvx)
 8. **failed** – Delivery failed (e.g., customer unreachable)
 
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753879997398_Muvu-order-status.jpg" alt="order status" width="4768" height="1414" />
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1753879997398_Muvu-order-status.jpg"
+  alt="order status"
+  width="4768"
+  height="1414"
+/>
 
-Each status will be reflected in Muvu's system and, optionally, pushed to your system via a webhook.
+Each status will be reflected in Muvx's system and, optionally, pushed to your system via a webhook.

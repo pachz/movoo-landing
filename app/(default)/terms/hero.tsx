@@ -14,7 +14,7 @@ export default function Hero() {
             </h1>
             <div className="mx-auto max-w-3xl">
               <p className="text-lg text-gray-700">
-                Review Muvu’s Terms and Conditions to understand the rules and
+                Review Muvx’s Terms and Conditions to understand the rules and
                 guidelines for using our services.
               </p>
             </div>

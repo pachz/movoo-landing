@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Apps - Muvu",
+  title: "Apps - Muvx",
   description: "Page description",
 };
 
@@ -11,7 +11,7 @@ export default function Apps() {
       <Hero />
       <div className="mx-auto max-w-4xl px-4 sm:px-6 mb-8">
         <p className="mb-6 text-sm sm:text-base text-gray-700">
-          Your privacy is important to us. This Privacy Policy explains how Muvu
+          Your privacy is important to us. This Privacy Policy explains how Muvx
           (“we”, “our”, or “us”) collects, uses, and protects your information
           when you interact with our platform, services, and website.
         </p>
@@ -36,7 +36,7 @@ export default function Apps() {
           2. How We Use Your Information
         </h2>
         <ul className="list-disc list-inside mb-6 text-sm sm:text-base text-gray-700 space-y-2">
-          <li>To provide access to Muvu’s API services and dashboards</li>
+          <li>To provide access to Muvx’s API services and dashboards</li>
           <li>To monitor performance and ensure platform security</li>
           <li>To respond to support requests and operational queries</li>
           <li>To improve our services through analytics and usage patterns</li>
@@ -62,10 +62,10 @@ export default function Apps() {
           time. <br />
           Contact us at{" "}
           <a
-            href="mailto:dev@muvu.me"
+            href="mailto:dev@Muvy.me"
             className="text-primary-500 hover:underline"
           >
-            dev@muvu.me
+            dev@Muvu.me
           </a>
           .
         </p>
