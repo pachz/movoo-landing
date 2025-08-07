@@ -7,7 +7,7 @@ import {
 } from '@/utils/sitemap'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://muvx.ai'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.muvx.ai'
   
   // Static pages
   const staticPages = [
