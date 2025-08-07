@@ -1,8 +1,5 @@
+import Landing1 from "@/public/images/LANDIN.webp";
 import Image from "next/image";
-import FeatureImg01 from "@/public/images/features-02-overlay-01.png";
-import FeatureImg02 from "@/public/images/features-02-overlay-02.png";
-import FeatureImg03 from "@/public/images/features-02-overlay-03.png";
-import Landing1 from "@/public/images/LANDIN1.jpg";
 
 export default function FeaturesHome() {
   return (

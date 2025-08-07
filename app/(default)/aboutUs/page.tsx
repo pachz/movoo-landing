@@ -44,7 +44,7 @@ export default function Support() {
         <div className="mt-6 space-y-2 text-sm sm:text-base text-gray-700">
           <div className="flex items-start gap-3">
             <Mail className="w-5 h-5 mt-0.5 text-gray-600" />
-            <span>dev@Muvu.me</span>
+            <span>dev@Muvx.ai</span>
           </div>
           <div className="flex items-start gap-3">
             <Globe className="w-5 h-5 mt-0.5 text-gray-600" />
