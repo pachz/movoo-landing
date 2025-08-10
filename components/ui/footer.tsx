@@ -61,7 +61,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="/documentation/what-is-Muvx-overview"
+                  href="/documentation/what-is-muvx-overview"
                 >
                   Getting started
                 </Link>
