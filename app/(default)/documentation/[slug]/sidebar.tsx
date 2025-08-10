@@ -23,6 +23,8 @@ type DocType = {
   parent?: string;
   rank: string;
   section?: string;
+  next?: string;
+  prev?: string;
 };
 
 export default function Sidebar({ docs }: { docs: DocType[] }) {
@@ -32,31 +34,71 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
   const links = useScrollSpy();
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
 
-  // Group docs by section and sort by rank
+  // Group docs by section first, then by parent
   const groupedDocs = docs.reduce((acc, doc) => {
-    const section = doc.section || doc.metadata.section || "General";
-    if (!acc[section]) {
-      acc[section] = [];
+    // Use explicit section, or derive from parent, or default to "General"
+    let section = doc.section || doc.metadata.section;
+    if (!section) {
+      const parent = doc.parent || doc.metadata.parent;
+      if (parent) {
+        // Extract section name from parent (e.g., "1. What Is Muvx ?" -> "What Is Muvx")
+        const match = parent.match(/^\d+\.\s*(.+?)\s*$/);
+        if (match) {
+          section = match[1].trim();
+        } else {
+          section = parent;
+        }
+      } else {
+        section = "General";
+      }
     }
-    acc[section].push(doc);
+    
+    const parent = doc.parent || doc.metadata.parent || "General";
+    
+    if (!acc[section]) {
+      acc[section] = {};
+    }
+    if (!acc[section][parent]) {
+      acc[section][parent] = [];
+    }
+    acc[section][parent].push(doc);
     return acc;
-  }, {} as Record<string, DocType[]>);
+  }, {} as Record<string, Record<string, DocType[]>>);
 
-  // Sort documents within each section group by rank
+  // Sort documents within each parent group by rank
   Object.keys(groupedDocs).forEach(section => {
-    groupedDocs[section].sort((a, b) => {
-      const rankA = parseInt(a.rank) || 99;
-      const rankB = parseInt(b.rank) || 99;
-      return rankA - rankB;
+    Object.keys(groupedDocs[section]).forEach(parent => {
+      groupedDocs[section][parent].sort((a, b) => {
+        const rankA = parseInt(a.rank) || 99;
+        const rankB = parseInt(b.rank) || 99;
+        return rankA - rankB;
+      });
     });
   });
 
-  // Auto-expand section if current page belongs to it
+  // Auto-expand section and parent if current page belongs to it
   useEffect(() => {
     const currentDoc = docs.find(doc => pathname.includes(doc.slug));
     if (currentDoc) {
-      const section = currentDoc.section || currentDoc.metadata.section || "General";
-      setExpandedSections(prev => new Set([...Array.from(prev), section]));
+      // Determine section using the same logic as above
+      let section = currentDoc.section || currentDoc.metadata.section;
+      if (!section) {
+        const parent = currentDoc.parent || currentDoc.metadata.parent;
+        if (parent) {
+          // Extract section name from parent (e.g., "1. What Is Muvx ?" -> "What Is Muvx")
+          const match = parent.match(/^\d+\.\s*(.+?)\s*$/);
+          if (match) {
+            section = match[1].trim();
+          } else {
+            section = parent;
+          }
+        } else {
+          section = "General";
+        }
+      }
+      
+      const parent = currentDoc.parent || currentDoc.metadata.parent || "General";
+      setExpandedSections(prev => new Set([...Array.from(prev), section, parent]));
     }
   }, [pathname, docs]);
 
@@ -118,82 +160,101 @@ export default function Sidebar({ docs }: { docs: DocType[] }) {
               <ul className="space-y-4 text-sm">
                 {Object.entries(groupedDocs)
                   .sort(([sectionA], [sectionB]) => {
-                    // Put "General" or "Documentation" first
-                    if (sectionA === "General" || sectionA === "Documentation") return -1;
-                    if (sectionB === "General" || sectionB === "Documentation") return 1;
+                    // Sort sections alphabetically, but put "General" first if it exists
+                    if (sectionA === "General") return -1;
+                    if (sectionB === "General") return 1;
                     return sectionA.localeCompare(sectionB);
                   })
-                  .map(([section, sectionDocs]) => (
+                  .map(([section, parentGroups]) => (
                   <li key={section}>
-                    {/* Section Header */}
-                    <button
-                      onClick={() => toggleSection(section)}
-                      className={`relative flex w-full items-center justify-between text-gray-700 hover:text-gray-900 ${
-                        expandedSections.has(section) ? "font-medium" : ""
-                      }`}
-                    >
+                    {/* Section Header - Always visible */}
+                    <div className="relative flex w-full items-center justify-between text-gray-700">
                       <span className="font-bold">{section}</span>
-                      <svg
-                        className={`shrink-0 fill-gray-400 transition-transform duration-200 ${
-                          expandedSections.has(section) ? "rotate-180" : ""
-                        }`}
-                        width="11"
-                        height="7"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
-                      </svg>
-                    </button>
+                    </div>
                     
-                    {/* Section Content */}
-                    {expandedSections.has(section) && (
-                      <ul className="mt-2 space-y-2 pl-4">
-                        {sectionDocs.map((doc: DocType, index: number) => (
-                          <li key={index}>
-                            <Link
-                              href={`/documentation/${doc.slug}`}
-                              className={`relative flex items-center text-gray-700 hover:text-gray-900 ${
-                                pathname.includes(doc.slug) ? "font-medium" : ""
+                    {/* Section Content - Always expanded */}
+                    <ul className="mt-2 space-y-2 pl-4">
+                      {Object.entries(parentGroups)
+                        .sort(([parentA], [parentB]) => {
+                          // Put "General" first within each section
+                          if (parentA === "General") return -1;
+                          if (parentB === "General") return 1;
+                          return parentA.localeCompare(parentB);
+                        })
+                        .map(([parent, parentDocs]) => (
+                        <li key={parent}>
+                          {/* Parent Header - Collapsible */}
+                          <button
+                            onClick={() => toggleSection(parent)}
+                            className={`relative flex w-full items-center justify-between text-gray-700 hover:text-gray-900 ${
+                              expandedSections.has(parent) ? "font-medium" : ""
+                            }`}
+                          >
+                            <span className="font-medium">{parent}</span>
+                            <svg
+                              className={`shrink-0 fill-gray-400 transition-transform duration-200 ${
+                                expandedSections.has(parent) ? "rotate-180" : ""
                               }`}
+                              width="11"
+                              height="7"
+                              xmlns="http://www.w3.org/2000/svg"
                             >
-                              {doc.metadata.kind === "detailed" ? (
-                                <>
-                                  <svg
-                                    className={`absolute -left-5 shrink-0 fill-gray-400 ${
-                                      pathname.includes(doc.slug) ? "" : "-rotate-90"
+                              <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
+                            </svg>
+                          </button>
+                          
+                          {/* Parent Content */}
+                          {expandedSections.has(parent) && (
+                            <ul className="mt-2 space-y-2 pl-4">
+                              {parentDocs.map((doc: DocType, index: number) => (
+                                <li key={index}>
+                                  <Link
+                                    href={`/documentation/${doc.slug}`}
+                                    className={`relative flex items-center text-gray-700 hover:text-gray-900 ${
+                                      pathname.includes(doc.slug) ? "font-medium" : ""
                                     }`}
-                                    width="11"
-                                    height="7"
-                                    xmlns="http://www.w3.org/2000/svg"
                                   >
-                                    <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
-                                  </svg>
-                                  <span>{doc.metadata.title}</span>
-                                </>
-                              ) : (
-                                doc.metadata.title
-                              )}
-                            </Link>
-                            {doc.metadata.kind === "detailed" &&
-                            pathname.includes(doc.slug) ? (
-                              <ul className="mt-2 space-y-2 pl-4">
-                                {links.map((link, linkIndex) => (
-                                  <li key={linkIndex}>
-                                    <a
-                                      data-scrollspy-link
-                                      className="text-gray-500 hover:text-gray-900"
-                                      href={`#${link.id}`}
-                                    >
-                                      {link.innerText}
-                                    </a>
-                                  </li>
-                                ))}
-                              </ul>
-                            ) : null}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                                    {doc.metadata.kind === "detailed" ? (
+                                      <>
+                                        <svg
+                                          className={`absolute -left-5 shrink-0 fill-gray-400 ${
+                                            pathname.includes(doc.slug) ? "" : "-rotate-90"
+                                          }`}
+                                          width="11"
+                                          height="7"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path d="m2 .94 3.5 3.5L9 .94 10.06 2 5.5 6.56.94 2 2 .94Z" />
+                                        </svg>
+                                        <span>{doc.metadata.title}</span>
+                                      </>
+                                    ) : (
+                                      doc.metadata.title
+                                    )}
+                                  </Link>
+                                  {doc.metadata.kind === "detailed" &&
+                                  pathname.includes(doc.slug) ? (
+                                    <ul className="mt-2 space-y-2 pl-4">
+                                      {links.map((link, linkIndex) => (
+                                        <li key={linkIndex}>
+                                          <a
+                                            data-scrollspy-link
+                                            className="text-gray-500 hover:text-gray-900"
+                                            href={`#${link.id}`}
+                                          >
+                                            {link.innerText}
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  ) : null}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
                   </li>
                 ))}
               </ul>

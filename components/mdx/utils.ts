@@ -12,6 +12,9 @@ type Metadata = {
   parent?: string;
   rank?: string;
   section?: string;
+  next?: string;
+  prev?: string;
+  slug?: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -45,7 +48,9 @@ function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
-    const slug = path.basename(file, path.extname(file));
+    const slug = metadata.slug || path.basename(file, path.extname(file));
+    const next = metadata.next || null;
+    const prev = metadata.prev || null;
     return {
       metadata,
       slug,
@@ -53,6 +58,8 @@ function getMDXData(dir: string) {
       parent: metadata.parent,
       rank: metadata.rank || "99",
       section: metadata.section || "General",
+      next,
+      prev,
     };
   });
 }

@@ -54,20 +54,25 @@ export default async function DocumentationPage(props: {
 }) {
   const params = await props.params;
   const allDocs = getDocPages();
-  // Sort pages by date
-  allDocs.sort((a, b) => {
-    return new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-      ? 1
-      : -1;
-  });
   const post = allDocs.find((post) => post.slug === params.slug);
-  const currentIndex = allDocs.findIndex((post) => post.slug === params.slug);
 
   if (!post) notFound();
 
-  const prevPost = currentIndex > 0 ? allDocs[currentIndex - 1] : null;
-  const nextPost =
-    currentIndex < allDocs.length - 1 ? allDocs[currentIndex + 1] : null;
+  // Use next/prev metadata if available, otherwise fall back to array order
+  const prevPost = post.prev 
+    ? allDocs.find((doc) => {
+        // Handle various formats: /source/add, source-add, source-details
+        const prevPath = post.prev!.replace(/^\//, '').replace(/\//g, '-');
+        return doc.slug === prevPath || doc.slug === post.prev!.replace(/^\//, '') || doc.slug === post.prev;
+      }) || null
+    : null;
+  const nextPost = post.next 
+    ? allDocs.find((doc) => {
+        // Handle various formats: /destination/detail, destination-detail, destination-details
+        const nextPath = post.next!.replace(/^\//, '').replace(/\//g, '-');
+        return doc.slug === nextPath || doc.slug === post.next!.replace(/^\//, '') || doc.slug === post.next;
+      }) || null
+    : null;
 
   return (
     <DocumentationProvider>
