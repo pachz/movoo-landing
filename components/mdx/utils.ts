@@ -49,8 +49,8 @@ function getMDXData(dir: string) {
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
     const slug = metadata.slug || path.basename(file, path.extname(file));
-    const next = metadata.next || null;
-    const prev = metadata.prev || null;
+    const next = metadata.next;
+    const prev = metadata.prev;
     return {
       metadata,
       slug,

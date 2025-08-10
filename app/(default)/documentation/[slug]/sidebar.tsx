@@ -17,6 +17,8 @@ type DocType = {
     kind?: string;
     parent?: string;
     section?: string;
+    next?: string;
+    prev?: string;
   };
   slug: string;
   content: string;
