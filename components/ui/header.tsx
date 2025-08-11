@@ -14,7 +14,7 @@ export default function Header() {
           </div>
           {/* Centered nav and auth */}
           <div className="flex flex-1 items-center justify-center gap-6">
-            <nav className="hidden md:flex">
+            <nav className="hidden lg:flex">
               {/* Desktop menu links */}
               <ul className="flex flex-wrap items-center justify-center gap-4 text-sm lg:gap-8">
                 {/* <li className="px-3 py-1">
@@ -59,7 +59,7 @@ export default function Header() {
                 </li>
               </ul>
             </nav>
-            <ul className="hidden md:flex items-center gap-3">
+            <ul className="hidden lg:flex items-center gap-3">
               <li className="px-3 py-1">
                 <Link
                   href="https://panel.muvx.ai/signin"
@@ -78,7 +78,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <MobileMenu />
           </div>
         </div>
