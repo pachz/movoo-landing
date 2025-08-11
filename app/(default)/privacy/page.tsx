@@ -65,7 +65,7 @@ export default function Apps() {
             href="mailto:dev@Muvy.me"
             className="text-primary-500 hover:underline"
           >
-            dev@Muvu.me
+            dev@Muvx.ai
           </a>
           .
         </p>
