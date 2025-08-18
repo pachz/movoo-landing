@@ -100,7 +100,7 @@ export default function TestimonialsGrid() {
         className="absolute bottom-0 left-1/2 -z-10 -translate-x-1/2 translate-y-1/2"
         aria-hidden="true"
       >
-        <div className="h-80 w-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]"></div>
+        <div className="h-80 w-80 rounded-full bg-linear-to-tr from-primary-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]"></div>
       </div>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">

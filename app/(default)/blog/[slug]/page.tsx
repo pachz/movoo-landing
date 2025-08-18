@@ -8,11 +8,9 @@ import PostNav from "./post-nav";
 import PageIllustration from "@/components/page-illustration";
 import Newsletter from "@/components/newsletter";
 
-export async function generateMetadata(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-): Promise<Metadata | undefined> {
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata | undefined> {
   const params = await props.params;
   const post = getBlogPosts().find((post) => post.slug === params.slug);
 
@@ -28,11 +26,9 @@ export async function generateMetadata(
   };
 }
 
-export default async function SinglePost(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function SinglePost(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const post = getBlogPosts().find((post) => post.slug === params.slug);
 
@@ -50,7 +46,7 @@ export default async function SinglePost(
               <header className="pb-8">
                 <div className="mb-6">
                   <Link
-                    className="text-sm font-medium text-blue-500 transition-colors hover:text-blue-600"
+                    className="text-sm font-medium text-primary-500 transition-colors hover:text-blue-600"
                     href="/blog"
                   >
                     <span className="tracking-normal text-blue-300">&lt;-</span>{" "}
@@ -76,7 +72,7 @@ export default async function SinglePost(
                   </div>
                 </div>
               </header>
-              <div className="prose max-w-none text-gray-700 prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:text-gray-900 prose-a:font-medium prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:font-medium prose-blockquote:italic prose-blockquote:text-gray-900 prose-strong:font-medium prose-strong:text-gray-900 prose-code:rounded prose-code:bg-transparent prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-gray-900 prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900 prose-blockquote:xl:-ml-4">
+              <div className="prose max-w-none text-gray-700 prose-headings:scroll-mt-24 prose-headings:font-bold prose-headings:text-gray-900 prose-a:font-medium prose-a:text-primary-500 prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-gray-300 prose-blockquote:pl-4 prose-blockquote:font-medium prose-blockquote:italic prose-blockquote:text-gray-900 prose-strong:font-medium prose-strong:text-gray-900 prose-code:rounded prose-code:bg-transparent prose-code:px-1 prose-code:py-0.5 prose-code:font-mono prose-code:text-gray-900 prose-code:before:content-[''] prose-code:after:content-[''] prose-pre:border prose-pre:border-gray-700 prose-pre:bg-gray-900 prose-blockquote:xl:-ml-4">
                 <CustomMDX source={post.content} />
               </div>
             </article>

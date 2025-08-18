@@ -36,11 +36,15 @@ export default function PricingTables() {
                   aria-hidden="true"
                 >
                   <span
-                    className={`absolute inset-0 w-1/2 transform rounded-sm bg-white shadow-sm transition ${annual ? "translate-x-0" : "translate-x-full"}`}
+                    className={`absolute inset-0 w-1/2 transform rounded-sm bg-white shadow-sm transition ${
+                      annual ? "translate-x-0" : "translate-x-full"
+                    }`}
                   ></span>
                 </span>
                 <button
-                  className={`relative flex-1 p-1 text-sm font-medium transition ${annual ? "" : "text-gray-900"}`}
+                  className={`relative flex-1 p-1 text-sm font-medium transition ${
+                    annual ? "" : "text-gray-900"
+                  }`}
                   onClick={() => setAnnual(true)}
                   aria-pressed={annual}
                 >
@@ -48,7 +52,9 @@ export default function PricingTables() {
                   <span className="text-emerald-500">-20%</span>
                 </button>
                 <button
-                  className={`relative flex-1 p-1 text-sm font-medium transition ${annual ? "text-gray-500" : ""}`}
+                  className={`relative flex-1 p-1 text-sm font-medium transition ${
+                    annual ? "text-gray-500" : ""
+                  }`}
                   onClick={() => setAnnual(false)}
                   aria-pressed={annual}
                 >
@@ -119,7 +125,7 @@ export default function PricingTables() {
                 </ul>
                 <div className="mt-6">
                   <a
-                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
+                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-primary-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
                     href="#0"
                   >
                     Try for free
@@ -188,7 +194,7 @@ export default function PricingTables() {
                 </ul>
                 <div className="mt-6">
                   <a
-                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
+                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-primary-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
                     href="#0"
                   >
                     Try for free
@@ -257,7 +263,7 @@ export default function PricingTables() {
                 </ul>
                 <div className="mt-6">
                   <a
-                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
+                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-primary-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
                     href="#0"
                   >
                     Try for free
@@ -326,7 +332,7 @@ export default function PricingTables() {
                 </ul>
                 <div className="mt-6">
                   <a
-                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
+                    className="btn-sm w-full rounded-lg bg-linear-to-t from-blue-600 to-primary-500 bg-[length:100%_100%] bg-[bottom] py-1.5 text-white shadow-sm hover:bg-[length:100%_150%]"
                     href="#0"
                   >
                     Try for free
