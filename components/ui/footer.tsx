@@ -1,5 +1,6 @@
 import Link from "next/link";
-import Logo from "./logo";
+import Logo from "@/public/images/logo.png";
+import Image from "next/image";
 
 export default function Footer({ border = false }: { border?: boolean }) {
   return (
@@ -15,8 +16,8 @@ export default function Footer({ border = false }: { border?: boolean }) {
         >
           {/* 1st block */}
           <div className="space-y-2 sm:col-span-12 lg:col-span-4">
-            <div>
-              <Logo />
+            <div className="flex items-center w-24 h-12">
+              <Image src={Logo} alt="Stripes" />
             </div>
 
             <div className="text-sm text-gray-600">
