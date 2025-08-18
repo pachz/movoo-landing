@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Logo01 from "@/public/images/logo-01.svg";
+import Logo01 from "@/public/images/logo.svg";
 import Logo02 from "@/public/images/logo-021.svg";
 import Logo03 from "@/public/images/logo-03.svg";
 import Logo04 from "@/public/images/logo-04.svg";
@@ -279,4 +279,4 @@ export default function BusinessCategoriesAr() {
       </div>
     </section>
   );
-} 
+}

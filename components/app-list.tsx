@@ -270,7 +270,7 @@ export default function AppList() {
               <div className="mb-5 flex items-center justify-between space-x-2">
                 <h2 className="truncate text-xl font-bold">Noteworthy</h2>
                 <a
-                  className="shrink-0 text-sm font-medium text-blue-500 transition hover:text-blue-600"
+                  className="shrink-0 text-sm font-medium text-primary-500 transition hover:text-blue-600"
                   href="#0"
                 >
                   View All
@@ -290,7 +290,7 @@ export default function AppList() {
               <div className="mb-5 flex items-center justify-between space-x-2">
                 <h2 className="truncate text-xl font-bold">Trending</h2>
                 <a
-                  className="shrink-0 text-sm font-medium text-blue-500 transition hover:text-blue-600"
+                  className="shrink-0 text-sm font-medium text-primary-500 transition hover:text-blue-600"
                   href="#0"
                 >
                   View All
@@ -310,7 +310,7 @@ export default function AppList() {
               <div className="mb-5 flex items-center justify-between space-x-2">
                 <h2 className="truncate text-xl font-bold">Coming soon</h2>
                 <a
-                  className="shrink-0 text-sm font-medium text-blue-500 transition hover:text-blue-600"
+                  className="shrink-0 text-sm font-medium text-primary-500 transition hover:text-blue-600"
                   href="#0"
                 >
                   View All

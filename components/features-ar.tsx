@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import AdminPanel from "@/public/images/Admin.png";
-import Seamless from "@/public/images/Seamless.png";
-import Live from "@/public/images/liveDebugger.png";
-import Track from "@/public/images/Track.png";
+import AdminPanel from "@/public/images/Admin2.webp";
+import Seamless from "@/public/images/Seamless2.webp";
+import Live from "@/public/images/liveDebugger2.webp";
+import Track from "@/public/images/Track2.webp";
 
 const features = [
   {
@@ -52,7 +52,8 @@ export default function FeaturesDemoSectionAr() {
               شاهد موفو في العمل، إدارة توصيل بسيطة وقوية
             </h2>
             <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-              لوحة التحكم البديهية لدينا تجعل تكامل التوصيل في المرحلة الأخيرة سهلاً. إليك كيف تعمل والميزات الرئيسية التي نقدمها جاهزة:
+              لوحة التحكم البديهية لدينا تجعل تكامل التوصيل في المرحلة الأخيرة
+              سهلاً. إليك كيف تعمل والميزات الرئيسية التي نقدمها جاهزة:
             </p>
           </div>
 
@@ -101,4 +102,4 @@ export default function FeaturesDemoSectionAr() {
       </div>
     </section>
   );
-} 
+}

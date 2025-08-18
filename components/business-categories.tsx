@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import Logo01 from "@/public/images/logo-01.svg";
+// import Logo01 from "@/public/images/logo-01.svg";
+import Logo01 from "@/public/images/logo.png";
 import Nomou from "@/public/images/nomou.png";
 import Provin from "@/public/images/provin.png";
 import Heal from "@/public/images/heal.png";
@@ -20,12 +21,13 @@ export default function BusinessCategories() {
   return (
     <section>
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        {" "}
         <div className="relative flex h-[324px] items-center justify-center">
           {/* Tab panels */}
           {/* Small blue dots */}
           <div className="absolute -z-10">
             <svg
-              className="fill-primary-500"
+              className="fill-primary-400"
               xmlns="http://www.w3.org/2000/svg"
               width={164}
               height={41}
