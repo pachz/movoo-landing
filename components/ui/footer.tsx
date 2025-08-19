@@ -72,13 +72,13 @@ export default function Footer({ border = false }: { border?: boolean }) {
                   className="text-gray-600 transition hover:text-gray-900"
                   href="/documentation/API-overview"
                 >
-                  API refrence
+                  API reference
                 </Link>
               </li>
             </ul>
           </div>
           {/* 4th block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+          {/* <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h3 className="text-sm font-medium">Social</h3>
             <ul className="flex gap-1">
               <li>
@@ -127,7 +127,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 
