@@ -2,7 +2,7 @@ import Image from "next/image";
 import FeatureImg01 from "@/public/images/features-02-overlay-01.png";
 import FeatureImg02 from "@/public/images/features-02-overlay-02.png";
 import FeatureImg03 from "@/public/images/features-02-overlay-03.png";
-import Landing1 from "@/public/images/LANDIN1.jpg";
+import Landing1 from "@/public/images/LANDING2.jpg";
 
 export default function FeaturesHomeAr() {
   return (
@@ -21,7 +21,8 @@ export default function FeaturesHomeAr() {
               لماذا موفو مهمة؟
             </h2>
             <p className="text-lg text-gray-700">
-              نحن نمكن الشركات من فتح تكامل التوصيل السلس، وتقليل التعقيد، وإسعاد العملاء بحلول لوجستية موثوقة ومرنة.
+              نحن نمكن الشركات من فتح تكامل التوصيل السلس، وتقليل التعقيد،
+              وإسعاد العملاء بحلول لوجستية موثوقة ومرنة.
             </p>
           </div>
           {/* Illustration */}
@@ -50,7 +51,8 @@ export default function FeaturesHomeAr() {
                 <span>تكامل سلس</span>
               </h3>
               <p className="text-[15px] text-gray-600">
-                واجهة برمجة موحدة تربطك بجميع مقدمي خدمات التوصيل الرئيسيين في المنطقة.
+                واجهة برمجة موحدة تربطك بجميع مقدمي خدمات التوصيل الرئيسيين في
+                المنطقة.
               </p>
             </article>
             <article>
@@ -86,7 +88,8 @@ export default function FeaturesHomeAr() {
                 <span>مرونة في التوسع</span>
               </h3>
               <p className="text-[15px] text-gray-600">
-                بنية تحتية قابلة للتوسع تنمو مع عملك وتدعم أحجام الطلبات المختلفة.
+                بنية تحتية قابلة للتوسع تنمو مع عملك وتدعم أحجام الطلبات
+                المختلفة.
               </p>
             </article>
             <article>
@@ -148,4 +151,4 @@ export default function FeaturesHomeAr() {
       </div>
     </section>
   );
-} 
+}

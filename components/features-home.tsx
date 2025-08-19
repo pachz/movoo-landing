@@ -1,4 +1,4 @@
-import Landing1 from "@/public/images/LANDIN.webp";
+import Landing1 from "@/public/images/LANDIN1 (2).webp";
 import Image from "next/image";
 
 export default function FeaturesHome() {

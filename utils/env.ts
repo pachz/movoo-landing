@@ -1,6 +1,6 @@
 export const isStaging = () => {
   // Check for staging environment variables
-  const isStagingEnv = process.env.NODE_ENV === 'staging' || 
+  const isStagingEnv = process.env.NODE_ENV === 'development' || 
                       process.env.NEXT_PUBLIC_STAGING === 'true' ||
                       process.env.STAGING === 'true' ||
                       process.env.VERCEL_ENV === 'preview' ||

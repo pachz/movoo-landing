@@ -59,10 +59,10 @@ export default function TestimonialsCarousel() {
             className="absolute bottom-20 -z-10 -translate-x-36"
             aria-hidden="true"
           >
-            <div className="h-80 w-80 rounded-full bg-linear-to-tr from-blue-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]" />
+            <div className="h-80 w-80 rounded-full bg-linear-to-tr from-primary-500 to-gray-900 opacity-30 blur-[160px] will-change-[filter]" />
           </div>
           <div className="absolute -bottom-10 -z-10" aria-hidden="true">
-            <div className="h-80 w-80 rounded-full bg-blue-500 opacity-40 blur-[160px] will-change-[filter]" />
+            <div className="h-80 w-80 rounded-full bg-primary-500 opacity-40 blur-[160px] will-change-[filter]" />
           </div>
           <div className="absolute bottom-0 -z-10" aria-hidden="true">
             <div className="h-56 w-56 rounded-full border-[20px] border-white blur-[20px] will-change-[filter]" />

@@ -25,7 +25,7 @@ export default function AuthLayout({
           className="pointer-events-none absolute bottom-0 left-0 -translate-x-1/3"
           aria-hidden="true"
         >
-          <div className="h-80 w-80 rounded-full bg-linear-to-tr from-blue-500 opacity-70 blur-[160px] will-change-[filter]"></div>
+          <div className="h-80 w-80 rounded-full bg-linear-to-tr from-primary-500 opacity-70 blur-[160px] will-change-[filter]"></div>
         </div>
 
         {/* Content */}
