@@ -70,7 +70,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <li>
                 <Link
                   className="text-gray-600 transition hover:text-gray-900"
-                  href="/documentation/API-overview"
+                  href="/documentation/api-overview"
                 >
                   API reference
                 </Link>

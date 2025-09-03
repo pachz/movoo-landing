@@ -1,0 +1,121 @@
+---
+title: "Muvx Postman Collection"
+publishedAt: "2025-08-20"
+updatedAt: "2025-08-20"
+summary: "The Muvx Postman Collection provides everything you need to start testing and integrating with the Muvx API."
+kind: "detailed"
+parent: "Developer Tools"
+rank: "1"
+section: "API Docs"
+slug: "postman"
+prev: "api-webhook"
+---
+
+It includes ready-made requests for order management (create, cancel, trigger pickup, get status) and a preconfigured environment for variables like base URL and API key.
+
+---
+
+## Downloads
+
+Use these files to quickly set up Postman and start testing the Muvx API:
+- [⬇️ Download Postman Collection](https://sawaai.lon1.digitaloceanspaces.com/bot/1755694208168_Muvx.postman_collection.json)  
+- [⬇️ Download Postman Environment](https://sawaai.lon1.digitaloceanspaces.com/bot/1755694208188_Muvx%20Env.postman_environment.json)
+
+
+## Online Postman Documentation
+
+You can also explore the live Postman docs here:  
+- [📖 Muvx API Postman Documentation](https://documenter.getpostman.com/view/30420472/2sB3BKFoHH)
+
+---
+
+## Setup Instructions
+
+You have **two options** to configure the environment:  
+
+#### Option A — Import the Environment (Recommended)  
+- Open **Postman** → **Environments** → **Import**  
+- Upload the file `Muvx Env.postman_environment.json`  
+- Activate the environment named **Muvx Env** from the dropdown in the top-right  
+
+Environment variables included:  
+
+- `muvx_base_url` → API base URL (`https://core.muvx.ai`)  
+- `sample_api_key` → **Replace this with your own API key**  
+- `sample_order_id` → **First create an order using the API, then use its ID here**  
+
+<Banner>
+- Always replace the <code>sample_api_key</code> value with your actual API key.<br/>
+- To set <code>sample_order_id</code>, first use the <b>Create Order</b> API, then copy the returned <code>id</code> into this variable.
+</Banner>
+
+---
+
+#### Option B — Create the Environment Manually  
+If you don’t want to use the file, you can manually create the environment:  
+
+1. Open **Postman** → **Environments** → **Add New**  
+2. Add the following variables and values:  
+
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Key</TableHeader>
+      <TableHeader>Value</TableHeader>
+      <TableHeader>Type</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>muvx_base_url</code></TableCell>
+      <TableCell><code>https://core.muvx.ai</code></TableCell>
+      <TableCell>Default</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code>sample_api_key</code></TableCell>
+      <TableCell><i>Your real API key here</i></TableCell>
+      <TableCell>Secret</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code>sample_order_id</code></TableCell>
+      <TableCell><i>Example order ID</i></TableCell>
+      <TableCell>Default</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+3. Save the environment.  
+4. Select it from the environment dropdown in the top-right.  
+
+> Only one environment can be active at a time. All `{{variables}}` in the collection will be resolved from the selected environment.  
+
+---
+
+### 2. Import the Collection
+- Open **Postman** → **Collections** → **Import**.  
+- Upload the file `Muvx.postman_collection.json`.  
+- You’ll see the **Muvx** collection with all requests ready.
+
+---
+
+## Authentication
+
+This collection uses **Bearer Token authentication**:  
+- The token is set at the collection level.  
+- All requests automatically use `{{sample_api_key}}` from your active environment.  
+- You don’t need to edit headers manually.  
+
+---
+
+## Using the Collection
+
+With the environment and collection active, you can immediately start testing:
+
+- **Create Order** → Register a new order in Muvx  
+- **Trigger Pickup** → Dispatch an order to delivery  
+- **Get Order Status** → Track status updates  
+- **Cancel Order** → Cancel an existing order  
+
+<Banner>
+For full API details, see the <a href="/documentation/api-order-management">Order Management documentation</a>.
+</Banner>
