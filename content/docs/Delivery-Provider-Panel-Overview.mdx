@@ -1,0 +1,55 @@
+---
+title: "Overview"
+publishedAt: "2025-09-08"
+updatedAt: "2025-09-088"
+summary: "Guidelines for delivery providers on how to use the Muvx Admin Panel effectively."
+kind: "detailed"
+parent: "3. Delivery Provider Panel"
+rank: "1"
+slug: "delivery-provider-panel-overview"
+next: "delivery-provider-panel-connections"
+prev: "admin-panel-manual-settings"
+---
+
+## Introduction
+
+This manual is written for **delivery providers** using the Muvx platform.  
+The panel is designed to help logistics partners manage daily operations, track shipments, and maintain integrations with their business partners.
+
+
+If you are looking for the **Admin Panel Manual for Business Partners (ECs)**, please refer to this link:  
+[Admin Panel Manual for ECs](/documentation/admin-panel-manual-source-start)
+
+
+**Business Partners (ECs)** create and submit orders through Muvx, while delivery providers are responsible for fulfilling those orders and updating their status in the system.  
+
+Within this panel, delivery providers can:  
+- View overall performance and order metrics at a glance  
+- Manage active connections with business partners  
+- Track shipments across their entire lifecycle  
+- Review API requests and debug integration issues  
+- Configure authentication and account settings  
+
+The following sections explain each part of the panel in detail and how it supports the provider’s role in the Muvx ecosystem.
+
+---
+
+## Dashboard
+
+The dashboard provides delivery providers with a quick snapshot of their operations right after logging in.  
+It combines key performance metrics, connection status, and error monitoring in one place.  
+
+- **KPI Cards** display the total number of:  
+  `Created Orders`, `Accepted Orders`, `Picked-up Orders`, `Delivered Orders`  
+  These counters give an overview of how many shipments are in each stage of the delivery lifecycle.  
+
+- **Active Connections** shows the list of connected **Business Partners (ECs)** and their current status.  
+  Selecting *View All* takes you to the full list in the **Connections** section.  
+
+- **Integration Error Logs** highlight the most recent errors that occurred during API communication.  
+  Each record includes: `Company`, `Order ID`, `API Name`, `Status Code`, `Timestamp`.  
+  Selecting *View All* opens the complete log history in the **API Logs** section.  
+
+This page is designed to help providers monitor performance at a glance and quickly identify if action is needed on shipments or integrations.
+
+---

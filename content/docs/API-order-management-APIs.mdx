@@ -56,13 +56,23 @@ Creates a new delivery order in Muvx.
   ],
   "notes": "Leave at the door",
   "cod_amount": 3.5,
+  "destination_id": "ks7fzcatg65zdv4b1plihw0qz57q5qcs",
   "auto_pickup": true,
   "scheduled_pickup_time": "2025-07-16T15:00:00Z"
 }
 ```
 
-> **Note**: address fields can be a plain string or a structured object. lat and lng are optional but improve delivery accuracy.
+<Banner title="Address Fields">
+  Address fields can be provided either as a plain string or as a structured object. <code>lat</code> and <code>lng</code> are optional but improve delivery accuracy.
+</Banner>
+<div className="mt-6"></div>
+<Banner title="Destination Routing">
+  • If you provide <code>destination_id</code>, the order will be created for that specific destination.  
+  • If omitted, the order will automatically route to the Source’s <strong>default</strong> destination.  
+  • You can fetch available destinations (and see which one is default) via the <a href="/documentation/api-order-management#4-destinations-list">Destinations List</a> API or in the panel under <em>Source &rarr; Overview</em>.
+</Banner>
 
+<div className="mt-6"></div>
 <div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
   200 OK Response
 </div>
@@ -214,3 +224,43 @@ Manually triggers a pickup for an existing order if auto-pickup is disabled or d
 ```
 
 ---
+
+## 4. Destinations List
+
+`GET /v1/destinations`
+
+Returns all Active destinations linked to the calling Source (the Source is inferred from the API key used to call this endpoint).
+Use the returned id to target a specific destination when creating an order — pass it as destination_id in Create Order (POST /v1/orders) to route the order to that destination.
+
+
+<div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
+  200 OK Response
+</div>
+
+```json
+{
+  "success": true,
+  "destinations": [
+    {
+      "id": "ks7871ycvns4h4nx530c0ss0ks7q4dqt",
+      "name": "beep beep DMS",
+      "is_default": true,
+      "environment": "sandbox",
+      "provider": "beepbeep"
+    },
+    {
+      "id": "ks7fzcatg65zdv4b1gmqhw0qz57q5qcs",
+      "name": "autobot test",
+      "is_default": false,
+      "environment": "sandbox",
+      "provider": "autobot"
+    }
+  ]
+}
+```
+
+<Banner title="Notes">  
+  • Only destinations with status **Active** are returned.  
+  • Each destination includes its `environment` (`sandbox` or `production`) and `provider` identifier.  
+  • Exactly one destination per Source is always marked as `is_default: true`.  
+</Banner>  
