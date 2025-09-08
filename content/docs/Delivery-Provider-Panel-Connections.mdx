@@ -1,0 +1,115 @@
+---
+title: "Connections"
+publishedAt: "2025-09-08"
+updatedAt: "2025-09-08"
+summary: "The Connections section lets delivery providers manage their relationships with other businesses on Muvx.  "
+kind: "detailed"
+parent: "3. Delivery Provider Panel"
+rank: "2"
+slug: "delivery-provider-panel-connections"
+next: "delivery-provider-panel-activity-monitor"
+prev: "delivery-provider-panel-overview"
+---
+
+
+## Business Partner (List)
+The **Business Partner** page shows all partners your company is already connected to.
+
+- Each row in the list includes:  
+  `Company Name`, `Status`, `Number of Connections`, `Total Shipments`, `Action`
+
+- From here you can:  
+  - See which partners are currently active or inactive  
+  - Track how many connections and shipments exist with each partner  
+  - Click **Action → View Details** to open the **Business Partner Detail** page
+
+
+## Business Partner Detail
+
+The detail view is accessible from *Business Partner (List → Action: Open)*  
+and contains four tabs:
+
+#### A) Overview
+The **Overview** tab gives a quick summary of this business partner’s performance and health.
+
+- KPI cards show totals for:  
+  `Created Orders`, `In Progress Orders`, `On Way Orders`, `Delivered Orders`
+
+- A preview of **Integration Error Logs** lists:  
+  `Company`, `Order ID`, `API Name`, `Status Code`, `Timestamp`
+
+- From here you can:  
+  - Monitor overall shipment flow at a glance  
+  - Identify recent integration errors quickly  
+  - Navigate to the full **Logs** page for detailed debugging  
+
+#### B) Logs
+
+The **Logs** section shows **all API interactions** related to this business partner.
+
+Each log entry displays:
+
+`Company`, `Order ID`, `API Name`, `Status Code`, `Timestamp`, `Path`, `IP Address`, `Details`
+
+
+#### C) Shipment
+The **Shipment** tab shows all shipments associated with this business partner.
+
+- Filter shipments by status:  
+  `Created`, `Accepted`, `Dispatched`, `Picked Up`, `In Transit`, `Delivered`, `Cancelled`, `Failed`
+
+- Each row includes:  
+  `Integration ID`, `Source`, `Shipment ID`, `Created Date`, `Status`, `COD (Cash on Delivery)`, `Last Updated`, `Details`
+
+#### D) Settings
+
+The **Settings** tab allows you to manage authentication and configuration for this business partner.  
+
+Depending on the delivery provider’s system, the required credentials can vary. For example, one provider may only need an `API Key`, while another may require `Username` and `Password`
+
+---
+## Catalog
+
+The **Catalog** page works as a marketplace where delivery providers can discover business partners **who have chosen to be visible**.
+
+- From here you can:  
+  - Browse available partners to expand your network  
+  - Click **Send Request** to start the connection process  
+  - After sending, the request appears in the **My Requests** page
+
+### Connect Business (Send Request flow)
+
+
+When you are in the **Catalog** page and click on the *Send Request* button for a business partner, you will be redirected here.  
+In this screen you must provide the credentials that allow Muvx to integrate your system with the partner’s system.
+This step is called **Connect Business** and it is required to activate the relationship.
+
+<Banner title="Notes">  
+  • Muvx is only an integration layer — all contracts and agreements with the partner must be handled directly between you and them.  
+  • Submitting a request in the Catalog does not replace the need for a business agreement.  
+</Banner>  
+
+The required fields depend on the **structure of the delivery provider’s system** integrated with Muvx.  
+They may include an `API Key`, `Username & Password`, or `Client ID & Secret`.  
+Muvx automatically displays the correct fields for each provider in the form.  
+
+After you submit the request:  
+- The partner reviews your request and either approves or rejects it.  
+- While the request is pending, you can still see its status in the **My Requests** page.  
+- Once approved, the partner is added to your **Business Partner List** and you will be able to manage shipments, logs, and settings for that connection.  
+- If rejected, the request remains visible in *My Requests* with a rejected status, and you can try again later with updated information.  
+---
+
+## My Requests
+
+The **My Requests** page shows all connection requests that have been sent to business partners and their current status.
+
+- Filter requests by:  
+  `All`, `Approved`, `Rejected`, `Pending`
+
+- Each row in the list includes:  
+  `Company Name`, `Request Sent On`, `Status`, `Last Status Update`, `Action`
+
+- From here you can:  
+  - Open a request when its status is **Approved** and view the **Business Partner Detail**  
+  - Cancel a request if its status is **Pending**
