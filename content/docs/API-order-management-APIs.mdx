@@ -63,7 +63,8 @@ Creates a new delivery order in Muvx.
 ```
 
 <Banner title="Address Fields">
-  Address fields can be provided either as a plain string or as a structured object. <code>lat</code> and <code>lng</code> are optional but improve delivery accuracy.
+  Address fields can be provided either as a plain string or as a structured object. <code>lat</code> and <code>lng</code> are optional but improve delivery accuracy.  
+  However, some Delivery Providers may enforce them as mandatory. If your order is routed to such a destination and these fields are missing, the request will fail with a validation error.
 </Banner>
 <div className="mt-6"></div>
 <Banner title="Destination Routing">
@@ -71,6 +72,74 @@ Creates a new delivery order in Muvx.
   • If omitted, the order will automatically route to the Source’s <strong>default</strong> destination.  
   • You can fetch available destinations (and see which one is default) via the <a href="/documentation/api-order-management#4-destinations-list">Destinations List</a> API or in the panel under <em>Source &rarr; Overview</em>.
 </Banner>
+
+<div className="mt-6"></div>
+<Banner title="Pickup Flow & Auto-Dispatch">
+  Auto Pickup controls when the order is sent to the Delivery Provider:
+
+  • auto_pickup: false → The order is created and stored in Muvx but not dispatched until you manually call 
+  <a href="/documentation/api-order-management#4-trigger-pickup">Trigger Pickup</a>.  
+
+  • auto_pickup: true →  
+    – Without scheduled_pickup_time → The order is dispatched to the Delivery Provider immediately.  
+    – With scheduled_pickup_time → The order is first stored in Muvx and held until the scheduled time. At that moment, it is automatically dispatched to the Delivery Provider.  
+
+  Notes:  
+  • You can always trigger dispatch earlier or adjust timing using 
+  <a href="/documentation/api-order-management#4-trigger-pickup">Trigger Pickup</a> (depending on the order status).  
+  • scheduled_pickup_time must use ISO-8601 UTC format, e.g. 2025-07-16T15:00:00Z.
+</Banner>
+
+### Required Fields 
+
+When creating an order in Muvx, some of fields are strictly required.
+All other fields are either optional (e.g. items, notes, cod_amount, coordinates, scheduled_pickup_time).
+
+The following fields must always be provided :
+
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Field</TableHeader>
+      <TableHeader>Requirement</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>integrationOrderId</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>pickup.name</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>pickup.address</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>pickup.phone</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>dropoff.name</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>dropoff.address</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>dropoff.phone</TableCell>
+      <TableCell>Required</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>auto_pickup</TableCell>
+      <TableCell>Required (defaults to false if not provided)</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
 
 <div className="mt-6"></div>
 <div className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-3 py-0 rounded">
