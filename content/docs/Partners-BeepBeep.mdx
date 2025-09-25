@@ -1,0 +1,56 @@
+---
+title: "Beep Beep"
+publishedAt: "2025-09-15"
+updatedAt: "2025-09-15"
+summary: "How to integrate the Beep Beep delivery service into Muvx."
+kind: "detailed"
+parent: "4. Partners"
+rank: "1"
+slug: "partners-beepbeep"
+next: "delivery-provider-panel-connections"
+prev: "admin-panel-manual-settings"
+---
+
+Beep Beep is a delivery service API used for **urban logistics**.  
+If you want to send your orders through **Beep Beep** using Muvx, please note:
+
+- You must first **sign a contract directly with Beep Beep**.  
+- All terms (such as delivery costs and conditions) are handled in that contract.  
+- You must obtain your **API Key** from Beep Beep before integration.
+
+---
+
+## Integration Flow
+
+1. **Register & Create Source**  
+   Before connecting Beep Beep, you must have at least one **Source** set up.  
+   → See [Source Setup Guide](admin-panel-manual-source-start).
+
+2. **Create Destination**  
+   - From the **Catalog** page, browse the list of available Delivery Providers.  
+   - Select **Beep Beep**.  
+   - In the integration form:
+     - Enter a **Destination Name** (internal label for your Beep Beep destination).  
+     - Paste the **API Key** you obtained from Beep Beep.  
+     - Choose which **Sources** this Destination should connect to.
+
+3. **Complete Integration**  
+   Once submitted, your **Destination** will be created and linked to the selected Sources.  
+   → For more details about Destinations, see [Destination Details Documentation](admin-panel-manual-destination-details).
+
+---
+
+## Important Notes
+
+- **No Native Scheduled Pickup**  
+  Beep Beep does not support scheduling pickups for a future time (`scheduled_pickup_time`).  
+  However, in Muvx you can still provide this field when creating an order.  
+  - Muvx will **hold your order** until the scheduled time.  
+  - At that time, Muvx sends the order to Beep Beep, and a driver will be assigned.
+
+- **No Post-Creation Cancellation**  
+  Beep Beep does not allow canceling an order once it has been created.  
+  - If you use `scheduled_pickup_time`, you may still **cancel** the order *before* the scheduled pickup time is reached.  
+  - After that, cancellation is no longer possible.
+
+---
