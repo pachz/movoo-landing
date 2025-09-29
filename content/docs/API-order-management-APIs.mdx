@@ -2,7 +2,7 @@
 title: "Order Management APIs"
 publishedAt: "2025-07-30"
 updatedAt: "2025-07-30"
-summary: "These endpoints allow your system — whether it’s an e-commerce platform, restaurant app, or any custom backend — to create, update, and track delivery orders via Muvx."
+summary: "These endpoints allow your system (whether it’s an e-commerce platform, restaurant app, or any custom backend) to create, update, and track delivery orders via Muvx."
 kind: "detailed"
 parent: "API Docs"
 rank: "4"
@@ -62,10 +62,7 @@ Creates a new delivery order in Muvx.
 }
 ```
 
-<Banner title="Address Fields">
-  Address fields can be provided either as a plain string or as a structured object. <code>lat</code> and <code>lng</code> are optional but improve delivery accuracy.  
-  However, some Delivery Providers may enforce them as mandatory. If your order is routed to such a destination and these fields are missing, the request will fail with a validation error.
-</Banner>
+
 <div className="mt-6"></div>
 <Banner title="Destination Routing">
   • If you provide <code>destination_id</code>, the order will be created for that specific destination.  
@@ -102,40 +99,49 @@ The following fields must always be provided :
     <TableRow>
       <TableHeader>Field</TableHeader>
       <TableHeader>Requirement</TableHeader>
+      <TableHeader>Description</TableHeader>
     </TableRow>
   </TableHead>
   <TableBody>
     <TableRow>
       <TableCell>integrationOrderId</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell>Unique order ID from your system (must not be duplicated). Muvx also generates its own <code>id</code> in the response.</TableCell>
     </TableRow>
     <TableRow>
       <TableCell>pickup.name</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell> - </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>pickup.address</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell> - </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>pickup.phone</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell> - </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>dropoff.name</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell> - </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>dropoff.address</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell> - </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>dropoff.phone</TableCell>
       <TableCell>Required</TableCell>
+      <TableCell> - </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>auto_pickup</TableCell>
-      <TableCell>Required (defaults to false if not provided)</TableCell>
+      <TableCell>Required</TableCell>
+      <TableCell>defaults to false if not provided</TableCell>
     </TableRow>
   </TableBody>
 </Table>
@@ -294,7 +300,7 @@ Manually triggers a pickup for an existing order if auto-pickup is disabled or d
 
 ---
 
-## 4. Destinations List
+## 5. Destinations List
 
 `GET /v1/destinations`
 
