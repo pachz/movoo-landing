@@ -34,6 +34,13 @@ and contains four tabs:
 #### A) Overview
 The **Overview** tab gives a quick summary of this business partner’s performance and health.
 
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759106223786_image_2025-09-29_04-07-02.png"
+  alt="Overview Enterprise Merchant"
+  width="2874"
+  height="1052"
+/>
+
 - KPI cards show totals for:  
   `Created Orders`, `In Progress Orders`, `On Way Orders`, `Delivered Orders`
 
@@ -75,8 +82,23 @@ Depending on the delivery provider’s system, the required credentials can vary
 
 Use the top-right button (**Add Enterprise Merchant**) to open the **Catalog**.
 
-The Catalog lists merchants who opted to be discoverable. From there you can select a merchant and send a connection request.  
-After you submit the request:
+The Catalog lists merchants who opted to be discoverable. From there you can select a merchant and send a connection request.
+
+Each merchant in the Catalog can appear in one of the following states:
+
+- **Send Request** – Available to select and send a new connection request.
+- **Accepted** – Your request was previously sent and approved.
+- **Pending** – You have sent a request but it is still awaiting the merchant’s approval.
+- **Rejected** – Your request was sent but declined by the merchant.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759105611083_image_2025-09-29_03-56-49.png"
+  alt="Add Enterprise Merchant"
+  width="2872"
+  height="1186"
+/>
+
+After you submit a request:
 
 - The merchant **immediately appears in your Enterprise Merchant list** with **Status = Pending**.  
 - The connection remains **inactive (Disabled)** until the merchant **approves** your request.  
@@ -97,6 +119,14 @@ These vary depending on both systems. Examples include:
 - API Key (generated in your system and shared with the merchant)  
 - Username & Password  
 - Client ID & Secret
+
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759106400362_image_2025-09-29_04-09-59.png"
+  alt="Connect Merchant"
+  width="2846"
+  height="1058"
+/>
 
 Once submitted, the system validates your inputs and creates the pending connection entry in your **Enterprise Merchant** list. After approval, you can manage shipments, logs, and settings for that connection.
 
@@ -129,6 +159,13 @@ The detail page is divided into three tabs:
 
 #### 1. Overview
 The **Overview** tab provides a quick snapshot of the merchant’s account and performance.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759106625228_image_2025-09-29_04-13-43.png"
+  alt="Overview Individual Merchant"
+  width="2848"
+  height="1662"
+/>
 
 - KPI cards show totals for:  
   **Created Orders**, **Accepted Orders**, **Picked-up Orders**, **Delivered Orders**  
@@ -184,12 +221,27 @@ Enter:
 - Email Address  
 - Brand Name (optional)
 
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759052849467_image_2025-09-28_13-17-28.png"
+  alt="Individual Merchant"
+  width="2866"
+  height="1180"
+/>
+
 #### Step 2 — Integration Setup
-Provide the **authentication fields required by your company’s integration** so Muvx can place the merchant’s manual orders into your delivery system.  
+Provide the **authentication fields required by your company’s integration** so Muvx can place the merchant’s manual orders into your delivery system. The entered information will be validated and connection tested here. If the details are correct, you can proceed to the next step.
+ 
 The exact fields vary by provider; common examples:
 - API Key (issued in your system)  
 - Username & Password  
 - Client ID & Secret
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759053029762_image_2025-09-28_13-20-28.png"
+  alt="Individual Merchant - Integration Setup"
+  width="2860"
+  height="864"
+/>
 
 #### Step 3 — Pickup & Price
 Define the default pickup details and per-shipment price:
@@ -197,6 +249,13 @@ Define the default pickup details and per-shipment price:
   • **Area** and **Street** auto-fill from the selected pin and are **not editable**.  
   • Enter **Block**, **Home/Building**, and **Address Line**.
 - **Fixed Delivery Cost**: The flat price you charge this merchant per shipment.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759053629448_screencapture_panel_muvx_ai_the_delivery_company_9234d6_addIndividualMerchant.png"
+  alt="Individual Merchant - Pickup & Price"
+  width="2859"
+  height="2273"
+/>
 
 #### Step 4 — Review
 Verify:
