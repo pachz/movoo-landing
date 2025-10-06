@@ -11,26 +11,35 @@ next: "delivery-provider-panel-activity-monitor"
 prev: "delivery-provider-panel-overview"
 ---
 
+## Enterprise Merchant
 
-## Business Partner (List)
-The **Business Partner** page shows all partners your company is already connected to.
+The **Enterprise Merchant** section allows delivery providers to manage and track all enterprise-level merchants connected to their company.
 
-- Each row in the list includes:  
-  `Company Name`, `Status`, `Number of Connections`, `Total Shipments`, `Action`
+### Merchant List
 
-- From here you can:  
-  - See which partners are currently active or inactive  
-  - Track how many connections and shipments exist with each partner  
-  - Click **Action → View Details** to open the **Business Partner Detail** page
+The main list shows all enterprise merchants linked to your company.  
+Each row in the table includes:
 
+- **Company Name** – The merchant company name.  
+- **Status** – Connection status (e.g., Pending / Enabled / Disabled / Rejected).  
+- **Number of Connections** – A company may create multiple destinations and connect from different sources.  
+- **Total Shipments** – Total shipments processed with this merchant.  
+- **Action** – Opens the **Enterprise Merchant Detail** page.
 
-## Business Partner Detail
+### Merchant Detail
 
-The detail view is accessible from *Business Partner (List → Action: Open)*  
+The detail view is accessible from *Merchant (List → Action: Open)*  
 and contains four tabs:
 
 #### A) Overview
-The **Overview** tab gives a quick summary of this business partner’s performance and health.
+The **Overview** tab gives a quick summary of this Merchant’s performance and health.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759106223786_image_2025-09-29_04-07-02.png"
+  alt="Overview Enterprise Merchant"
+  width="2874"
+  height="1052"
+/>
 
 - KPI cards show totals for:  
   `Created Orders`, `In Progress Orders`, `On Way Orders`, `Delivered Orders`
@@ -45,7 +54,7 @@ The **Overview** tab gives a quick summary of this business partner’s performa
 
 #### B) Logs
 
-The **Logs** section shows **all API interactions** related to this business partner.
+The **Logs** section shows **all API interactions** related to this Merchant.
 
 Each log entry displays:
 
@@ -53,7 +62,7 @@ Each log entry displays:
 
 
 #### C) Shipment
-The **Shipment** tab shows all shipments associated with this business partner.
+The **Shipment** tab shows all shipments associated with this Merchant.
 
 - Filter shipments by status:  
   `Created`, `Accepted`, `Dispatched`, `Picked Up`, `In Transit`, `Delivered`, `Cancelled`, `Failed`
@@ -63,53 +72,208 @@ The **Shipment** tab shows all shipments associated with this business partner.
 
 #### D) Settings
 
-The **Settings** tab allows you to manage authentication and configuration for this business partner.  
+The **Settings** tab allows you to manage authentication and configuration for this Merchant.  
 
 Depending on the delivery provider’s system, the required credentials can vary. For example, one provider may only need an `API Key`, while another may require `Username` and `Password`
 
 ---
-## Catalog
 
-The **Catalog** page works as a marketplace where delivery providers can discover business partners **who have chosen to be visible**.
+### Add Enterprise Merchant
 
-- From here you can:  
-  - Browse available partners to expand your network  
-  - Click **Send Request** to start the connection process  
-  - After sending, the request appears in the **My Requests** page
+Use the top-right button (**Add Enterprise Merchant**) to open the **Catalog**.
 
-### Connect Business (Send Request flow)
+The Catalog lists merchants who opted to be discoverable. From there you can select a merchant and send a connection request.
+
+Each merchant in the Catalog can appear in one of the following states:
+
+- **Send Request** – Available to select and send a new connection request.
+- **Accepted** – Your request was previously sent and approved.
+- **Pending** – You have sent a request but it is still awaiting the merchant’s approval.
+- **Rejected** – Your request was sent but declined by the merchant.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759105611083_image_2025-09-29_03-56-49.png"
+  alt="Add Enterprise Merchant"
+  width="2872"
+  height="1186"
+/>
+
+After you submit a request:
+
+- The merchant **immediately appears in your Enterprise Merchant list** with **Status = Pending**.  
+- The connection remains **inactive (Disabled)** until the merchant **approves** your request.  
+- Once approved, the status changes to **Enabled** and the connection becomes active.  
+- If the merchant rejects the request, the status becomes **Rejected** and remains visible in the same list.
+
+<Banner title="Important Notes">
+• All negotiations happen outside of Muvx. Sending a request does **not** imply a signed agreement.  
+• Pricing, service terms, and any legal agreements must be finalized directly between you and the merchant.  
+• A connection request must be approved by the merchant before it becomes active.
+</Banner>
+
+### Connection Flow
+
+When you send a request to connect with an enterprise merchant, you must provide the required integration credentials.  
+These vary depending on both systems. Examples include:
+
+- API Key (generated in your system and shared with the merchant)  
+- Username & Password  
+- Client ID & Secret
 
 
-When you are in the **Catalog** page and click on the *Send Request* button for a business partner, you will be redirected here.  
-In this screen you must provide the credentials that allow Muvx to integrate your system with the partner’s system.
-This step is called **Connect Business** and it is required to activate the relationship.
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759106400362_image_2025-09-29_04-09-59.png"
+  alt="Connect Merchant"
+  width="2846"
+  height="1058"
+/>
 
-<Banner title="Notes">  
-  • Muvx is only an integration layer — all contracts and agreements with the partner must be handled directly between you and them.  
-  • Submitting a request in the Catalog does not replace the need for a business agreement.  
-</Banner>  
+Once submitted, the system validates your inputs and creates the pending connection entry in your **Enterprise Merchant** list. After approval, you can manage shipments, logs, and settings for that connection.
 
-The required fields depend on the **structure of the delivery provider’s system** integrated with Muvx.  
-They may include an `API Key`, `Username & Password`, or `Client ID & Secret`.  
-Muvx automatically displays the correct fields for each provider in the form.  
-
-After you submit the request:  
-- The partner reviews your request and either approves or rejects it.  
-- While the request is pending, you can still see its status in the **My Requests** page.  
-- Once approved, the partner is added to your **Business Partner List** and you will be able to manage shipments, logs, and settings for that connection.  
-- If rejected, the request remains visible in *My Requests* with a rejected status, and you can try again later with updated information.  
 ---
 
-## My Requests
+## Individual Merchant
 
-The **My Requests** page shows all connection requests that have been sent to business partners and their current status.
+**Individual Merchants** are small or independent businesses that do not have their own website or system to integrate with Muvx.  
+Instead of using APIs, delivery providers can **create and manage these merchants directly** in the panel. Once created, the User receives access to a simplified **Muvx Merchant Panel** via emai, where they can **manually register and submit their orders**.  
 
-- Filter requests by:  
-  `All`, `Approved`, `Rejected`, `Pending`
+### Merchant List
 
-- Each row in the list includes:  
-  `Company Name`, `Request Sent On`, `Status`, `Last Status Update`, `Action`
+The list shows all Individual Merchants created under your company.  
+Each row includes:
 
-- From here you can:  
-  - Open a request when its status is **Approved** and view the **Business Partner Detail**  
-  - Cancel a request if its status is **Pending**
+- **Name** – Merchant’s full name  
+- **Brand Name** – Optional store/brand name  
+- **Email** – Used for panel access  
+- **Phone Number** – Merchant’s contact  
+- **Address** – Default pickup address  
+- **Total Shipments** – Shipments completed with this merchant  
+- **Action** – Opens the **Individual Merchant Detail** page
+
+> Note: Individual Merchants are **created directly by the delivery provider**. There is no public catalog for discovery.
+
+### Individual Merchant Detail
+
+Clicking **Action** on any Individual Merchant in the list opens the detail view.  
+The detail page is divided into three tabs:
+
+#### 1. Overview
+The **Overview** tab provides a quick snapshot of the merchant’s account and performance.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759106625228_image_2025-09-29_04-13-43.png"
+  alt="Overview Individual Merchant"
+  width="2848"
+  height="1662"
+/>
+
+- KPI cards show totals for:  
+  **Created Orders**, **Accepted Orders**, **Picked-up Orders**, **Delivered Orders**  
+
+- A **Share Merchant Panel Link** is available so you can quickly copy and send the login link to the merchant.  
+
+- The **Individual Merchant Info** section displays:  
+  • Full Name  
+  • Email  
+  • Phone Number  
+  • Address  
+
+- At the bottom, a list of **Recent Shipments** is shown, including:  
+  **Integration ID**, **Destination**, **Order ID**, **Created Date**, **Status**, **COD**, **Last Updated**
+
+---
+
+#### 2. Shipments
+The **Shipments** tab lists all shipments created by this merchant.
+
+- Filter shipments by status:  
+  **All**, **Created**, **Accepted**, **Dispatched**, **Picked Up**, **In Transit**, **Delivered**, **Cancelled**, **Failed**
+
+- Each row includes:  
+  **Integration ID**, **Destination**, **Shipment ID**, **Created Date**, **Status**, **COD**, **Last Updated**, **Action (open details)**
+
+This view lets you monitor all shipments for the merchant and track their current state in the delivery process.
+
+---
+
+#### 3. Settings
+The **Settings** tab allows you to manage the merchant’s account details and configuration.
+
+- **Merchant Info**: Update full name, phone number, email, and optional brand name.  
+- **Pickup Address**: Adjust the default pickup address (Area and Street auto-filled from the map, with manual entry for Block, Home/Building, and Address Line).  
+- **Connection**: Update authentication credentials (e.g., API Key).  
+- **Pricing**: Set or update the fixed delivery cost per shipment.  
+
+After making changes, click **Save Changes** to apply updates.
+
+---
+
+This structure allows delivery providers to both monitor merchant activity and adjust settings at any time, while the merchant continues to create and send orders via their dedicated panel.
+
+### Add Individual Merchant
+
+Click **Add Individual Merchant** (top-right) to start a guided setup with five steps.
+
+#### Step 1 — Merchant Information
+Enter:
+- Full Name  
+- Phone Number  
+- Email Address  
+- Brand Name (optional)
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759052849467_image_2025-09-28_13-17-28.png"
+  alt="Individual Merchant"
+  width="2866"
+  height="1180"
+/>
+
+#### Step 2 — Integration Setup
+Provide the **authentication fields required by your company’s integration** so Muvx can place the merchant’s manual orders into your delivery system. The entered information will be validated and connection tested here. If the details are correct, you can proceed to the next step.
+ 
+The exact fields vary by provider; common examples:
+- API Key (issued in your system)  
+- Username & Password  
+- Client ID & Secret
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759053029762_image_2025-09-28_13-20-28.png"
+  alt="Individual Merchant - Integration Setup"
+  width="2860"
+  height="864"
+/>
+
+#### Step 3 — Pickup & Price
+Define the default pickup details and per-shipment price:
+- **Pickup Address**: Select the location on the map.  
+  • **Area** and **Street** auto-fill from the selected pin and are **not editable**.  
+  • Enter **Block**, **Home/Building**, and **Address Line**.
+- **Fixed Delivery Cost**: The flat price you charge this merchant per shipment.
+
+<Banner title="Important Notes">
+The merchant cannot edit the address after submission. Please double-check and ensure you enter the correct address before saving.  
+</Banner>
+
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1759053629448_screencapture_panel_muvx_ai_the_delivery_company_9234d6_addIndividualMerchant.png"
+  alt="Individual Merchant - Pickup & Price"
+  width="2859"
+  height="2273"
+/>
+
+
+#### Step 4 — Review
+Verify:
+- Merchant details  
+- Integration credentials  
+- Pickup address and coordinates  
+- Fixed delivery cost
+
+If everything looks correct, confirm.
+
+#### Step 5 — Complete
+After confirmation:
+- The merchant is created under your company.  
+- A **welcome email** is automatically sent to the address from Step 1 with panel access details.  
+- The merchant can now **log in to the Muvx Merchant Panel** and **manually create orders**, which will be routed via **your** delivery integration.

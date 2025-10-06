@@ -2,7 +2,7 @@
 title: "Settings"
 publishedAt: "2025-09-08"
 updatedAt: "2025-09-08"
-summary: "This section explains how delivery providers can manage their **billing, company details, and user accounts** within the Muvx Admin Panel."
+summary: "This section explains how delivery providers can manage their **company details, and user accounts** within the Muvx Admin Panel."
 kind: "detailed"
 parent: "3. Delivery Provider Panel"
 rank: "4"
@@ -11,92 +11,7 @@ next: "api-overview"
 prev: "delivery-provider-panel-activity-monitor"
 ---
 
-## Billing
 
-The Billing section manages your wallet balance, payments, and all charge activity on Muvx.  
-Charges apply **only to delivery providers**. **Business Partners (ECs)** are not billed by Muvx.
-
-Muvx uses a **prepaid wallet** model: you top up your wallet, and fees are **automatically deducted** as shipments are created/processed by your **Business Partners (ECs)** or when chargeable APIs are called.
-
-
----
-
-### Overview
-
-A snapshot of your billing status and the most recent ledger activity.
-
-- **KPI Cards**:
-  - **Wallet Balance** — Current available balance.
-  - **Total Spent (30d)** — Charges deducted in the last 30 days.
-  - **Last Recharge** — Amount and date of the latest top-up.
-
-- **Recent Transactions**: a rolling table of your latest entries with:
-  `Payment Date`, `Type`, `Amount`, `Status` (Success / Pending / Failed).
-
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1757357041873_image_2025-09-08_22-14-00.png" alt="billing overview" width="2870" height="1930" />
-
----
-
-### Wallet
-
-Add funds to your prepaid wallet so operations can continue without interruption.
-
-- **Wallet Balance** — Displays current wallet balance.
-- **Charge Wallet** — Choose a preset amount (e.g., `10 KWD`, `15 KWD`, `20 KWD`) or enter a **Custom** value, then confirm to top up.
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1757357292176_image_2025-09-08_22-18-10.png" alt="wallet" width="2876" height="1522" />
-
-
-<Banner title="Tips">
-  • Keep a safety buffer in your wallet to prevent failed deductions during peak hours.  
-  • Large top-ups reduce the frequency of recharges and reconciliation overhead.  
-</Banner>
-
-
-
----
-
-### Transactions History
-
-A complete ledger of all credits and debits on your account with powerful filters and export.
-
-- **Search & Filters** — Search by `Transaction ID` or `Note`, filter by date range, then **Export Transactions** to CSV.
-- **Table Columns**:
-  `Payment Date`, `Transaction ID`, `Type`, `Amount`, `Status`, `Note`.
-
-**Types** commonly include:
-- **Top Up** — Funds added to wallet (credit).  
-- **Payment** — Charges settled to Muvx (debit).  
-- **Deduction** — Automatic fee deducted for a shipment/API (debit).  
-- **Refund** — Funds returned to wallet (credit).
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1757357478461_image_2025-09-08_22-21-16.png" alt="Transactions" width="2882" height="1518" />
-
----
-
-### Usage History
-
-An audit trail of **chargeable API activity** and per-shipment deductions, grouped by day, with drill-down.
-
-- **Filters** — Pick a date, search by `Shipment ID`.
-- **Daily Summary Columns**:
-  `Date`, `Total Shipments`, `Total Deduction`, `Balance After`, `Details` (Expand/Collapse).
-- **Expanded Rows (per event)**:
-  `Time`, `Shipment ID`, `API Called`, `Deducted`, `Balance After`.
-
-Use **Export CSV** for reporting and reconciliation.
-
-<Image src="https://sawaai.lon1.digitaloceanspaces.com/bot/1757357669729_image_2025-09-08_22-24-27.png" alt="Usage" width="2870" height="1844" />
-
----
-
-## Company Settings
-
-The Company Settings section allows delivery providers to manage their organization profile and control who has access to the panel.  
-It ensures that company details are up to date and that team members have the right roles for collaboration.
-
----
 
 ### Company Information
 
@@ -139,7 +54,7 @@ Manage the list of people who have access to your company’s Delivery Provider 
 ---
 ## User Settings
 
-The **User Settings** section is identical to the one available for **Business Partners (ECs)**.  
+The **User Settings** section is identical to the one available for **Merchants**.  
 It covers personal account information, security options, and notification preferences.  
 
 For detailed explanations, please refer to the shared documentation here:  
