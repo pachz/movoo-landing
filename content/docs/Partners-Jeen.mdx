@@ -1,0 +1,84 @@
+---
+title: "Jeen"
+publishedAt: "2025-10-13"
+updatedAt: "2025-10-13"
+summary: "How to integrate the Jeen delivery service into Muvx."
+kind: "detailed"
+parent: "4. Partners"
+rank: "2"
+slug: "partners-jeen"
+next: "delivery-provider-panel-connections"
+prev: "partners-beepbeep"
+---
+
+
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1760371173565_Screenshot_20251013-192840.png"
+  alt="Jeen"
+  width="1079"
+  height="867"
+/>
+
+[Jeen](https://halajeen.com/) is a delivery platform designed for **efficient and reliable order fulfillment**.  
+Integrating **[Jeen](https://halajeen.com/)** with **Muvx** allows you to manage all your deliveries in one place while keeping order statuses consistent across multiple providers.
+
+---
+
+## Integration Flow
+
+1. **Register & Create Source**  
+   Before connecting Jeen, you must have at least one **Source** created in Muvx.  
+   → See [Source Setup Guide](https://www.muvx.ai/documentation/source-setup) for detailed instructions.
+
+2. **Create Destination**  
+   - From the **Catalog** page, browse the list of available Delivery Providers.  
+   - Select **Jeen**.  
+   - In the integration form:
+     - Enter a **Destination Name** (internal label for your Jeen destination).  
+     - Paste the **Merchant ID** obtained from Jeen.  
+     - Choose which **Sources** this Destination should connect to.  
+   - Submit the form to complete integration.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1760371654742_image_2025-10-13_19-37-33.png"
+  alt="Jeen Destination"
+  width="2896"
+  height="1520"
+/>
+
+3. **Complete Integration**  
+   Once submitted, your **Destination** will be created and linked to the selected Sources.  
+   → For more details about Destinations, see [Destination Details Documentation](https://www.muvx.ai/documentation/destinations).
+
+---
+
+## Status Mapping
+
+The diagram below shows how **Jeen delivery statuses** are mapped into the standard **Muvx status model**.  
+This ensures consistent tracking across all delivery providers.  
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1760372000728_image_2025-10-13_19-43-18.png"
+  alt="Jeen Status Mapping"
+  width="4216"
+  height="4840"
+/>
+
+---
+
+## Important Notes
+
+- **No Native Scheduled Pickup**  
+  Jeen does **not** support scheduling pickups for a future time (`scheduled_pickup_time`).  
+  However, in Muvx you can still provide this field when creating an order.  
+  - Muvx will **hold your order** until the scheduled time.  
+  - At that time, Muvx sends the order to Jeen, and a driver will be assigned.
+
+- **No Post-Creation Cancellation**  
+  Jeen does **not** allow canceling an order once it has been created.  
+  - If you use `scheduled_pickup_time`, you may still **cancel** the order *before* the scheduled pickup time is reached.  
+  - After that, cancellation is no longer possible.  
+  - For manual cancellation after creation, contact **Jeen Support**.
+
+---
