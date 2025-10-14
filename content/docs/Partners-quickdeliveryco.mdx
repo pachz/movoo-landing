@@ -1,0 +1,104 @@
+---
+title: "Quick Delivery"
+publishedAt: "2025-10-13"
+updatedAt: "2025-10-13"
+summary: "How to integrate the Quick Delivery service into Muvx."
+kind: "detailed"
+parent: "4. Partners"
+rank: "3"
+slug: "partners-quick-delivery"
+next: "delivery-provider-panel-connections"
+prev: "partners-jeen"
+---
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1760379088128_image_2025-10-13_21-41-26.png"
+  alt="Quick Delivery"
+  width="3384"
+  height="1498"
+/>
+
+[Quick Delivery](https://www.quickdeliveryco.com/) is a fast and reliable delivery platform.  
+By integrating **[Quick Delivery](https://www.quickdeliveryco.com/)** with **Muvx**, you can quickly create delivery destinations and manage orders efficiently.
+
+---
+
+## Integration Flow
+
+1. **Register & Create Source**  
+   Before connecting Quick Delivery, make sure you have at least one **Source** created in Muvx.  
+   → See [Source Setup Guide](https://www.muvx.ai/documentation/source-setup) for instructions.
+
+2. **Create Destination**  
+   - From the **Catalog** page, browse the list of available Delivery Providers.  
+   - Select **Quick Delivery**.  
+   - In the integration form:
+     - **Destination Name** : Internal label for your Quick Delivery destination.  
+     - **Client ID**: Unique identifier for your client.  
+     - **Client Code**: Code associated with your client for internal tracking.  
+     - **Service Type**: Select your preferred delivery mode (**Flexible** or **Premium**) based on your Quick Delivery contract and service needs.
+     - **Sources**: this Destination should connect to
+   - Submit the form to complete integration.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1760442623227_Screenshot%202025-10-14%20at%2015.19.00.png"
+  alt="Quick Delivery Destination"
+  width="2864"
+  height="1662"
+/>
+
+3. **Complete Integration**  
+   Once submitted, your **Destination** will be created and linked to the selected Sources.  
+   → For more details, see [Destination Details Documentation](https://www.muvx.ai/documentation/destinations).
+
+---
+
+## Status Mapping
+
+
+Quick Delivery statuses are mapped into the standard **Muvx status model** to maintain consistency across all delivery providers.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1760381111815_image_2025-10-13_22-15-09.png"
+  alt="Quick Delivery Status Mapping"
+  width="3928"
+  height="3560"
+/>
+
+---
+
+## Important Notes
+
+- **Scheduled Pickup Handling**  
+  Quick Delivery supports `scheduled Start Time`.  
+  When you provide a `scheduled pickup time` in Muvx, the order is sent immediately to Quick Delivery with the corresponding `scheduled Start Time`. The pickup will occur according to your selected service type (**Flexible** or **Premium**) and the terms of your contract.  
+
+- **No Post-Creation Cancellation**  
+  Quick Delivery does **not** allow canceling an order once it has been sent.  
+  Because Muvx sends the order immediately (whether it is a scheduled pickup or an instant order) **you will not be able to cancel the order at any time**.
+
+### Delivery Services
+
+Quick Delivery offers two types of delivery services:
+
+- **Premium Service**
+  - Standard weight limit per order: Up to 8 kg
+  - Pricing: Based on total distance (in kilometers) from pickup to drop-off.
+  - Order Quantity: No limit on the number of orders.
+  - Service Type: On-demand; once the order is received, it is picked up and delivered immediately to the customer.
+
+- **Flexible Service**
+  - Standard weight limit per order: Up to 8 kg
+  - Pricing: Flat rate (excluding remote areas).
+  - Order Quantity: A minimum of 3 orders is required per pickup. You may send 3 or more orders.
+  - Booking Slots: Delivery is based on the selected time slot. Two daily booking slots are available:
+    - **Slot 1:** Orders booked before 3:00 PM will be delivered the same day.
+    - **Slot 2:** Orders booked after 3:30 PM will be delivered either the same day or the next day.
+
+<Banner title="Quick Delivery Service Type Setup">
+  According to your Quick Delivery contract, when creating a Destination, you must select the service type (Flexible or Premium) as described above.  
+  If your contract grants access to both service types and you want to use both, you must create two separate Destinations, one for Flexible and one for Premium.  
+  Depending on your use case, you can then call the appropriate Destination via API or other integration methods.
+</Banner>
+
+---
