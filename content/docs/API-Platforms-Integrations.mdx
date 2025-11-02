@@ -1,0 +1,453 @@
+---
+title: "Platforms Integrations"
+publishedAt: "2025-07-30"
+updatedAt: "2025-07-30"
+summary: "Muvx provides a unified delivery integration API designed for E-Commerce Platforms and Marketplaces to connect their merchants' stores to multiple delivery providers."
+kind: "detailed"
+parent: "API Docs"
+rank: "6"
+section: "API Docs"
+slug: "api-platforms-integrations"
+next: "postman"
+prev: "api-webhook"
+---
+
+## Overview
+
+Muvx provides a unified delivery integration API designed for E-Commerce Platforms and Marketplaces.
+It allows platforms like Ustore or custom-built solutions to seamlessly connect their merchants' stores to multiple delivery providers (Destinations) through a single, consistent interface.
+
+By integrating with Muvx, your platform can:
+
+- Authenticate securely using your Platform Access Token (OAuth2)
+- Retrieve a list of available delivery providers (Destinations) and the credential fields they require
+- Register merchants from your platform into Muvx
+- Allow merchants to connect their stores to one or more delivery Destinations
+- Receive and manage a unique Merchant Destination Token (API Key) for each merchant–destination connection
+- Use the returned tokens for creating and managing shipments, tracking deliveries, and synchronizing fulfillment data between systems
+
+Muvx handles the complexity of integrating with multiple carriers, giving your platform a single API and consistent data structure across all destinations.
+
+---
+
+## Base Information
+
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Property</TableHeader>
+      <TableHeader>Value</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell><strong>Base URL</strong></TableCell>
+      <TableCell><code>https://core.muvx.ai</code></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><strong>Protocol</strong></TableCell>
+      <TableCell>HTTPS (all endpoints require TLS 1.2 or higher)</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><strong>Authentication</strong></TableCell>
+      <TableCell>Bearer token via OAuth2 Client Credentials flow</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><strong>Content Type</strong></TableCell>
+      <TableCell><code>application/json</code></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><strong>Character Encoding</strong></TableCell>
+      <TableCell>UTF-8</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><strong>Rate Limits</strong></TableCell>
+      <TableCell>1000 requests per minute per Platform</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><strong>Timeouts</strong></TableCell>
+      <TableCell>30 seconds request timeout</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+### Example Request Header
+
+```json
+Authorization: Bearer <platform_access_token>
+Content-Type: application/json
+Accept: application/json
+```
+
+---
+
+## Authentication
+
+All API requests must include a valid Platform Access Token. Tokens are issued using the OAuth2 Client Credentials flow.
+
+`POST /oauth2/token`
+
+**Request**
+
+```json
+{
+  "client_id": "plf_live_12345",
+  "client_secret": "secret_abc123"
+}
+```
+
+**Response**
+
+```json
+{
+  "access_token": "plf_access_abcd5678",
+  "token_type": "bearer",
+  "expires_in": 31536000
+}
+```
+
+Use the `access_token` in all subsequent requests as:
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+<Banner title="Token Expiration">
+  The token expires after the configured period (31536000 seconds → 365 days). When it expires, request a new one using the same credentials.
+</Banner>
+
+---
+
+## Destinations API
+
+### List Available Destinations
+
+Retrieve all delivery providers (Destinations) supported by Muvx.
+Each destination includes its localized names, logos, descriptions, and credential requirements.
+
+`GET /platform/destinations`
+
+**Headers**
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "destinations": [
+    {
+      "id": "dst_qd",
+      "name": "quick delivery",
+      "name_ar": "كويك ديلفري",
+      "logo": "https://cdn.muvx.ai/qd.png",
+      "logo_ar": "https://cdn.muvx.ai/qd_ar.png",
+      "description": "Urban and on-demand delivery service tailored for ecommerce and local businesses.",
+      "description_ar": "خدمة توصيل حضرية وسريعة مصممة خصيصًا للتجارة الإلكترونية والأعمال المحلية.",
+      "credentials_schema": {
+        "destination_label": {
+          "title": "Destination Label",
+          "title_ar": "ملصق الوجهة",
+          "type": "string"
+        },
+        "client_id": {
+          "title": "Client ID",
+          "title_ar": "معرّف العميل",
+          "type": "string"
+        },
+        "client_code": {
+          "title": "Client Code",
+          "title_ar": "كود العميل",
+          "type": "string"
+        },
+        "service_type": {
+          "title": "Service Type",
+          "title_ar": "نوع الخدمة",
+          "type": "string",
+          "enum": ["premium", "flexible"]
+        }
+      },
+      "status": "active"
+    },
+    {
+      "id": "dst_jeen",
+      "name": "Jeen",
+      "name_ar": "جين",
+      "logo": "https://cdn.muvx.ai/jeen.png",
+      "logo_ar": "https://cdn.muvx.ai/jeen_ar.png",
+      "description": "Jeen is your everyday app! Delivery, car wash subscription, or water delivery.",
+      "description_ar": "جين هو تطبيقك اليومي! للتوصيل، أو اشتراك غسيل السيارات، أو توصيل المياه، والمزيد!",
+      "credentials_schema": {
+        "destination_label": {
+          "title": "Destination Label",
+          "title_ar": "ملصق الوجهة",
+          "type": "string"
+        },
+        "merchant_id": {
+          "title": "Merchant ID",
+          "title_ar": "معرّف التاجر",
+          "type": "string"
+        }
+      },
+      "status": "active"
+    }
+  ]
+}
+```
+
+<Banner title="Tip">
+  Use the `credentials_schema` to dynamically render input fields when your merchants choose a destination to connect.
+</Banner>
+
+---
+
+## Merchants API
+
+Each merchant represents a single online store under an E-Commerce Platform or Marketplace.
+Merchants are created and managed by the platform, and their connections to delivery providers are authenticated using Destination Tokens (API Keys), there is no separate merchant token.
+
+### Create a Merchant
+
+Register a new merchant (store) on Muvx.
+This step must be performed before creating any destination connections.
+
+`POST /platform/merchants`
+
+**Headers**
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+**Request**
+
+```json
+{
+  "external_id": "shop_98765",
+  "name": "BookPort Store",
+  "contact": {
+    "email": "owner@example.com",
+    "phone": "+965-00000000",
+    "country": "Kuwait",
+    "address_line": "40, Abdul Rahman Al Ghafigi Street",
+    "website": "https://example.com"
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "id": "mrc_45f9a",
+  "external_id": "shop_98765",
+  "name": "BookPort Store",
+  "status": "active",
+  "created_at": "2025-10-19T10:30:00Z"
+}
+```
+
+<Banner title="External ID">
+  The `external_id` is the merchant's unique ID in your platform (e.g., Ustore store ID). This allows Muvx to associate your internal merchant with its Muvx record. The `id` field is generated by Muvx, while `external_id` is supplied by the platform during merchant creation.
+</Banner>
+
+---
+
+### List All Merchants
+
+`GET /platform/merchants`
+
+**Headers**
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "merchants": [
+    {
+      "id": "mrc_45f9a",
+      "external_id": "shop_98765",
+      "name": "DailyMart Store",
+      "status": "active",
+      "created_at": "2025-10-19T10:30:00Z"
+    },
+    {
+      "id": "mrc_67a8b",
+      "external_id": "shop_12345",
+      "name": "BookPort Store",
+      "status": "disabled",
+      "created_at": "2025-10-19T10:30:00Z"
+    }
+  ]
+}
+```
+
+---
+
+### Retrieve Merchant Details (with Destinations)
+
+Retrieve a merchant's profile, including all connected destinations and their tokens.
+
+`GET /platform/merchants/{merchant_id}?include=destinations,apikey`
+
+**Headers**
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "id": "mrc_45f9a",
+  "external_id": "shop_98765",
+  "name": "BookPort Store",
+  "status": "active",
+  "contact": {
+    "email": "owner@example.com",
+    "phone": "+965-91-000000",
+    "country": "Kuwait",
+    "address_line": "40, Abdul Rahman Al Ghafigi Street",
+    "website": "https://example.com"
+  },
+  "destinations": [
+    {
+      "id": "dst_qd",
+      "name": "quick delivery",
+      "name_ar": "كويك ديلفري",
+      "logo": "https://cdn.muvx.ai/qd.png",
+      "destination_label": "QD DMS",
+      "api_key": "src_live_abcd7890",
+      "status": "connected",
+      "created_at": "2025-10-19T12:00:00Z"
+    },
+    {
+      "id": "dst_jeen",
+      "name": "Jeen",
+      "name_ar": "جين",
+      "logo": "https://cdn.muvx.ai/jeen.png",
+      "destination_label": "Jeen DMS",
+      "api_key": "src_live_xyz9876",
+      "status": "connected",
+      "created_at": "2025-10-19T12:00:00Z"
+    }
+  ],
+  "created_at": "2025-10-19T10:30:00Z",
+  "updated_at": "2025-10-20T08:45:00Z"
+}
+```
+
+<Banner title="Query Parameters">
+  Use this endpoint to display merchant integrations on your dashboard or settings page. The `include=destinations,apikey` query parameter expands the merchant object to include all destination details and their API keys. Without this parameter, the response only returns merchant profile data (no destinations). Each `api_key` is unique to that merchant–destination pair.
+</Banner>
+
+---
+
+### Update Merchant
+
+`PATCH /platform/merchants/{merchant_id}`
+
+**Headers**
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+**Request**
+
+```json
+{
+  "name": "BookNest Store",
+  "contact": {
+    "email": "new-email@example.com"
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "id": "mrc_45f9a",
+  "name": "BookNest Store",
+  "contact": {
+    "email": "new-email@example.com",
+    "phone": "+965-00000000",
+    "country": "Kuwait",
+    "address_line": "40, Abdul Rahman Al Ghafigi Street",
+    "website": "https://example.com"
+  },
+  "updated_at": "2025-10-20T09:00:00Z"
+}
+```
+
+---
+
+## Merchant Destinations API
+
+### Create Merchant Destination
+
+When a merchant selects a destination and provides credentials, use this endpoint to create a destination connection.
+A unique Merchant Destination Token (API Key) will be returned.
+This API key must be securely stored by your platform, it will be required for all future operations related to that merchant's orders, such as creating and tracking shipments through Muvx.
+
+<Banner title="Prerequisites">
+  **Important:** Before creating a destination, the merchant must first be registered in Muvx using the Create Merchant API. The `merchant_id` returned from that endpoint is required here.
+</Banner>
+
+`POST /platform/merchants/{merchant_id}/destinations`
+
+**Headers**
+
+```json
+Authorization: Bearer <platform_access_token>
+```
+
+**Request**
+
+```json
+{
+  "id": "dst_qd",
+  "credentials": {
+    "destination_label": "QD DMS",
+    "client_id": "qd_client_id",
+    "client_code": "secure_code",
+    "service_type": "premium"
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "id": "src_123",
+  "merchant_id": "mrc_45f9a",
+  "destination_id": "dst_qd",
+  "destination_name": "quick delivery",
+  "destination_name_ar": "كويك ديلفري",
+  "destination_label": "QD DMS",
+  "api_key": "src_live_abcd7890",
+  "status": "connected",
+  "created_at": "2025-10-19T12:00:00Z"
+}
+```
+
+<Banner title="Credential Validation">
+  When this API is called, Muvx automatically validates the submitted destination credentials before establishing the connection. It performs a real-time verification with the selected delivery provider using the provided credential fields (e.g., `client_id`, `client_code`, `service_type`, etc.) to ensure authenticity and connectivity. If the credentials are valid, the destination connection will be created and activated immediately. If any credential is invalid, missing, or rejected by the provider, Muvx returns a detailed error response indicating which field failed validation or why the connection could not be established.
+</Banner>
+
+---
