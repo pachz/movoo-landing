@@ -4,7 +4,7 @@ publishedAt: "2025-10-13"
 updatedAt: "2025-10-13"
 summary: "How to integrate the Jeen delivery service into Muvx."
 kind: "detailed"
-parent: "4. Partners"
+parent: "4. Delivery Partners"
 rank: "2"
 slug: "partners-jeen"
 next: "partners-quick-delivery"
@@ -68,6 +68,25 @@ This ensures consistent tracking across all delivery providers.
 ---
 
 ## Important Notes
+- **Limited Service Areas**  
+  Jeen only operates in specific **service areas**.  
+  When you provide coordinates in **Muvx**, the system automatically checks whether the location is within Jeen’s service coverage.  
+  If the coordinates fall **outside** of supported areas, Muvx will return an error and the order will not be created.
+
+  **API Response Example:**
+  ```json
+  {
+      "success": false,
+      "error": "validation_error",
+      "message": "Jeen does not support the pickup coordinates provided. Please choose a supported area."
+  }
+  ```
+
+  **Manual Order Creation:**
+  If you try to create an order manually, the following toast message will appear:
+  Jeen does not support these coordinates. Please choose a supported area.
+
+
 
 - **No Native Scheduled Pickup**  
   Jeen does **not** support scheduling pickups for a future time (`scheduled_pickup_time`).  

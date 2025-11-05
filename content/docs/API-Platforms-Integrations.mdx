@@ -1,7 +1,7 @@
 ---
 title: "Platforms Integrations"
-publishedAt: "2025-07-30"
-updatedAt: "2025-07-30"
+publishedAt: "2025-11-01"
+updatedAt: "2025-11-01"
 summary: "Muvx provides a unified delivery integration API designed for E-Commerce Platforms and Marketplaces to connect their merchants' stores to multiple delivery providers."
 kind: "detailed"
 parent: "API Docs"
@@ -28,6 +28,25 @@ By integrating with Muvx, your platform can:
 
 Muvx handles the complexity of integrating with multiple carriers, giving your platform a single API and consistent data structure across all destinations.
 
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1762177636858_Muvx%20Platform%20Flow.png"
+  alt="Muvx Platform Integration Flow"
+  width="16372"
+  height="7992"
+/>
+
+
+The diagram above provides a high-level overview of the integration flow explained in this documentation.  
+It helps you understand how the Platform, Muvx, and Delivery Providers interact through the main steps, including authentication, merchant registration, and destination creation.  
+For a high-resolution version, you can [download the PDF here](https://sawaai.lon1.digitaloceanspaces.com/bot/1762178314579_Muvx%20Platform%20Flow.pdf).  
+
+---
+
+## Online Postman Documentation
+
+You can also explore the live Postman docs here:  
+- [📖 Muvx Platforms Integrations Postman Documentation](https://documenter.getpostman.com/view/46925579/2sB3Wqtewp)
+
 ---
 
 ## Base Information
@@ -42,7 +61,7 @@ Muvx handles the complexity of integrating with multiple carriers, giving your p
   <TableBody>
     <TableRow>
       <TableCell><strong>Base URL</strong></TableCell>
-      <TableCell><code>https://core.muvx.ai</code></TableCell>
+      <TableCell><code>https://core.muvx.ai/v1</code></TableCell>
     </TableRow>
     <TableRow>
       <TableCell><strong>Protocol</strong></TableCell>
@@ -138,6 +157,9 @@ Authorization: Bearer <platform_access_token>
 ```json
 {
   "success": true,
+  "limit": 20,
+  "next_cursor": null,
+  "has_more": false
   "destinations": [
     {
       "id": "dst_qd",
@@ -200,6 +222,25 @@ Authorization: Bearer <platform_access_token>
 
 <Banner title="Tip">
   Use the `credentials_schema` to dynamically render input fields when your merchants choose a destination to connect.
+</Banner>
+
+<Banner title="Pagination Details">
+
+The **destinations list** endpoint uses cursor-based pagination.  
+Each response includes:
+
+- **`next_cursor`** →  The value you must pass in the next request.
+- **`has_more`** →  A boolean flag indicating whether more pages are available.
+
+
+**Example Request URLs:**
+
+
+#### First request
+`GET /platform/destinations`
+
+#### Next request using next_cursor
+`GET /platform/destinations?limit=20&cursor=3f82a0d9-ff91-4fb3-ae6b-0d48fc93e21b`
 </Banner>
 
 ---
@@ -272,6 +313,9 @@ Authorization: Bearer <platform_access_token>
 ```json
 {
   "success": true,
+  "limit": 20,
+  "next_cursor": null,
+  "has_more": false
   "merchants": [
     {
       "id": "mrc_45f9a",
@@ -290,6 +334,25 @@ Authorization: Bearer <platform_access_token>
   ]
 }
 ```
+
+<Banner title="Pagination Details">
+
+The **merchants list** endpoint uses cursor-based pagination.  
+Each response includes:
+
+- **`next_cursor`** →  The value you must pass in the next request.
+- **`has_more`** →  A boolean flag indicating whether more pages are available.
+
+
+**Example Request URLs:**
+
+
+#### First request
+`GET /platform/merchants`
+
+#### Next request using next_cursor
+`GET /platform/merchants?limit=20&cursor=3f82a0d9-ff91-4fb3-ae6b-0d48fc93e21b`
+</Banner>
 
 ---
 
