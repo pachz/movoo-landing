@@ -1,0 +1,82 @@
+---
+title: "Seeda"
+publishedAt: "2025-11-01"
+updatedAt: "2025-11-01"
+summary: "How to integrate the Seeda delivery service into Muvx."
+kind: "detailed"
+parent: "4. Delivery Partners"
+rank: "5"
+slug: "partners-seeda"
+next: "partners-ososs"
+prev: "partners-quick-delivery"
+---
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1762354662279_Screenshot%202025-11-05%20at%206.25.17%20PM.png"
+  alt="Seeda"
+  width="3410"
+  height="1782"
+/>
+
+**[seeda](https://getseeda.com/)** is a delivery platform that handles the delivery so you can focus on growing your business.  
+By integrating **[seeda](https://getseeda.com/)** with **Muvx**, you can manage all your deliveries in one place while keeping order statuses consistent across multiple providers.
+
+---
+
+## Integration Flow
+
+1. **Register & Create Source**  
+   Before connecting Seeda, you must have at least one **Source** created in Muvx.  
+   → See [Source Setup Guide](/documentation/admin-panel-manual-source-start) for detailed instructions.
+
+2. **Create Destination**  
+   - From the **Destination Catalog** page, browse the list of available Delivery Providers.  
+   - Select **Seeda**.  
+   - In the integration form:
+      - **Destination Name**: Internal name for your Seeda destination instance (e.g., "Seeda" or "Seeda DMS")
+      - **Partner**: Partner name provided by Seeda (sent in the Partner header). After entering the Partner name, Muvx will validate it with Seeda and retrieve all stores associated with that partner.
+      - **Select Seeda Store**: Once the Partner is validated, you'll see a list of available stores. Select the Seeda store that will fulfill your orders. Use the "Reload" button to refresh the store list if needed.
+      - **Sources**: Select one or more sources that this Destination should connect to
+   - Submit the form to complete integration.
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1762355974300_image_2025-11-05_18-49-32.png"
+  alt="Seeda Destination"
+  width="2814"
+  height="1648"
+/>
+
+3. **Complete Integration**  
+   Once submitted, your **Destination** will be created and linked to the selected Sources and the chosen Seeda store.  
+   → For more details about Destinations, see [Destination Details Documentation](/documentation/admin-panel-manual-destination-details).
+
+---
+
+## Status Mapping
+
+The diagram below shows how **Seeda delivery statuses** are mapped into the standard **Muvx status model**.  
+This ensures consistent tracking across all delivery providers.  
+
+<Image
+  src="https://sawaai.lon1.digitaloceanspaces.com/bot/1762354034646_seedamapping.png"
+  alt="Seeda Status Mapping"
+  width="4736"
+  height="5352"
+/>
+
+---
+
+## Important Notes
+
+- **Partner Validation**  
+  When you enter the **Partner** name in the integration form, Muvx validates it with Seeda's system.  
+  Only after successful validation will the available stores be loaded and displayed in the "Select Seeda Store" dropdown.  
+  If the Partner name is invalid or not found, you'll receive an error message and the store list will not appear.
+
+- **Store Selection**  
+  Each Seeda partner may have multiple stores associated with their account.  
+  You must select the specific store that will fulfill orders for this Destination.  
+  If you need to refresh the store list (for example, if new stores are added to your partner account), use the **Reload** button next to the store selection field.
+
+---
+

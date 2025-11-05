@@ -110,8 +110,8 @@ All API requests must include a valid Platform Access Token. Tokens are issued u
 
 ```json
 {
-  "client_id": "plf_live_12345",
-  "client_secret": "secret_abc123"
+  "client_id": "ci_123456789",
+  "client_secret": "cs_123456789"
 }
 ```
 
@@ -514,3 +514,25 @@ Authorization: Bearer <platform_access_token>
 </Banner>
 
 ---
+
+## Next Steps
+
+Up to this point, the integration flow between Muvx and the platform has been explained. You have learned how to:
+
+- Authenticate using Platform Access Tokens
+- Retrieve available delivery destinations and their credential requirements
+- Register merchants on Muvx
+- List and retrieve merchant details
+- Update merchant information
+- Connect merchants to delivery providers and obtain API keys
+- View destination connections and their status
+
+Once you have completed the integration setup and obtained the Merchant Destination Token (API Key), you can proceed with order management operations. For detailed information on managing orders, including:
+
+- Creating shipments and orders
+- Checking order status and tracking deliveries
+- Triggering pickup requests
+- Managing fulfillment workflows
+- And more
+
+Please refer to the [Muvx Order Management documentation](/documentation/api-order-management).
