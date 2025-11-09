@@ -44,8 +44,8 @@ For a high-resolution version, you can [download the PDF here](https://sawaai.lo
 
 ## Online Postman Documentation
 
-You can also explore the live Postman docs here:  
-- [📖 Muvx Platforms Integrations Postman Documentation](https://documenter.getpostman.com/view/46925579/2sB3Wqtewp)
+To explore and test the Platforms Integration APIs using ready-made Postman requests and environment variables,  
+please refer to the [Muvx Platforms Integrations Postman documentation](/documentation/postman-platforms).
 
 ---
 
@@ -103,6 +103,10 @@ Accept: application/json
 ## Authentication
 
 All API requests must include a valid Platform Access Token. Tokens are issued using the OAuth2 Client Credentials flow.
+
+<Banner title="Getting Your Client Credentials">
+  Before you can request an access token, you need to create a regular Muvx account and contact the Muvx support team to obtain your <code>client_id</code> and <code>client_secret</code> credentials.
+</Banner>
 
 `POST /oauth2/token`
 
@@ -517,7 +521,7 @@ Authorization: Bearer <platform_access_token>
 
 ## Next Steps
 
-Up to this point, the integration flow between Muvx and the platform has been explained. You have learned how to:
+Up to this point, the integration flow between Muvx and your platform has been covered. You have seen how to:
 
 - Authenticate using Platform Access Tokens
 - Retrieve available delivery destinations and their credential requirements
@@ -532,7 +536,7 @@ Once you have completed the integration setup and obtained the Merchant Destinat
 - Creating shipments and orders
 - Checking order status and tracking deliveries
 - Triggering pickup requests
-- Managing fulfillment workflows
+- Cancel or update existing orders  
 - And more
 
 Please refer to the [Muvx Order Management documentation](/documentation/api-order-management).
