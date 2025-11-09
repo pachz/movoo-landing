@@ -1,0 +1,132 @@
+---
+title: "Muvx Platforms Integrations Postman"
+publishedAt: "2025-11-01"
+updatedAt: "2025-11-01"
+summary: "The Muvx Platforms Integrations Postman Collection provides everything E-Commerce Platforms and Marketplaces need to test and explore the unified delivery integration APIs."
+kind: "detailed"
+parent: "Developer Tools"
+rank: "2"
+section: "API Docs"
+slug: "postman-platforms"
+prev: "postman-order-management"
+
+---
+
+Muvx provides a **unified delivery integration API** designed for **E-Commerce Platforms and Marketplaces** to connect their merchants' stores to multiple delivery providers through a single, consistent interface.  
+
+This Postman Collection helps you explore and test the **Platforms Integration APIs** effortlessly.  
+With it, you can:
+
+- Authenticate using your Platform Access Token (OAuth2)  
+- Retrieve supported delivery destinations  
+- Register and manage merchants  
+- Connect merchants to delivery providers and obtain their unique API keys  
+
+---
+
+## Downloads
+
+Use these files to quickly set up Postman and start testing the Muvx Platform APIs:  
+- [⬇️ Download Postman Collection](https://sawaai.lon1.digitaloceanspaces.com/bot/1762693673269_Muvx%20Platforms%20Integrations.postman_collection.json)  
+- [⬇️ Download Postman Environment](https://sawaai.lon1.digitaloceanspaces.com/bot/1762693743922_Muvx%20Env.postman_environment.json)
+
+---
+
+## Online Postman Documentation
+
+You can also explore the live Postman docs here:  
+- [📖 Muvx Platforms Integrations Postman Documentation](https://documenter.getpostman.com/view/46925579/2sB3Wqtewp)
+
+---
+
+## Setup Instructions
+
+You have **two options** to configure the environment:  
+
+#### Option A — Import the Environment (Recommended)  
+- Open **Postman** → **Environments** → **Import**  
+- Upload the file `Muvx Platform Env.postman_environment.json`  
+- Activate the environment named **Muvx Env** from the dropdown in the top-right  
+
+Environment variables included:  
+
+- `muvx-platform_base_url` → API base URL (`https://core.muvx.ai/v1`)  
+- `platform_access_token` → **Your Platform OAuth2 access token**  
+- `platform_merchant_id` → **Merchant ID returned from Muvx after creation**  
+
+<Banner>
+- Always replace the <code>platform_access_token</code> value with your real Platform Access Token.<br/>
+- To set platform_merchant_id, first create a merchant using the <b>Create Merchant</b> API, then copy the returned <code>id</code> into this variable.
+</Banner>
+
+---
+
+#### Option B — Create the Environment Manually  
+If you prefer not to use the file, you can manually create the environment:  
+
+1. Open **Postman** → **Environments** → **Add New**  
+2. Add the following variables and values:  
+
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableHeader>Key</TableHeader>
+      <TableHeader>Value</TableHeader>
+      <TableHeader>Type</TableHeader>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell><code>muvx-platform_base_url</code></TableCell>
+      <TableCell><code>https://core.muvx.ai/v1</code></TableCell>
+      <TableCell>Default</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code>platform_access_token</code></TableCell>
+      <TableCell><i>Your real Platform Access Token</i></TableCell>
+      <TableCell>Secret</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell><code>platform_merchant_id</code></TableCell>
+      <TableCell><i>Example merchant ID</i></TableCell>
+      <TableCell>Default</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+3. Save the environment.  
+4. Select it from the environment dropdown in the top-right.  
+
+> Only one environment can be active at a time. All `{{variables}}` in the collection will be resolved from the selected environment.  
+
+---
+
+### 2. Import the Collection
+- Open **Postman** → **Collections** → **Import**.  
+- Upload the file `Muvx Platform Collection.postman_collection.json`.  
+- You’ll see the **Muvx Platforms Integrations** collection with all requests ready.
+
+---
+
+## Authentication
+
+This collection uses **Bearer Token authentication**:  
+- The token is set at the collection level.  
+- All requests automatically use `{{platform_access_token}}` from your active environment.  
+- You don’t need to edit headers manually.  
+
+---
+
+## Using the Collection
+
+With the environment and collection active, you can immediately start testing:
+
+- **Obtain Access Token** → Authenticate your platform  
+- **List Destinations** → Retrieve available delivery providers  
+- **Create Merchant** → Register a merchant in Muvx  
+- **Connect Merchant Destination** → Link a merchant to a delivery provider and obtain the API key  
+- **Get Merchant Details** → View merchant profiles and destination connections  
+
+<Banner>
+For full API details, see the <a href="/documentation/api-platforms-integrations">Platforms Integrations documentation</a>.
+</Banner>
